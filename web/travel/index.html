@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel · Zhlin Photography</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <a href="../index.html" class="logo-link">
+        <span class="logo-mark">ZL</span>
+        <span class="logo-text">ZHLIN PHOTOGRAPHY</span>
+      </a>
+    </div>
+    <nav class="main-nav">
+      <a href="../index.html">ABOUT ME</a>
+      <a href="../photography/index.html">PHOTOGRAPHY</a>
+      <a href="../hobby/index.html">HOBBY</a>
+      <a href="index.html" class="nav-active">TRAVEL</a>
+      <a href="../contact/index.html" class="nav-contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main class="content content--wide">
+    <section class="section travel-intro">
+      <h1 class="section-heading">Travel</h1>
+      <p class="section-desc">一些游记与路上的见闻。</p>
+    </section>
+
+    <ul class="travel-grid">
+      <li class="travel-card">
+        <a href="nanjing/index.html" class="travel-card-link">
+          <div class="travel-card-image-wrap">
+            <img src="nanjing/front.jpg" alt="南京 · 中山陵景区">
+            <div class="travel-card-overlay">
+              <span class="travel-card-overlay-tag">Travel</span>
+              <span class="travel-card-overlay-title">南京</span>
+              <span class="travel-card-overlay-sub">Nanjing</span>
+            </div>
+          </div>
+          <p class="travel-card-meta">2024 · 春</p>
+          <h2 class="travel-card-title">南京行记：中山陵与梧桐</h2>
+          <span class="travel-card-read">Read More</span>
+        </a>
+      </li>
+      <li class="travel-card">
+        <div class="travel-card-image-wrap">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--border);color:var(--text-muted);font-size:0.875rem;letter-spacing:0.06em;">更多游记 · 敬请期待</div>
+        </div>
+        <p class="travel-card-meta">—</p>
+        <h2 class="travel-card-title">更多目的地</h2>
+        <span class="travel-card-read" style="opacity:0.6;">Coming Soon</span>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换深色/浅色模式">
+      <span class="theme-label">浅色</span>
+    </button>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

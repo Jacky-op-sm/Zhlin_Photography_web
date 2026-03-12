@@ -1,0 +1,14 @@
+第一阶段：网站内容规划 (The Blueprint)
+
+在写代码前，我们需要先确定网页上要放什么。
+
+ABOTE ME：放头像和个人简介
+
+PHOTOGRAPHY：记录摄影的成长
+
+HOBBY：阅读、电影、游戏
+
+TRAVEL：放一些游记
+
+CONTACT：像clondon一样，对方可以给我发邮件的界面；留一个个人邮箱
+
