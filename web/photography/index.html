@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photography · Zhlin Photography</title>
+  <title>Photography 路 Zhlin Photography</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,12 +26,95 @@
     </nav>
   </header>
 
-  <main class="content">
-    <section class="section">
+  <main class="content content--wide">
+    <section class="section photography-intro">
       <h1 class="section-heading">Photography</h1>
-      <p class="section-desc">记录摄影的成长与作品。日后可在此展示精选照片或项目链接。</p>
-      <p class="section-placeholder">精选作品与成长记录将在此呈现。</p>
+      <p class="section-desc">Selected photography.</p>
     </section>
+
+    <ul class="photo-gallery" aria-label="Photography Gallery">
+      <li class="photo-item photo-item--a">
+        <button
+          type="button"
+          class="photo-card"
+          data-lightbox-src="../../内容/摄影/学校的光影.jpeg"
+          data-lightbox-title="School Light and Shadows"
+          data-lightbox-subtitle="Warm afternoon light moving through classrooms"
+          data-lightbox-location="Hangzhou, China"
+          data-lightbox-date="March 2026"
+          aria-label="Open School Light and Shadows"
+        >
+          <span class="photo-card-media">
+            <img src="../../内容/摄影/学校的光影.jpeg" alt="School Light and Shadows">
+          </span>
+        </button>
+      </li>
+
+      <li class="photo-item photo-item--b">
+        <button
+          type="button"
+          class="photo-card"
+          data-lightbox-src="../../内容/摄影/雨西湖.jpeg"
+          data-lightbox-title="Rain Over West Lake"
+          data-lightbox-subtitle="Rain and mist over water in early spring"
+          data-lightbox-location="Hangzhou, China"
+          data-lightbox-date="March 2026"
+          aria-label="Open Rain Over West Lake"
+        >
+          <span class="photo-card-media">
+            <img src="../../内容/摄影/雨西湖.jpeg" alt="Rain Over West Lake">
+          </span>
+        </button>
+      </li>
+
+      <li class="photo-item photo-item--c">
+        <button
+          type="button"
+          class="photo-card"
+          data-lightbox-src="../../内容/摄影/抽象建筑.jpeg"
+          data-lightbox-title="Abstract Architecture"
+          data-lightbox-subtitle="Lines and shadows in a passing urban frame"
+          data-lightbox-location="China"
+          data-lightbox-date="2026"
+          aria-label="Open Abstract Architecture"
+        >
+          <span class="photo-card-media">
+            <img src="../../内容/摄影/抽象建筑.jpeg" alt="Abstract Architecture">
+          </span>
+        </button>
+      </li>
+
+      <li class="photo-item photo-item--d">
+        <button
+          type="button"
+          class="photo-card"
+          data-lightbox-src="../../内容/摄影/冰箱.jpeg"
+          data-lightbox-title="Fridge Study"
+          data-lightbox-subtitle="An everyday object turned into graphic composition"
+          data-lightbox-location="China"
+          data-lightbox-date="2026"
+          aria-label="Open Fridge Study"
+        >
+          <span class="photo-card-media">
+            <img src="../../内容/摄影/冰箱.jpeg" alt="Fridge Study">
+          </span>
+        </button>
+      </li>
+    </ul>
+
+    <div class="photo-lightbox" id="photo-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo preview">
+      <button type="button" class="photo-lightbox-close" id="photo-lightbox-close" aria-label="Close preview">×</button>
+      <div class="photo-lightbox-backdrop" data-lightbox-close="true"></div>
+      <figure class="photo-lightbox-figure">
+        <img id="photo-lightbox-image" src="" alt="">
+        <figcaption class="photo-lightbox-caption">
+          <p class="photo-lightbox-title" id="photo-lightbox-title"></p>
+          <p class="photo-lightbox-subtitle" id="photo-lightbox-subtitle"></p>
+          <p class="photo-lightbox-location" id="photo-lightbox-location"></p>
+          <p class="photo-lightbox-date" id="photo-lightbox-date"></p>
+        </figcaption>
+      </figure>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -41,5 +124,9 @@
   </footer>
 
   <script src="../script.js"></script>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -47,19 +47,19 @@ a:hover {
 
 /* ===== 布局容器 ===== */
 .content {
-  max-width: 720px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
+  padding: 3.5rem 1.5rem 4.5rem;
 }
 
 @media (min-width: 640px) {
   .content {
-    padding: 4rem 2rem 5rem;
+    padding: 4.5rem 2.5rem 5.5rem;
   }
 }
 
 .content--wide {
-  max-width: 900px;
+  max-width: 1360px;
 }
 
 /* ===== 头部 ===== */
@@ -252,15 +252,211 @@ a:hover {
 }
 
 /* ===== Contact ===== */
-.contact-section .contact-email {
-  display: inline-block;
-  font-size: 0.9375rem;
-  color: var(--accent);
-  margin-top: 0.5rem;
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
-.contact-section .contact-email:hover {
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+
+.contact-title {
+  margin: 0 0 1.35rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.contact-email {
+  display: inline-block;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.contact-email:hover {
+  color: var(--text);
   text-decoration: underline;
+}
+
+.contact-social {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #444;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.social-icon--text {
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.social-icon:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 760px;
+  justify-self: end;
+}
+
+.contact-fieldset {
+  border: 0;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.contact-fieldset legend {
+  margin: 0 0 1rem;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.name-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+}
+
+.form-group {
+  margin-bottom: 1.55rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  margin-bottom: 0.45rem;
+  color: var(--text);
+}
+
+.form-group label span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #b8b8b8;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.58rem 0.72rem;
+}
+
+.contact-form input {
+  min-height: 58px;
+}
+
+.contact-form textarea {
+  min-height: 142px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(139, 115, 85, 0.35);
+  outline-offset: 1px;
+}
+
+.send-btn {
+  border: 0;
+  background: #000;
+  color: #fff;
+  min-width: 128px;
+  min-height: 54px;
+  padding: 0.55rem 1rem;
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background: #1f1f1f;
+}
+
+@media (min-width: 980px) {
+  .contact-layout {
+    grid-template-columns: minmax(220px, 34%) minmax(540px, 52%);
+    column-gap: clamp(2rem, 5vw, 5.5rem);
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .name-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 979px) {
+  .contact-title {
+    font-size: 1.25rem;
+  }
+
+  .contact-email {
+    font-size: 0.95rem;
+  }
+
+  .contact-fieldset legend,
+  .form-group label {
+    font-size: 0.95rem;
+  }
+
+  .form-group label span {
+    font-size: 0.8rem;
+  }
+
+  .contact-form input {
+    min-height: 46px;
+  }
+
+  .contact-form textarea {
+    min-height: 125px;
+  }
+
+  .send-btn {
+    min-width: 116px;
+    min-height: 46px;
+    font-size: 0.8rem;
+  }
+
+  .social-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .social-icon--text {
+    font-size: 1.8rem;
+  }
 }
 
 /* ===== 页脚与主题切换 ===== */
@@ -321,12 +517,24 @@ a:hover {
 
 /* ===== Travel 卡片列表（参考 旅游.jpg） ===== */
 .travel-intro {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.travel-intro .section-heading {
+  font-size: 2.125rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.travel-intro .section-desc {
+  font-size: 2rem;
+  line-height: 1.45;
+  color: var(--text-muted);
 }
 
 .travel-grid {
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -335,7 +543,7 @@ a:hover {
 @media (min-width: 640px) {
   .travel-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 3rem;
   }
 }
 
@@ -355,10 +563,10 @@ a:hover {
 
 .travel-card-image-wrap {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/2;
   overflow: hidden;
   background: var(--border);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .travel-card-image-wrap img {
@@ -374,13 +582,13 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.25rem 1rem;
+  padding: 1.8rem 1.4rem;
   background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
   color: #fff;
 }
 
 .travel-card-overlay-tag {
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   opacity: 0.9;
@@ -388,7 +596,7 @@ a:hover {
 }
 
 .travel-card-overlay-title {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -397,7 +605,7 @@ a:hover {
 }
 
 .travel-card-overlay-sub {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 0.15rem;
@@ -405,24 +613,54 @@ a:hover {
 }
 
 .travel-card-meta {
-  font-size: 0.8125rem;
+  font-size: 2rem;
   color: var(--text-muted);
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.5rem;
 }
 
 .travel-card-title {
-  font-size: 0.9375rem;
+  font-size: 2.4rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.65rem;
   color: var(--text);
 }
 
 .travel-card-read {
-  font-size: 0.8125rem;
+  font-size: 2rem;
   color: var(--text-muted);
   text-decoration: underline;
   text-underline-offset: 0.2em;
+}
+
+@media (max-width: 900px) {
+  .travel-intro .section-heading {
+    font-size: 1.5rem;
+  }
+
+  .travel-intro .section-desc {
+    font-size: 1.125rem;
+  }
+
+  .travel-card-overlay-title {
+    font-size: 2rem;
+  }
+
+  .travel-card-overlay-sub {
+    font-size: 0.95rem;
+  }
+
+  .travel-card-meta {
+    font-size: 1.2rem;
+  }
+
+  .travel-card-title {
+    font-size: 1.5rem;
+  }
+
+  .travel-card-read {
+    font-size: 1.1rem;
+  }
 }
 
 .travel-card-link:hover .travel-card-read {
@@ -441,4 +679,193 @@ a:hover {
   font-weight: 700;
   letter-spacing: 0.02em;
   margin: 0 0 0.5rem;
+}
+
+/* ===== Photography Gallery ===== */
+.photography-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.photography-intro .section-heading {
+  font-size: 2.125rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.9rem;
+}
+
+.photography-intro .section-desc {
+  font-size: 2rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.photo-gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.photo-item {
+  min-width: 0;
+}
+
+.photo-card {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: zoom-in;
+}
+
+.photo-card-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.35s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.035);
+}
+
+@media (min-width: 640px) {
+  .photo-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .photo-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.3rem;
+  }
+}
+
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 999;
+}
+
+.photo-lightbox.is-open {
+  display: flex;
+}
+
+.photo-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.74);
+}
+
+.photo-lightbox-figure {
+  position: relative;
+  margin: 0;
+  max-width: min(92vw, 860px);
+  max-height: 90vh;
+  width: auto;
+  z-index: 1;
+}
+
+.photo-lightbox-figure img {
+  display: block;
+  width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  background: #111;
+}
+
+.photo-lightbox-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  padding: 1.15rem 1.5rem 1.2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.58) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+.photo-lightbox-caption p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.photo-lightbox-title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.photo-lightbox-subtitle,
+.photo-lightbox-location,
+.photo-lightbox-date {
+  font-size: 1.02rem;
+  opacity: 0.96;
+}
+
+.photo-lightbox-subtitle,
+.photo-lightbox-location {
+  margin-bottom: 0.24rem;
+}
+
+.photo-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 1.45rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+@media (max-width: 980px) {
+  .photography-intro .section-heading {
+    font-size: 1.55rem;
+  }
+
+  .photography-intro .section-desc {
+    font-size: 1.125rem;
+  }
+
+  .photo-lightbox-figure {
+    max-width: 95vw;
+  }
+
+  .photo-lightbox-title {
+    font-size: 1.25rem;
+  }
+
+  .photo-lightbox-subtitle,
+  .photo-lightbox-location,
+  .photo-lightbox-date {
+    font-size: 0.94rem;
+  }
 }
