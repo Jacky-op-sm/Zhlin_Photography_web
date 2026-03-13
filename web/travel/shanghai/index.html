@@ -1,15 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="上海旅行记录：外滩与弄堂。">
+  <link rel="canonical" href="https://zhlin-photography.vercel.app/travel/shanghai/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="上海行记 · Travel · Zhlin Photography">
+  <meta property="og:description" content="上海旅行记录：外滩与弄堂。">
+  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/shanghai-front.jpg">
   <title>上海行记 · Travel · Zhlin Photography</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="travel-detail" data-city="shanghai" data-base-path="../.." data-content-url="../../data/site-content.json">
   <header class="site-header">
     <div class="logo">
       <a href="../../index.html" class="logo-link">
@@ -17,7 +23,7 @@
         <span class="logo-text">ZHLIN PHOTOGRAPHY</span>
       </a>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main Navigation">
       <a href="../../index.html">ABOUT ME</a>
       <a href="../../photography/index.html">PHOTOGRAPHY</a>
       <a href="../../hobby/index.html">HOBBY</a>
@@ -28,18 +34,36 @@
 
   <main class="content">
     <section class="section">
-      <p class="travel-detail-meta">2024 · 秋</p>
-      <h1 class="travel-detail-title">上海行记：外滩与弄堂</h1>
-      <p class="section-desc">上海 · Shanghai</p>
+      <p class="travel-detail-meta" id="travel-detail-period"></p>
+      <h1 class="travel-detail-title" id="travel-detail-title"></h1>
+      <p class="section-desc" id="travel-detail-location"></p>
+      <p class="travel-detail-summary" id="travel-detail-summary"></p>
 
-      <div class="travel-detail-image-wrap" style="margin: 2rem 0;">
-        <img src="front.jpg" alt="上海 · 外滩夜景" style="width:100%;height:auto;display:block;vertical-align:middle;">
+      <div class="travel-detail-image-wrap">
+        <img id="travel-detail-cover" src="" alt="" style="width:100%;height:auto;display:block;vertical-align:middle;">
       </div>
 
-      <div class="about-text">
-        <p>此处为上海游记正文，后续可补充行程、见闻与感受。</p>
-        <p>上海的秋天梧桐叶黄，浦江两岸尽是流转的光影与现代都市的脉动。</p>
+      <div class="travel-detail-grid">
+        <article class="travel-detail-block">
+          <h2>行程概览</h2>
+          <ul id="travel-itinerary"></ul>
+        </article>
+
+        <article class="travel-detail-block">
+          <h2>地点清单</h2>
+          <ul id="travel-spots"></ul>
+        </article>
       </div>
+
+      <article class="travel-detail-block">
+        <h2>照片故事</h2>
+        <p id="travel-photo-story"></p>
+      </article>
+
+      <article class="travel-detail-block">
+        <h2>个人感受</h2>
+        <p id="travel-reflection"></p>
+      </article>
 
       <p style="margin-top: 2rem;">
         <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
@@ -53,10 +77,10 @@
     </button>
   </footer>
 
-  <script src="../../script.js"></script>
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script src="../../script.js"></script>
 </body>
 </html>

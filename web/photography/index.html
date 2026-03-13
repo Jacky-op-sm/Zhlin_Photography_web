@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photography 路 Zhlin Photography</title>
+  <meta name="description" content="Zhlin 的摄影作品精选，包含地点、时间与拍摄注释。">
+  <link rel="canonical" href="https://zhlin-photography.vercel.app/photography/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Photography · Zhlin Photography">
+  <meta property="og:description" content="Selected photography with notes on place, light, and time.">
+  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/photos/学校的光影.jpeg">
+  <title>Photography · Zhlin Photography</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="photography" data-base-path=".." data-content-url="../data/site-content.json">
   <header class="site-header">
     <div class="logo">
       <a href="../index.html" class="logo-link">
@@ -17,7 +23,7 @@
         <span class="logo-text">ZHLIN PHOTOGRAPHY</span>
       </a>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main Navigation">
       <a href="../index.html">ABOUT ME</a>
       <a href="index.html" class="nav-active">PHOTOGRAPHY</a>
       <a href="../hobby/index.html">HOBBY</a>
@@ -29,80 +35,14 @@
   <main class="content content--wide">
     <section class="section photography-intro">
       <h1 class="section-heading">Photography</h1>
-      <p class="section-desc">Selected photography.</p>
+      <p class="section-desc" id="photography-intro">Selected photography with notes on place, light, and time.</p>
     </section>
 
-    <ul class="photo-gallery" aria-label="Photography Gallery">
-      <li class="photo-item photo-item--a">
-        <button
-          type="button"
-          class="photo-card"
-          data-lightbox-src="../../内容/摄影/学校的光影.jpeg"
-          data-lightbox-title="School Light and Shadows"
-          data-lightbox-subtitle="Warm afternoon light moving through classrooms"
-          data-lightbox-location="Hangzhou, China"
-          data-lightbox-date="March 2026"
-          aria-label="Open School Light and Shadows"
-        >
-          <span class="photo-card-media">
-            <img src="../../内容/摄影/学校的光影.jpeg" alt="School Light and Shadows">
-          </span>
-        </button>
-      </li>
-
-      <li class="photo-item photo-item--b">
-        <button
-          type="button"
-          class="photo-card"
-          data-lightbox-src="../../内容/摄影/雨西湖.jpeg"
-          data-lightbox-title="Rain Over West Lake"
-          data-lightbox-subtitle="Rain and mist over water in early spring"
-          data-lightbox-location="Hangzhou, China"
-          data-lightbox-date="March 2026"
-          aria-label="Open Rain Over West Lake"
-        >
-          <span class="photo-card-media">
-            <img src="../../内容/摄影/雨西湖.jpeg" alt="Rain Over West Lake">
-          </span>
-        </button>
-      </li>
-
-      <li class="photo-item photo-item--c">
-        <button
-          type="button"
-          class="photo-card"
-          data-lightbox-src="../../内容/摄影/抽象建筑.jpeg"
-          data-lightbox-title="Abstract Architecture"
-          data-lightbox-subtitle="Lines and shadows in a passing urban frame"
-          data-lightbox-location="China"
-          data-lightbox-date="2026"
-          aria-label="Open Abstract Architecture"
-        >
-          <span class="photo-card-media">
-            <img src="../../内容/摄影/抽象建筑.jpeg" alt="Abstract Architecture">
-          </span>
-        </button>
-      </li>
-
-      <li class="photo-item photo-item--d">
-        <button
-          type="button"
-          class="photo-card"
-          data-lightbox-src="../../内容/摄影/冰箱.jpeg"
-          data-lightbox-title="Fridge Study"
-          data-lightbox-subtitle="An everyday object turned into graphic composition"
-          data-lightbox-location="China"
-          data-lightbox-date="2026"
-          aria-label="Open Fridge Study"
-        >
-          <span class="photo-card-media">
-            <img src="../../内容/摄影/冰箱.jpeg" alt="Fridge Study">
-          </span>
-        </button>
-      </li>
-    </ul>
+    <ul class="photo-gallery" id="photo-gallery" aria-label="Photography Gallery"></ul>
 
     <div class="photo-lightbox" id="photo-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo preview">
+      <button type="button" class="photo-lightbox-nav photo-lightbox-nav--prev" id="photo-lightbox-prev" aria-label="Previous photo">‹</button>
+      <button type="button" class="photo-lightbox-nav photo-lightbox-nav--next" id="photo-lightbox-next" aria-label="Next photo">›</button>
       <button type="button" class="photo-lightbox-close" id="photo-lightbox-close" aria-label="Close preview">×</button>
       <div class="photo-lightbox-backdrop" data-lightbox-close="true"></div>
       <figure class="photo-lightbox-figure">
@@ -123,10 +63,10 @@
     </button>
   </footer>
 
-  <script src="../script.js"></script>
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>

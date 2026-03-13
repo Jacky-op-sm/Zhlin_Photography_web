@@ -1,0 +1,423 @@
+﻿{
+  "site": {
+    "name": "Zhlin Photography",
+    "baseUrl": "https://zhlin-photography.vercel.app",
+    "defaultOgImage": "assets/profile/avatar.jpeg"
+  },
+  "profile": {
+    "name": "Zhlin",
+    "title": "PhD Student · Photographer",
+    "city": "Hangzhou, China",
+    "email": "Jackylin714@gmail.com",
+    "avatar": "assets/profile/avatar.jpeg",
+    "aboutParagraphs": [
+      "研究方向聚焦 VLA（Vision-Language-Action），关注视觉理解、语言建模与行动决策之间的连接。",
+      "摄影以街拍为主，偏爱在日常场景中捕捉真实情绪与城市节奏，记录那些转瞬即逝的细微时刻。",
+      "目前常驻浙江杭州，在学习与创作之间持续积累，也希望通过这个网站分享阶段性的观察与作品。"
+    ],
+    "socials": {
+      "instagram": "",
+      "linkedin": "",
+      "wechat": "Aluck714"
+    }
+  },
+  "photography": {
+    "intro": "Selected photography with notes on place, light, and time.",
+    "items": [
+      {
+        "id": "school-light",
+        "src": "assets/photos/学校的光影.jpeg",
+        "title": "School Light and Shadows",
+        "subtitle": "Warm afternoon light moving through classrooms",
+        "location": "Hangzhou, China",
+        "date": "March 2026"
+      },
+      {
+        "id": "west-lake-rain",
+        "src": "assets/photos/雨西湖.jpeg",
+        "title": "Rain Over West Lake",
+        "subtitle": "Rain and mist over water in early spring",
+        "location": "Hangzhou, China",
+        "date": "March 2026"
+      },
+      {
+        "id": "abstract-architecture",
+        "src": "assets/photos/抽象建筑.jpeg",
+        "title": "Abstract Architecture",
+        "subtitle": "Lines and shadows in a passing urban frame",
+        "location": "China",
+        "date": "2026"
+      },
+      {
+        "id": "fridge-study",
+        "src": "assets/photos/冰箱.jpeg",
+        "title": "Fridge Study",
+        "subtitle": "An everyday object turned into graphic composition",
+        "location": "China",
+        "date": "2026"
+      }
+    ]
+  },
+  "hobby": {
+    "intro": "阅读、电影、游戏，是我保持观察力和叙事感的三个长期入口。",
+    "externalProfiles": {
+      "goodreads": "https://www.goodreads.com/user/show/92395148-jacky",
+      "letterboxd": "https://letterboxd.com/madscientist4/diary/"
+    },
+    "lolProfile": {
+      "server": "CN",
+      "rank": "超凡大师",
+      "mainRoles": [
+        "打野",
+        "中单"
+      ],
+      "championPool": [
+        "杰斯",
+        "卡牌",
+        "发条"
+      ],
+      "currentInsight": "我最喜欢的三名选手：Zeus, Chovy, Last丶炫神"
+    },
+    "featured": [
+      {
+        "title": "阅读",
+        "items": [
+          {
+            "name": "《第六病室》",
+            "why": "契诃夫对日常处境的冷静拆解，持续提醒我关注“普通人如何承受生活”。"
+          },
+          {
+            "name": "《流动的盛宴》",
+            "why": "写作与城市经验之间的连接很直接，常让我反思创作需要怎样的“精神避难所”。"
+          },
+          {
+            "name": "《逃离》",
+            "why": "短篇的留白和节奏让我不断思考“逃离”在叙事中的力量。"
+          }
+        ]
+      },
+      {
+        "title": "电影",
+        "items": [
+          {
+            "name": "An Autumn Afternoon（秋刀鱼之味）",
+            "why": "2026-02-27 观看，★★★★。留白与克制的表达方式很打动我，父女关系的寂寞感也非常耐看。"
+          },
+          {
+            "name": "Million Dollar Baby（百万美元宝贝）",
+            "why": "2026-01-12 观看，★★★★½。三段式叙事很完整，文戏与拳击场面的切换让结尾更有力度。"
+          },
+          {
+            "name": "Taxi Driver（出租车司机）",
+            "why": "2026-01-08 观看，★★★★。人物游走在善恶之间，都市孤独与黑色幽默收尾都很有冲击力。"
+          }
+        ]
+      },
+      {
+        "title": "游戏",
+        "items": [
+          {
+            "name": "LOL",
+            "why": "自始至终，我能坚持下来的只有这一款游戏，当我不再玩时，我想我也就不玩游戏了。"
+          }
+        ]
+      }
+    ],
+    "monthlyDigest": [
+      {
+        "month": "2026-03",
+        "reading": [
+          {
+            "name": "《乞力马扎罗的雪（译文经典）》",
+            "why": "Goodreads 记录为在读；短篇密度很高，我主要在练习“压缩叙事里的情绪转折”。"
+          }
+        ],
+        "films": [
+        ]
+      },
+      {
+        "month": "2026-02",
+        "reading": [
+          {
+            "name": "《流动的盛宴（译文经典）》",
+            "why": "2 月读完并打了 4 星，写作者如何在城市中维持创作状态这一点很打动我。"
+          },
+          {
+            "name": "《第六病室：契诃夫小说精选》",
+            "why": "2 月读完并打了 5 星，人物处境和道德困境的书写很有后劲。"
+          }
+        ],
+        "films": [
+          {
+            "name": "An Autumn Afternoon（秋刀鱼之味）",
+            "why": "2026-02-27 观看，★★★★。留白与克制的情绪表达，以及父亲视角下的寂寞感。"
+          },
+          {
+            "name": "Miss Kobayashi's Dragon Maid: A lonely dragon wants to be loved（小林家的龙女仆：寂寞的龙想被爱）",
+            "why": "2026-02-19 观看，★★★½。延续 TV 角色魅力，但剧场版更偏打斗，日常疗愈感有所减弱。"
+          },
+          {
+            "name": "Scare Out（惊蛰无声）",
+            "why": "2026-02-18 观看，★★½。整体更像类型模板，缺少反转与博弈。"
+          },
+          {
+            "name": "Nobody Knows（无人知晓）",
+            "why": "2026-02-09 观看，★★★½。依然是是枝裕和的边缘生活题材，但结尾观感偏悬空。"
+          }
+        ]
+      },
+      {
+        "month": "2026-01",
+        "reading": [
+          {
+            "name": "《香水》",
+            "why": "1 月读完；它对嗅觉和欲望的描写方式，让我重新思考“不可见之物”如何被叙述。"
+          }
+        ],
+        "films": [
+          {
+            "name": "A Silent Voice: The Movie（声之形）",
+            "why": "2026-01-31 观看，★★½。前半段画面和音乐不错，但后半段剧情说服力不足。"
+          },
+          {
+            "name": "Million Dollar Baby（百万美元宝贝）",
+            "why": "2026-01-12 观看，★★★★½。三段式推进清晰，文戏与拳击戏都很扎实。"
+          },
+          {
+            "name": "Shame（羞耻）",
+            "why": "2026-01-09 观看，★★★。前段影像很有电影感，但影片更多是提问而非作答。"
+          },
+          {
+            "name": "Taxi Driver（出租车司机）",
+            "why": "2026-01-08 观看，★★★★。角色复杂、孤独感强，黑色幽默的结局很亮眼。"
+          },
+          {
+            "name": "Happy Together（春光乍泄）",
+            "why": "2026-01-04 观看，★★★½。关系在重复中持续恶化，瀑布意象让爱情片更接近文艺表达。"
+          }
+        ]
+      },
+      {
+        "month": "2025-12",
+        "reading": [
+          {
+            "name": "《九個故事》",
+            "why": "12 月读完；短篇之间的语调差异很大，但都保持了非常稳的叙事控制。"
+          },
+          {
+            "name": "《献给阿尔吉侬的花束》",
+            "why": "同月读完并打了 4 星，文本结构与情感冲击都很完整。"
+          }
+        ],
+        "films": [
+          {
+            "name": "The Terror Live（恐怖直播）",
+            "why": "2025-12-31 观看，★★★½。制作规模不大，但核心设定很有想象力。"
+          },
+          {
+            "name": "Nostalgia（乡愁）",
+            "why": "2025-12-15 观看，★★★½。观影后仍在反复思考象征意义，虽然理解上保留疑问。"
+          },
+          {
+            "name": "Millennium Actress（千年女优）",
+            "why": "2025-12-09 观看，★★★★。也是 2025 Top 5 之一，今敏的叙事方式很有后劲。"
+          },
+          {
+            "name": "Little Women（小妇人）",
+            "why": "2025-12-04 观看，★★★★。温情质感很强，也让我继续思考女性独立与婚姻叙事。"
+          }
+        ]
+      },
+      {
+        "month": "2025-11",
+        "films": [
+          {
+            "name": "Nymphomaniac: Vol. I（女性瘾者：第一部）",
+            "why": "2025-11-23 观看，★★★★。叙事把欲望与精神状态并置，观感很强烈。"
+          },
+          {
+            "name": "Nymphomaniac: Vol. II（女性瘾者：第二部）",
+            "why": "2025-11-24 观看，★★★★。结尾反转让人物从“观念符号”回到复杂个体。"
+          },
+          {
+            "name": "Three Colours: Red（红）",
+            "why": "2025-11-07 观看，★★★★。人物气质、配乐和“博爱”主题都很难忘。"
+          }
+        ]
+      }
+    ],
+    "cards": [
+      {
+        "title": "阅读",
+        "items": [
+          {
+            "name": "《第六病室》",
+            "why": "契诃夫对日常处境的冷静拆解，持续提醒我关注“普通人如何承受生活”。"
+          },
+          {
+            "name": "《流动的盛宴》",
+            "why": "写作与城市经验之间的连接很直接，常让我反思创作需要怎样的“精神避难所”。"
+          },
+          {
+            "name": "《逃离》",
+            "why": "短篇的留白和节奏让我不断思考“逃离”在叙事中的力量。"
+          }
+        ]
+      },
+      {
+        "title": "电影",
+        "items": [
+          {
+            "name": "An Autumn Afternoon（秋刀鱼之味）",
+            "why": "2026-02-27 观看，★★★★。留白与克制的表达方式很打动我，父女关系的寂寞感也非常耐看。"
+          },
+          {
+            "name": "Million Dollar Baby（百万美元宝贝）",
+            "why": "2026-01-12 观看，★★★★½。三段式叙事很完整，文戏与拳击场面的切换让结尾更有力度。"
+          },
+          {
+            "name": "Taxi Driver（出租车司机）",
+            "why": "2026-01-08 观看，★★★★。人物游走在善恶之间，都市孤独与黑色幽默收尾都很有冲击力。"
+          }
+        ]
+      },
+      {
+        "title": "游戏",
+        "items": [
+          {
+            "name": "LOL",
+            "why": "自始至终，我能坚持下来的只有这一款游戏，当我不再玩时，我想我也就不玩游戏了。"
+          }
+        ]
+      }
+    ]
+  },
+  "travel": {
+    "intro": "一些游记与路上的见闻。",
+    "cities": [
+      {
+        "slug": "beijing",
+        "zhName": "北京",
+        "enName": "Beijing",
+        "period": "2024 · 冬",
+        "cardTitle": "北京行记：城墙与烟火",
+        "cover": "assets/travel/beijing-front.jpeg",
+        "summary": "在冬天的北京，我把行程放慢，用步行连接历史肌理与当代城市节奏。",
+        "itinerary": [
+          "Day 1：前门—天安门周边步行，观察清晨和夜晚的人流变化。",
+          "Day 2：胡同与鼓楼片区，重点记录街巷中的光线反差。",
+          "Day 3：城市边缘区域短途移动，拍摄通勤与生活场景。"
+        ],
+        "spots": [
+          "前门与大栅栏",
+          "钟鼓楼周边胡同",
+          "二环沿线夜景"
+        ],
+        "photoStory": "这组照片以“古老结构中的当代速度”为线索：白天拍空间层次，夜晚拍灯光与人流，形成同一地点的双重叙事。",
+        "reflection": "北京给我的最大感受是尺度感。它既宏大又具体，每条街都在提醒我：好的纪录不是抢镜头，而是等待场景自己说话。"
+      },
+      {
+        "slug": "nanjing",
+        "zhName": "南京",
+        "enName": "Nanjing",
+        "period": "2024 · 春",
+        "cardTitle": "南京行记：中山陵与梧桐",
+        "cover": "assets/travel/nanjing-front.jpg",
+        "summary": "阴雨和梧桐构成了南京的春天底色，适合做低饱和、慢节奏的影像记录。",
+        "itinerary": [
+          "Day 1：中山陵片区徒步，记录雨雾中的层次与石阶结构。",
+          "Day 2：梧桐大道与老城区，拍摄行人与交通的节奏关系。",
+          "Day 3：河岸与居民区漫步，补拍生活细节。"
+        ],
+        "spots": [
+          "中山陵景区",
+          "梧桐大道",
+          "老门东周边"
+        ],
+        "photoStory": "我把镜头放在“湿度”上：湿漉路面、树叶反光、石材纹理，让南京春天的空气感更可见。",
+        "reflection": "南京的魅力在于克制。它不急于展示自己，但只要你愿意慢走，就会得到非常丰富的细节。"
+      },
+      {
+        "slug": "japan",
+        "zhName": "日本",
+        "enName": "Japan",
+        "period": "2024 · 夏",
+        "cardTitle": "日本行记：岛与城之间",
+        "cover": "assets/travel/japan-front.jpeg",
+        "summary": "从高松、直岛、小豆岛到京都与奈良，沿途记下移动中的风景、陌生人和日落。"
+        },
+      {
+        "slug": "dongbei",
+        "zhName": "东北",
+        "enName": "Northeast China",
+        "period": "2024 · 冬",
+        "cardTitle": "东北行记：雪乡与冰城",
+        "cover": "assets/travel/dongbei-front.jpg",
+        "summary": "极寒环境会改变人的行动方式，也会改变光线在城市中的传播方式。",
+        "itinerary": [
+          "Day 1：冰雪景区与居民区对照拍摄。",
+          "Day 2：清晨与夜间两组低温环境测试拍摄。",
+          "Day 3：交通节点和市场区收尾记录。"
+        ],
+        "spots": [
+          "冰雪活动区",
+          "沿街居民区",
+          "夜间集市"
+        ],
+        "photoStory": "这组更关注“温度差”：冷色环境中的暖色光源、人群聚拢与散开的瞬间。",
+        "reflection": "东北的冬天非常直接，也非常诚实。环境越极端，画面中的情绪越清晰。"
+      },
+      {
+        "slug": "shanghai",
+        "zhName": "上海",
+        "enName": "Shanghai",
+        "period": "2024 · 秋",
+        "cardTitle": "上海行记：外滩与弄堂",
+        "cover": "assets/travel/shanghai-front.jpg",
+        "summary": "上海适合做“界面感”叙事：历史建筑、商业空间与生活巷弄不断切换。",
+        "itinerary": [
+          "Day 1：外滩与江边步行，记录建筑立面与人流。",
+          "Day 2：弄堂区域慢拍，观察生活尺度。",
+          "Day 3：黄昏到夜间，补齐城市光线过渡段。"
+        ],
+        "spots": [
+          "外滩沿线",
+          "老弄堂片区",
+          "黄浦江夜景点"
+        ],
+        "photoStory": "我把上海分成“展示面”和“生活面”两条线索，并通过同色系光线让两条线在视觉上连接。",
+        "reflection": "上海最打动我的是切换速度。几分钟路程内，你就能看到完全不同的城市语法。"
+      },
+      {
+        "slug": "hangzhou",
+        "zhName": "杭州",
+        "enName": "Hangzhou",
+        "period": "2024 · 秋",
+        "cardTitle": "杭州行记：西湖与烟雨",
+        "cover": "assets/travel/hangzhou-front.jpeg",
+        "summary": "杭州的光线偏柔和，适合连续记录同一地点在天气变化中的细微差异。",
+        "itinerary": [
+          "Day 1：西湖沿线慢拍，记录晨雾与游客流动。",
+          "Day 2：山脚到湖边的步行路线，拍摄色调变化。",
+          "Day 3：雨天回访，补拍低对比场景。"
+        ],
+        "spots": [
+          "西湖苏堤与白堤",
+          "湖滨步道",
+          "山脚茶馆区域"
+        ],
+        "photoStory": "同一个湖面在不同天气下像不同场景。我用低反差和长停留方式记录“烟雨感”。",
+        "reflection": "杭州教会我耐心。很多好画面并不罕见，只是需要你愿意多等五分钟。"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let’s chat.",
+    "responseTime": "通常在 48 小时内回复。",
+    "types": [
+      "拍摄合作",
+      "学术交流",
+      "其他"
+    ]
+  }
+}

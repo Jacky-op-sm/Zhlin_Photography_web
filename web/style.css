@@ -189,14 +189,14 @@ a:hover {
 .about-block {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.8rem;
   align-items: flex-start;
 }
 
 @media (min-width: 640px) {
   .about-block {
     flex-direction: row;
-    gap: 2rem;
+    gap: 2.6rem;
     align-items: flex-start;
   }
 }
@@ -206,10 +206,17 @@ a:hover {
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background: linear-gradient(135deg, #a8d5e5 0%, #7eb8c9 100%);
+}
+
+@media (min-width: 980px) {
+  .avatar {
+    width: 240px;
+    height: 240px;
+  }
 }
 
 .avatar img {
@@ -289,6 +296,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.9rem;
+  flex-wrap: wrap;
 }
 
 .social-icon {
@@ -868,4 +876,1566 @@ body.lightbox-open {
   .photo-lightbox-date {
     font-size: 0.94rem;
   }
+}
+
+/* ===== P0 Extensions ===== */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 980px) {
+  .hobby-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+.hobby-card {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme="dark"] .hobby-card {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.hobby-card-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.06rem;
+}
+
+.hobby-card-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.hobby-card-list li {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.hobby-card-list li strong {
+  font-size: 0.95rem;
+}
+
+.hobby-card-list li span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.hobby-inline-lol {
+  margin-top: 0.7rem;
+  border: 1px solid var(--border);
+  padding: 0.95rem;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme="dark"] .hobby-inline-lol {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.hobby-inline-lol-desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.hobby-inline-lol-rows {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.hobby-inline-lol-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hobby-inline-lol-row-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  flex: 0 0 auto;
+}
+
+.hobby-inline-lol-chip-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.45rem;
+  min-width: 0;
+  overflow-x: auto;
+  padding-bottom: 0.1rem;
+}
+
+.hobby-inline-lol-chip-row .hobby-tag {
+  flex: 0 0 auto;
+}
+
+.hobby-inline-lol-note {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.hobby-block {
+  margin-top: 1.5rem;
+}
+
+.hobby-block--digest {
+  margin-top: 2rem;
+}
+
+.hobby-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+@media (max-width: 540px) {
+  .hobby-block-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.hobby-subheading {
+  margin: 0;
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+
+.hobby-more-btn,
+.hobby-mini-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.82rem;
+  line-height: 1;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+}
+
+.hobby-more-btn:hover,
+.hobby-mini-btn:hover {
+  color: var(--text);
+}
+
+.hobby-digest-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 980px) {
+  .hobby-digest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.hobby-digest-card {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme="dark"] .hobby-digest-card,
+[data-theme="dark"] .hobby-meta-card {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.hobby-digest-month {
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.hobby-digest-group + .hobby-digest-group {
+  margin-top: 0.85rem;
+}
+
+.hobby-digest-group-title {
+  margin: 0 0 0.45rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hobby-digest-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.hobby-digest-row {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.hobby-digest-row strong {
+  font-size: 0.93rem;
+}
+
+.hobby-digest-row span {
+  color: var(--text-muted);
+  font-size: 0.89rem;
+}
+
+.hobby-digest-row--extra {
+  display: none;
+}
+
+.hobby-digest-list.is-expanded .hobby-digest-row--extra {
+  display: grid;
+}
+
+.hobby-mini-btn {
+  margin-top: 0.65rem;
+}
+
+.hobby-digest-lol-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.hobby-meta-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 980px) {
+  .hobby-meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.hobby-meta-card {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hobby-meta-desc {
+  margin: 0.7rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.hobby-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.hobby-link-btn {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.7rem;
+  font-size: 0.88rem;
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+.hobby-link-btn:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.hobby-tag-list {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.hobby-tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.48rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.hobby-tag--label {
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0.2rem;
+}
+
+.hobby-lol-note {
+  margin: 0.85rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.travel-detail-summary {
+  margin: 0 0 1.4rem;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+.travel-detail-image-wrap {
+  margin: 1.3rem 0 1.8rem;
+}
+
+.travel-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .travel-detail-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.travel-detail-block {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.travel-detail-block h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.travel-detail-block p,
+.travel-detail-block li {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+}
+
+.travel-detail-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.nanjing-story {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem;
+}
+
+.nanjing-hero {
+  display: grid;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.nanjing-hero-media img,
+.nanjing-figure img,
+.nanjing-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nanjing-hero-copy {
+  max-width: 46rem;
+}
+
+.nanjing-curation {
+  max-width: 52rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.44);
+}
+
+[data-theme="dark"] .nanjing-curation {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.nanjing-kicker,
+.nanjing-section-index {
+  margin: 0 0 0.55rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.nanjing-hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.4rem, 6vw, 5.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+}
+
+.nanjing-hero-lead {
+  margin: 0.75rem 0 0;
+  max-width: 34rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.nanjing-section {
+  margin-top: 4.5rem;
+}
+
+.nanjing-section--intro {
+  max-width: 58rem;
+}
+
+.nanjing-section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.nanjing-section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.05;
+}
+
+.nanjing-prose {
+  max-width: 44rem;
+}
+
+.nanjing-prose--narrow {
+  max-width: 40rem;
+}
+
+.nanjing-prose p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.85;
+}
+
+.nanjing-curation p:last-child,
+.nanjing-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.nanjing-divider {
+  width: 5.5rem;
+  height: 1px;
+  margin: 2.2rem 0;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+}
+
+.nanjing-layout {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.nanjing-layout--gallery {
+  grid-template-columns: 1fr;
+  margin-top: 2rem;
+}
+
+.nanjing-layout--editorial {
+  grid-template-columns: 1fr;
+}
+
+.nanjing-layout--feature,
+.nanjing-layout--text-image,
+.nanjing-layout--ending {
+  grid-template-columns: 1fr;
+}
+
+.nanjing-figure {
+  margin: 0;
+}
+
+.nanjing-figure figcaption {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.nanjing-figure--spaced {
+  margin: 2rem 0;
+}
+
+.nanjing-figure--cinema {
+  margin-top: 1.35rem;
+}
+
+.nanjing-figure--cinema img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.nanjing-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.nanjing-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.38);
+}
+
+[data-theme="dark"] .nanjing-card {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.nanjing-card h3 {
+  margin: 0;
+  padding: 0.9rem 0.9rem 0.25rem;
+  font-size: 1rem;
+}
+
+.nanjing-card p {
+  margin: 0;
+  padding: 0 0.9rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.nanjing-card-grid--people .nanjing-card img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.nanjing-card-grid--food .nanjing-card img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.nanjing-card--text-only {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+
+.nanjing-card--text-only h3 {
+  padding: 0;
+  text-align: center;
+}
+
+.nanjing-section--backlink {
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 900px) {
+  .nanjing-story {
+    padding: 2.5rem 2rem 6rem;
+  }
+
+  .nanjing-hero {
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.8fr);
+    gap: 2rem;
+  }
+
+  .nanjing-layout--text-image,
+  .nanjing-layout--ending {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.78fr);
+    gap: 2rem;
+  }
+
+  .nanjing-layout--editorial {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.9fr);
+    gap: 2.1rem;
+  }
+
+  .nanjing-layout--feature {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.75fr);
+    gap: 2rem;
+  }
+
+  .nanjing-layout--gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .nanjing-card-grid--people {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .nanjing-card-grid--food {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .nanjing-story {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+
+  .nanjing-layout--text-image,
+  .nanjing-layout--ending {
+    grid-template-columns: minmax(0, 0.95fr) minmax(24rem, 0.72fr);
+  }
+}
+
+@media (max-width: 639px) {
+  .nanjing-story {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nanjing-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nanjing-story--roadbook {
+  max-width: 1320px;
+  padding-top: 1.4rem;
+}
+
+.nanjing-story--roadbook .nanjing-rb-article {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.nanjing-story--roadbook .nanjing-rb-hero {
+  margin: 0;
+}
+
+.nanjing-story--roadbook .nanjing-rb-hero img {
+  width: 100%;
+  max-height: 74vh;
+  object-fit: cover;
+  display: block;
+}
+
+.nanjing-story--roadbook .nanjing-rb-header {
+  padding: 2rem 0 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.nanjing-story--roadbook .nanjing-rb-channel {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.nanjing-story--roadbook .nanjing-rb-header h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.nanjing-story--roadbook .nanjing-rb-tags {
+  margin: 1.05rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.nanjing-story--roadbook .nanjing-rb-tags li {
+  border: 1px solid var(--border);
+  padding: 0.22rem 0.6rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.nanjing-story--roadbook .nanjing-rb-section {
+  max-width: 780px;
+  margin: 2.3rem auto 0;
+}
+
+.nanjing-story--roadbook .nanjing-rb-section-index {
+  margin: 0 0 0.4rem;
+  color: var(--accent);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.nanjing-story--roadbook .nanjing-rb-section h2 {
+  margin: 0 0 1rem;
+  padding: 0.32rem 0 0.32rem 0.82rem;
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 14%, transparent 86%) 0%, transparent 82%);
+  font-size: clamp(1.38rem, 2.15vw, 1.98rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  max-width: 28ch;
+  text-wrap: balance;
+}
+
+.nanjing-story--roadbook .nanjing-rb-section p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.95;
+}
+
+.nanjing-story--roadbook .nanjing-rb-section blockquote {
+  margin: 1.7rem 0;
+  padding: 0.8rem 1.2rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+[data-theme="dark"] .nanjing-story--roadbook .nanjing-rb-section blockquote {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.nanjing-story--roadbook .nanjing-rb-section blockquote p {
+  margin: 0;
+  color: var(--text);
+}
+
+.nanjing-story--roadbook .nanjing-rb-break {
+  width: 6.2rem;
+  height: 1px;
+  margin: 1.9rem 0;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+}
+
+.nanjing-story--roadbook .nanjing-rb-media {
+  margin: 2.2rem auto 0;
+  max-width: 980px;
+}
+
+.nanjing-story--roadbook .nanjing-rb-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nanjing-story--roadbook .nanjing-rb-media figcaption {
+  margin-top: 0.72rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.nanjing-story--roadbook .nanjing-rb-media-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2.2rem auto 0;
+  max-width: 980px;
+}
+
+.nanjing-story--roadbook .nanjing-rb-media-grid .nanjing-rb-media {
+  margin: 0;
+}
+
+.nanjing-story--roadbook .nanjing-rb-media-grid .nanjing-rb-media img {
+  width: 100%;
+  height: auto;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-shell {
+  display: none;
+  position: fixed;
+  left: 1rem;
+  top: 8.6rem;
+  z-index: 25;
+  width: 248px;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-toggle {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 1px solid var(--border);
+  background: rgba(248, 246, 242, 0.9);
+  background: color-mix(in srgb, var(--bg) 84%, #ffffff 16%);
+  color: var(--text-muted);
+  font-size: 0.77rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.52rem 0.7rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-toggle:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border) 55%);
+  text-decoration: none;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-toggle-icon {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc {
+  margin-top: 0.55rem;
+  border: 1px solid var(--border);
+  background: rgba(248, 246, 242, 0.95);
+  background: color-mix(in srgb, var(--bg) 90%, #ffffff 10%);
+  padding: 0.75rem 0.75rem 0.8rem;
+  max-height: calc(100vh - 12rem);
+  overflow-y: auto;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+[data-theme="dark"] body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc {
+  background: rgba(24, 24, 24, 0.86);
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-title {
+  margin: 0 0 0.65rem;
+  color: var(--text);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-content {
+  display: grid;
+  grid-template-columns: 3px minmax(0, 1fr);
+  gap: 0.62rem;
+  align-items: stretch;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-progress {
+  position: relative;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--border);
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: height 0.2s ease;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-list li + li {
+  margin-top: 0.32rem;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-list a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  column-gap: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  padding: 0.24rem 0.48rem;
+  border-left: 2px solid transparent;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-item-index {
+  color: color-mix(in srgb, var(--accent) 72%, var(--text-muted) 28%);
+  font-size: 0.69rem;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  margin-top: 0.05rem;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-item-title {
+  display: block;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-list a:hover {
+  color: var(--text);
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-list a.is-active {
+  color: var(--text);
+  border-left-color: var(--accent);
+  background: rgba(139, 115, 85, 0.12);
+  background: color-mix(in srgb, var(--accent) 12%, transparent 88%);
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]).travel-toc-collapsed .travel-toc {
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]).travel-toc-collapsed .travel-toc-toggle {
+  width: auto;
+}
+
+body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]).travel-toc-collapsed .travel-toc-toggle .travel-toc-toggle-label {
+  display: none;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-shell {
+  display: none;
+  position: fixed;
+  left: 1rem;
+  top: 8.6rem;
+  z-index: 25;
+  width: 190px;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-toggle {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 1px solid var(--border);
+  background: rgba(248, 246, 242, 0.9);
+  background: color-mix(in srgb, var(--bg) 84%, #ffffff 16%);
+  color: var(--text-muted);
+  font-size: 0.77rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.52rem 0.7rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-toggle:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border) 55%);
+  text-decoration: none;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-toggle-icon {
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc {
+  margin-top: 0.55rem;
+  border: 1px solid var(--border);
+  background: rgba(248, 246, 242, 0.95);
+  background: color-mix(in srgb, var(--bg) 90%, #ffffff 10%);
+  padding: 0.75rem 0.75rem 0.8rem;
+  max-height: calc(100vh - 12rem);
+  overflow-y: auto;
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+[data-theme="dark"] body[data-page="travel-nanjing"] .nanjing-toc {
+  background: rgba(24, 24, 24, 0.86);
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-title {
+  margin: 0 0 0.65rem;
+  color: var(--text);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-content {
+  display: grid;
+  grid-template-columns: 3px minmax(0, 1fr);
+  gap: 0.62rem;
+  align-items: stretch;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-progress {
+  position: relative;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--border);
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: height 0.2s ease;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-list li + li {
+  margin-top: 0.32rem;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-list a {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.83rem;
+  line-height: 1.45;
+  padding: 0.24rem 0.48rem;
+  border-left: 2px solid transparent;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-list a:hover {
+  color: var(--text);
+}
+
+body[data-page="travel-nanjing"] .nanjing-toc-list a.is-active {
+  color: var(--text);
+  border-left-color: var(--accent);
+  background: rgba(139, 115, 85, 0.12);
+  background: color-mix(in srgb, var(--accent) 12%, transparent 88%);
+}
+
+body[data-page="travel-nanjing"].nanjing-toc-collapsed .nanjing-toc {
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+}
+
+body[data-page="travel-nanjing"].nanjing-toc-collapsed .nanjing-toc-toggle {
+  width: auto;
+}
+
+body[data-page="travel-nanjing"].nanjing-toc-collapsed .nanjing-toc-toggle .nanjing-toc-toggle-label {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .nanjing-story--roadbook .nanjing-rb-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .nanjing-story--roadbook .nanjing-rb-media-grid .nanjing-rb-media img {
+    height: clamp(300px, 31vw, 460px);
+    object-fit: cover;
+  }
+
+  body[data-page="travel-nanjing"] .nanjing-toc-shell {
+    display: block;
+  }
+}
+
+@media (min-width: 1320px) {
+  body[data-page="travel-nanjing"] .nanjing-toc-shell {
+    left: max(1rem, calc((100vw - 1320px) / 2 - 210px));
+    top: 9rem;
+  }
+}
+
+.japan-story--roadbook {
+  max-width: 1360px;
+  padding-top: 1.4rem;
+}
+
+.japan-story--roadbook .japan-rb-article {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.japan-story--roadbook .japan-rb-hero {
+  margin: 0;
+}
+
+.japan-story--roadbook .japan-rb-hero img {
+  width: 100%;
+  max-height: 74vh;
+  object-fit: cover;
+  display: block;
+}
+
+.japan-story--roadbook .japan-rb-header {
+  padding: 2rem 0 1.3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.japan-story--roadbook .japan-rb-channel {
+  margin: 0 0 0.55rem;
+  color: #8d5d36;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.japan-story--roadbook .japan-rb-header h1 {
+  margin: 0;
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  line-height: 0.93;
+  letter-spacing: -0.04em;
+}
+
+.japan-story--roadbook .japan-rb-section {
+  max-width: 790px;
+  margin: 2.35rem auto 0;
+}
+
+.japan-story--roadbook .japan-rb-section-index {
+  margin: 0 0 0.45rem;
+  color: #8d5d36;
+  font-size: 0.74rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.japan-story--roadbook .japan-rb-section h2 {
+  margin: 0 0 1.05rem;
+  padding: 0.32rem 0 0.32rem 0.85rem;
+  border-left: 3px solid #8d5d36;
+  background: linear-gradient(90deg, rgba(141, 93, 54, 0.12) 0%, transparent 82%);
+  font-size: clamp(1.42rem, 2.2vw, 2.05rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  max-width: 28ch;
+  text-wrap: balance;
+}
+
+[data-theme="dark"] .japan-story--roadbook .japan-rb-section h2,
+[data-theme="dark"] .nanjing-story--roadbook .nanjing-rb-section h2 {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, transparent 86%);
+}
+
+/* Unified travel story rendering (Nanjing/Japan) */
+.nanjing-story--roadbook .nanjing-rb-section h2,
+.japan-story--roadbook .japan-rb-section h2 {
+  margin: 0 0 1rem;
+  padding: 0.32rem 0 0.32rem 0.82rem;
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, transparent 88%) 0%, transparent 82%);
+  font-size: clamp(1.22rem, 1.65vw, 1.62rem);
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  max-width: none;
+  text-wrap: pretty;
+  word-break: keep-all;
+}
+
+.nanjing-story--roadbook .nanjing-rb-section p,
+.japan-story--roadbook .japan-rb-section p {
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.nanjing-story--roadbook .nanjing-rb-media figcaption,
+.japan-story--roadbook .japan-rb-media figcaption {
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .nanjing-story--roadbook .nanjing-rb-section h2,
+  .japan-story--roadbook .japan-rb-section h2 {
+    white-space: nowrap;
+  }
+}
+
+.japan-story--roadbook .japan-rb-section p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 1.01rem;
+  line-height: 1.92;
+}
+
+.japan-story--roadbook .japan-rb-section blockquote {
+  margin: 1.55rem 0;
+  padding: 0.8rem 1.2rem;
+  border-left: 3px solid #8d5d36;
+  background: rgba(244, 235, 223, 0.42);
+}
+
+[data-theme="dark"] .japan-story--roadbook .japan-rb-section blockquote {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.japan-story--roadbook .japan-rb-section blockquote p {
+  margin: 0;
+  color: var(--text);
+}
+
+.japan-story--roadbook .japan-rb-media {
+  margin: 2.2rem auto 0;
+  max-width: 1020px;
+}
+
+.japan-story--roadbook .japan-rb-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.japan-story--roadbook .japan-rb-media figcaption {
+  margin-top: 0.7rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.58;
+  text-align: center;
+}
+
+.japan-story--roadbook .japan-rb-media-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2.2rem auto 0;
+  max-width: 1020px;
+}
+
+.japan-story--roadbook .japan-rb-media-grid .japan-rb-media {
+  margin: 0;
+}
+
+.japan-story--roadbook .japan-rb-media-grid--three .japan-rb-media img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-shell {
+    display: block;
+  }
+
+  body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-shell {
+    left: max(1rem, calc((100vw - 1360px) / 2 - 210px));
+    top: 9rem;
+  }
+
+  .japan-story--roadbook .japan-rb-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .japan-story--roadbook .japan-rb-media-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.japan-story {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 2rem 1rem 5rem;
+}
+
+.japan-hero {
+  display: grid;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.japan-hero-media img,
+.japan-figure img,
+.japan-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.japan-hero-copy {
+  max-width: 42rem;
+}
+
+.japan-kicker,
+.japan-section-index {
+  margin: 0 0 0.65rem;
+  color: #8d5d36;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.japan-hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.japan-hero-lead {
+  margin: 0.85rem 0 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.japan-section {
+  margin-top: 5rem;
+}
+
+.japan-section--intro {
+  max-width: 60rem;
+}
+
+.japan-section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.japan-section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3vw, 3.5rem);
+  line-height: 1.03;
+}
+
+.japan-prose {
+  max-width: 46rem;
+}
+
+.japan-prose--narrow {
+  max-width: 40rem;
+}
+
+.japan-prose p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.99rem;
+  line-height: 1.9;
+}
+
+.japan-divider {
+  width: 6rem;
+  height: 1px;
+  margin: 2.5rem 0;
+  background: linear-gradient(90deg, transparent 0%, #8d5d36 50%, transparent 100%);
+}
+
+.japan-layout {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.japan-layout--gallery,
+.japan-layout--gallery-wide,
+.japan-layout--feature,
+.japan-layout--text-image,
+.japan-layout--hero-split {
+  grid-template-columns: 1fr;
+}
+
+.japan-figure {
+  margin: 0;
+}
+
+.japan-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.japan-figure--wide {
+  margin-top: 1.5rem;
+}
+
+.japan-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.japan-card {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(244, 235, 223, 0.54) 0%, rgba(255, 255, 255, 0.32) 100%);
+}
+
+[data-theme="dark"] .japan-card {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.japan-card h3 {
+  margin: 0;
+  padding: 0.95rem 1rem 0.4rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.japan-card p {
+  margin: 0;
+  padding: 0 1rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+.japan-section--backlink {
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 900px) {
+  .japan-story {
+    padding: 2.5rem 2rem 6rem;
+  }
+
+  .japan-hero {
+    grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.82fr);
+    gap: 2rem;
+  }
+
+  .japan-layout--hero-split {
+    grid-template-columns: minmax(22rem, 0.82fr) minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .japan-layout--text-image {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.78fr);
+    gap: 2rem;
+  }
+
+  .japan-layout--feature {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.8fr);
+    gap: 2rem;
+  }
+
+  .japan-layout--reverse {
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr);
+  }
+
+  .japan-layout--gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .japan-layout--gallery-wide {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.4rem;
+    margin-top: 1.2rem;
+  }
+
+  .japan-card-grid--food {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .japan-story {
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+
+  .japan-layout--feature {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.72fr);
+  }
+}
+
+@media (max-width: 639px) {
+  .japan-story {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.contact-response-time {
+  margin: 0.2rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.contact-form select {
+  width: 100%;
+  border: 1px solid #b8b8b8;
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.58rem 0.72rem;
+  min-height: 46px;
+}
+
+.contact-form select:focus {
+  outline: 2px solid rgba(139, 115, 85, 0.35);
+  outline-offset: 1px;
+}
+
+.form-group--hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  min-height: 1.2rem;
+  margin: 0.8rem 0 0;
+  font-size: 0.88rem;
+}
+
+.form-status--pending {
+  color: var(--text-muted);
+}
+
+.form-status--success {
+  color: #1e7a37;
+}
+
+.form-status--error {
+  color: #b42318;
+}
+
+.photo-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 1.45rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.photo-lightbox-nav--prev {
+  left: 1rem;
+}
+
+.photo-lightbox-nav--next {
+  right: 4.25rem;
+}
+
+.photo-lightbox-nav:hover,
+.photo-lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.social-link--plain {
+  color: var(--text-muted);
+}
+
+.social-chip {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
 }

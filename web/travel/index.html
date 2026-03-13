@@ -1,18 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zhlin 的旅行摄影与游记：记录城市风景、在路上的见闻与故事。">
-  <meta name="keywords" content="zhlin, photographer, travel photography, travel, 北京, 南京, 日本, 上海, 杭州, 东北">
+  <meta name="description" content="Zhlin 的旅行游记与城市观察，记录不同地点与季节中的影像故事。">
+  <meta name="keywords" content="travel, travel photography, Beijing, Nanjing, Japan, Shanghai, Hangzhou">
   <meta name="author" content="Zhlin">
+  <link rel="canonical" href="https://zhlin-photography.vercel.app/travel/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Travel · Zhlin Photography">
+  <meta property="og:description" content="一些游记与路上的见闻。">
+  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/beijing-front.jpeg">
   <title>Travel · Zhlin Photography</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="travel" data-base-path=".." data-content-url="../data/site-content.json">
   <header class="site-header">
     <div class="logo">
       <a href="../index.html" class="logo-link">
@@ -20,7 +25,7 @@
         <span class="logo-text">ZHLIN PHOTOGRAPHY</span>
       </a>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main Navigation">
       <a href="../index.html">ABOUT ME</a>
       <a href="../photography/index.html">PHOTOGRAPHY</a>
       <a href="../hobby/index.html">HOBBY</a>
@@ -32,101 +37,10 @@
   <main class="content content--wide">
     <section class="section travel-intro">
       <h1 class="section-heading">Travel</h1>
-      <p class="section-desc">一些游记与路上的见闻。</p>
+      <p class="section-desc" id="travel-intro">一些游记与路上的见闻。</p>
     </section>
 
-    <ul class="travel-grid">
-      <li class="travel-card">
-        <a href="beijing/index.html" class="travel-card-link">
-          <div class="travel-card-image-wrap">
-            <img src="beijing/front.jpeg" alt="北京 · 城市风景">
-            <div class="travel-card-overlay">
-              <span class="travel-card-overlay-tag">Travel</span>
-              <span class="travel-card-overlay-title">北京</span>
-              <span class="travel-card-overlay-sub">Beijing</span>
-            </div>
-          </div>
-          <p class="travel-card-meta">2024 · 冬</p>
-          <h2 class="travel-card-title">北京行记：城墙与烟火</h2>
-          <span class="travel-card-read">Read More</span>
-        </a>
-      </li>
-      <li class="travel-card">
-        <a href="nanjing/index.html" class="travel-card-link">
-          <div class="travel-card-image-wrap">
-            <img src="nanjing/front.jpg" alt="南京 · 中山陵景区">
-            <div class="travel-card-overlay">
-              <span class="travel-card-overlay-tag">Travel</span>
-              <span class="travel-card-overlay-title">南京</span>
-              <span class="travel-card-overlay-sub">Nanjing</span>
-            </div>
-          </div>
-          <p class="travel-card-meta">2024 · 春</p>
-          <h2 class="travel-card-title">南京行记：中山陵与梧桐</h2>
-          <span class="travel-card-read">Read More</span>
-        </a>
-      </li>
-      <li class="travel-card">
-        <a href="japan/index.html" class="travel-card-link">
-          <div class="travel-card-image-wrap">
-            <img src="japan/front.jpeg" alt="日本 · 东京街头">
-            <div class="travel-card-overlay">
-              <span class="travel-card-overlay-tag">Travel</span>
-              <span class="travel-card-overlay-title">日本</span>
-              <span class="travel-card-overlay-sub">Japan</span>
-            </div>
-          </div>
-          <p class="travel-card-meta">2024 · 夏</p>
-          <h2 class="travel-card-title">日本行记：东京漫步</h2>
-          <span class="travel-card-read">Read More</span>
-        </a>
-      </li>
-      <li class="travel-card">
-        <a href="dongbei/index.html" class="travel-card-link">
-          <div class="travel-card-image-wrap">
-            <img src="dongbei/front.jpg" alt="东北 · 雪景">
-            <div class="travel-card-overlay">
-              <span class="travel-card-overlay-tag">Travel</span>
-              <span class="travel-card-overlay-title">东北</span>
-              <span class="travel-card-overlay-sub">Northeast</span>
-            </div>
-          </div>
-          <p class="travel-card-meta">2024 · 冬</p>
-          <h2 class="travel-card-title">东北行记：雪乡与冰城</h2>
-          <span class="travel-card-read">Read More</span>
-        </a>
-      </li>
-      <li class="travel-card">
-        <a href="shanghai/index.html" class="travel-card-link">
-          <div class="travel-card-image-wrap">
-            <img src="shanghai/front.jpg" alt="上海 · 外滩">
-            <div class="travel-card-overlay">
-              <span class="travel-card-overlay-tag">Travel</span>
-              <span class="travel-card-overlay-title">上海</span>
-              <span class="travel-card-overlay-sub">Shanghai</span>
-            </div>
-          </div>
-          <p class="travel-card-meta">2024 · 秋</p>
-          <h2 class="travel-card-title">上海行记：外滩与弄堂</h2>
-          <span class="travel-card-read">Read More</span>
-        </a>
-      </li>
-      <li class="travel-card">
-        <a href="hangzhou/index.html" class="travel-card-link">
-          <div class="travel-card-image-wrap">
-            <img src="hangzhou/front.jpeg" alt="杭州 · 西湖风景">
-            <div class="travel-card-overlay">
-              <span class="travel-card-overlay-tag">Travel</span>
-              <span class="travel-card-overlay-title">杭州</span>
-              <span class="travel-card-overlay-sub">Hangzhou</span>
-            </div>
-          </div>
-          <p class="travel-card-meta">2024 · 秋</p>
-          <h2 class="travel-card-title">杭州行记：西湖与烟雨</h2>
-          <span class="travel-card-read">Read More</span>
-        </a>
-      </li>
-    </ul>
+    <ul class="travel-grid" id="travel-grid" aria-label="Travel Cards"></ul>
   </main>
 
   <footer class="site-footer">
@@ -135,10 +49,10 @@
     </button>
   </footer>
 
-  <script src="../script.js"></script>
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>

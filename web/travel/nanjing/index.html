@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="南京行记：像摄影画册一样翻阅的游记长页，保留老门东、夫子庙与同行人的原始叙事。">
+  <link rel="canonical" href="https://zhlin-photography.vercel.app/travel/nanjing/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="南京行记 · Travel · Zhlin Photography">
+  <meta property="og:description" content="像摄影画册一样翻阅的南京游记，保留老门东、夫子庙与同行人的原始叙事。">
+  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/nanjing-front.jpg">
   <title>南京行记 · Travel · Zhlin Photography</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="travel-nanjing">
   <header class="site-header">
     <div class="logo">
       <a href="../../index.html" class="logo-link">
@@ -17,33 +23,261 @@
         <span class="logo-text">ZHLIN PHOTOGRAPHY</span>
       </a>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main Navigation">
       <a href="../../index.html">ABOUT ME</a>
       <a href="../../photography/index.html">PHOTOGRAPHY</a>
       <a href="../../hobby/index.html">HOBBY</a>
       <a href="../index.html" class="nav-active">TRAVEL</a>
       <a href="../../contact/index.html" class="nav-contact">CONTACT</a>
     </nav>
-  </header>
+</header>
 
-  <main class="content">
-    <section class="section">
-      <p class="travel-detail-meta">2024 · 春</p>
-      <h1 class="travel-detail-title">南京行记：中山陵与梧桐</h1>
-      <p class="section-desc">南京 · Nanjing</p>
+  <aside class="travel-toc-shell" id="travel-toc-shell" aria-label="目录">
+    <button type="button" class="travel-toc-toggle" id="travel-toc-toggle" aria-controls="travel-toc-panel" aria-expanded="true">
+      <span class="travel-toc-toggle-icon" aria-hidden="true">+</span>
+      <span class="travel-toc-toggle-label">隐藏目录</span>
+    </button>
+    <nav class="travel-toc" id="travel-toc-panel" aria-label="目录">
+      <p class="travel-toc-title">目录</p>
+      <div class="travel-toc-content">
+        <div class="travel-toc-progress" aria-hidden="true">
+          <span class="travel-toc-progress-bar" id="travel-toc-progress-bar"></span>
+        </div>
+        <ol class="travel-toc-list" id="travel-toc-list"></ol>
+      </div>
+    </nav>
+  </aside>
 
-      <div class="travel-detail-image-wrap" style="margin: 2rem 0;">
-        <img src="front.jpg" alt="南京 · 中山陵景区" style="width:100%;height:auto;display:block;vertical-align:middle;">
+  <main class="nanjing-story nanjing-story--roadbook">
+    <article class="nanjing-rb-article">
+      <figure class="nanjing-rb-hero">
+        <img src="../../assets/travel/nanjing-front.jpg" alt="南京街头的梧桐与建筑" loading="eager" decoding="async">
+      </figure>
+
+      <header class="nanjing-rb-header">
+        <p class="nanjing-rb-channel">旅行</p>
+        <h1>南京行记</h1>
+        <ul class="nanjing-rb-tags" aria-label="标签">
+          <li>南京</li>
+          <li>老门东</li>
+          <li>夫子庙</li>
+          <li>摄影</li>
+        </ul>
+      </header>
+
+      <section class="nanjing-rb-section">
+        <p class="nanjing-rb-section-index">前言</p>
+        <h2>当初是谁说要来南京的</h2>
+        <p>在一辆黄色的当地出租车里，我坐在后座的中间，左边是穿着白色羽绒服的lucky，右边是黑色薄外套的阿呆，前座是夹克衫的掏粪。这已是在南京的最后一天，我们在前往酒店的路上，离这次旅行的结束不过一个小时。</p>
+        <p>“当初是谁说要来南京的？” lucky嘟着嘴，收敛不住笑。</p>
+        <p>是的，我已经记不清当初是谁第一个提出要来南京的，只记得要按照往年的惯例，和lucky在春节聚一聚，既然他不能来找我们，那只能我们去找他。</p>
+        <div class="nanjing-rb-break" aria-hidden="true"></div>
+        <p>我想起出发前三天，当我把小红书的攻略整理到平板里，看着一旁崭新的、立在桌面上的相机，我明白南京于我是个练习摄影的地方；</p>
+        <p>当掏粪在群里零零散散地分享不知从何处找来的小吃店名时，南京于他是个吃美食的地方；</p>
+        <p>当老头和阿呆带着大包小包、等待火车的到来时，南京于他们是个中转的地方；</p>
+        <p>至于lucky，他向来是只出一个人，事后还要开玩笑，猛烈抨击，南京于他就不是个地方。</p>
+        <p>我小时候去过南京，依稀记得和母亲站在老门东的门牌下，外面天色已黑，人群黑压压地一片前进着，走向灯火明亮的夜市。</p>
+        <p>老头也去过，在南京大牌档的底下，他说高二那年的暑假，和高中同学在这里吃了晚饭，掏粪也在；</p>
+        <p>lucky十年前可是南京的常客，久住在新街口附近的姑姑家里。</p>
+        <p>但要说现在的我们对南京是个什么看法，我们只能摇摇头。毕竟一个地方去过但都忘了，那就不算是去过。</p>
+        <p>所以才有了此次的出行。</p>
+      </section>
+
+      <section class="nanjing-rb-section">
+        <p class="nanjing-rb-section-index">旅行</p>
+        <h2>老门东</h2>
+        <p>我和阿呆走在斑马线上，下午四点的太阳投下柔和、温热的光。线后面的汽车整齐地排列在一起，长得望不到底。一旁身穿绿色警服的交通警察，手里拿着指挥棒，左手笔直地展开，右手抬到胸口的位置，时不时吹动口哨，警告司机此处不能左转。</p>
+        <p>“我想快点把这杯奶茶扔掉。” 阿呆摇了摇手里还剩四分之一的奶茶，这是在半个小时前跟着老头点的茶颜悦色。我猛吸了一口自己的那杯，也跟着摇了摇，</p>
+        <p>“南京的司机也太坑了，横冲直撞也就算了，还有两公里就停了，钱却算进去了。”</p>
+        <p>我看着地图，和阿呆往老门东的方向走，说好和掏粪他们在北门汇合，心里还有点愧疚。</p>
+        <div class="nanjing-rb-break" aria-hidden="true"></div>
+        <p>我们是在中午十二点下的火车，坐了半个小时的地铁，在正午的大太阳下步行了一公里后抵达的民宿。</p>
+        <p>民宿在徽商银行的后面，从外观看，是座经营状况不错的办公楼改建。</p>
+        <p>“现在我学聪明了，都是从实拍视频里民宿外的走廊来判断好坏，一般走廊装修好的，里面基本也不会太坏。” 我自信地分享自己挑选的经验，带着大家向门内走去。</p>
+        <p>门廊是块劣质、带着污点的木板，左侧墙壁旁放着一张小的透明桌，上面摆着塑料的装饰花，右侧是唯一的卫生间，排风机发出轰隆隆的声音，像是在下雷雨，房间弥漫着不知从哪发出来的、腐烂的气味；客厅光秃秃地放着沙发床，一张小木桌挤在窗户旁，过道狭小；二楼两张大床紧挨着，隔开的内间封闭得像座棺材。</p>
+        <p>毫无疑问，我被骗了，但却是大家一起买单。</p>
+      </section>
+
+      <figure class="nanjing-rb-media nanjing-rb-media--single">
+        <img src="../../assets/travel/nanjing/a1.jpeg" alt="老门东人潮" loading="lazy" decoding="async">
+      </figure>
+
+      <section class="nanjing-rb-section">
+        <p>当看到老门东底下的人潮时，我就知道短时间内不可能和掏粪他们相遇。从入口望去，不是记忆里黑压压一片的人海，而是穿着各色衣服、像蜗牛一般向前蠕动的男女老少；入口处还有将近二三十米的队伍。</p>
+        <p>手是不好伸开的，脚是需要等待，才能向前迈一小步的；眼睛除了去看前面人的后脑勺，就只有街道两边开的商铺；一不留神，就找不到刚才还在一旁的阿呆了。</p>
+        <blockquote>
+          <p>“走吧，没必要一直往里硬挤。”</p>
+        </blockquote>
+        <p>我跟着往回走的阿呆的背影，低着头，缩着肩膀，又回到了入口。</p>
+        <p>在去「大报恩塔」的小路上，阿呆时不时地停在原地，举起挂在胸前的相机，对着晴天、墙壁和居民楼拍照。我像开关一样打开寻找猎物的眼，开始打猎。</p>
+      </section>
+
+      <div class="nanjing-rb-media-grid">
+        <figure class="nanjing-rb-media">
+          <img src="../../assets/travel/nanjing/z1.jpeg" alt="圆孔镜面中的景物" loading="lazy" decoding="async">
+          <figcaption>相比直接拍摄，圆孔的镜面让景物多了一个层次，且孔面本身是个很好的取景框。</figcaption>
+        </figure>
+        <figure class="nanjing-rb-media">
+          <img src="../../assets/travel/nanjing/z2.jpeg" alt="墙面与落叶松的构图" loading="lazy" decoding="async">
+          <figcaption>斜向上的墙壁作为引导，让人的视线落在碧绿的落叶松上，再配合落日的光影，组成一个干净的画面。</figcaption>
+        </figure>
       </div>
 
-      <div class="about-text">
-        <p>此处为南京游记正文，后续可补充时间、路线与见闻。</p>
-        <p>中山陵景区在阴雨天气下别有一番氛围，石阶与琉璃瓦在雾中若隐若现。</p>
-      </div>
+      <section class="nanjing-rb-section">
+        <p class="nanjing-rb-section-index">旅行</p>
+        <h2>夫子庙</h2>
+        <p>落日时分，红彤彤的太阳倒映在秦淮河上，几艘小型游船缓缓地开往岸边，船顶亮起橙黄的修饰灯，底下悬挂着红灯笼，湖面波光粼粼，像幅印象画一样染上颜色。河边有座桥，桥上车流不息，行人走在两侧的高地上，有拿着红旗、走在前头的导游领队，放大的声音从胸前的扩音器里传来；有倚靠在栏杆，高举手机自拍的情侣；有骑在父亲肩上、手指远方的小男孩…</p>
+        <p>“掏粪他们到底什么时候来？” 我站在桥上，眺望远方的城墙，墙上依稀可见人影。</p>
+        <p>阿呆摇摇头不说话，忽而他扬起头，脸朝向侧方，“这不来了嘛。”</p>
+        <p>我循着他指示的方向，看着他们三人穿过街边卖糖葫芦、玩具的小商贩们，lucky一边说，一边止不住笑，声音变得越来越清晰，</p>
+        <p>“南京啊，我觉得不如…”</p>
+        <p>时隔两个小时，这是我们第一次的相遇。</p>
+      </section>
 
-      <p style="margin-top: 2rem;">
-        <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
-      </p>
+      <figure class="nanjing-rb-media nanjing-rb-media--single">
+        <img src="../../assets/travel/nanjing/z4.jpeg" alt="桥上一对情侣的剪影" loading="lazy" decoding="async">
+        <figcaption>相遇后的分离来得很快。起因是掏粪想去厕所，厕所在街道的深处，等待时，我和阿呆走到了秦淮河的岸边，就此便走散了。幸运的是，我得此机会拍了桥上一对情侣的剪影。</figcaption>
+      </figure>
+
+      <section class="nanjing-rb-section">
+        <p>下次相遇时，lucky坐在钢铁博物馆一旁的椅子上休息，天空一片深蓝，已看不见太阳，月亮也未露面，椅子旁的水池倒映着博物馆的宣传画。</p>
+        <p>“我看啊，要说最无组织无纪律的，就是你和阿呆了。”</p>
+        <p>我挠挠头，笑着不说话，只是拿着相机，蹲坐在靠近水池的地上，寻找角度按下快门。</p>
+      </section>
+
+      <figure class="nanjing-rb-media nanjing-rb-media--single">
+        <img src="../../assets/travel/nanjing/z5.jpeg" alt="水池边拍摄的夜色场景" loading="lazy" decoding="async">
+      </figure>
+
+      <section class="nanjing-rb-section">
+        <p>后来我们上了次厕所，又走散了，在秦淮灯会下重聚。</p>
+        <p>“我刚在网上找到一个人，他能免费带我们进去，去不去？” 阿呆加快了脚步，小跑到走在前头的我的一旁。</p>
+        <p>我摇了摇头，只是往夫子庙的方向走去，“天下哪有这样的好事，能免我们每个人90块钱的门票钱。”</p>
+        <p>夫子庙的情形和下午的老门东相似，不同的是，晚上遮住了部分衣服的颜色，眼前是黑压压的一片。为了管控人流，每过三百米，就有一列穿着警服的警察，他们立着军姿，警告每个逆行的人。</p>
+        <p>途中遇到一个地方排起了长队，在队伍的前面人们纷纷举起手机，对着同一个方向，原来是条挂着灯笼的龙。</p>
+        <p>自此，我们便不抱有任何希望，朝出口的方向离去。</p>
+      </section>
+
+      <figure class="nanjing-rb-media nanjing-rb-media--single">
+        <img src="../../assets/travel/nanjing/a2.jpeg" alt="夫子庙夜晚的人潮" loading="lazy" decoding="async">
+      </figure>
+    </article>
+
+    <section class="nanjing-section nanjing-section--appendix">
+      <div class="nanjing-section-heading">
+        <p class="nanjing-section-index">附录 A</p>
+        <h2>人物志</h2>
+      </div>
+      <div class="nanjing-card-grid nanjing-card-grid--people">
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r1.jpeg" alt="钢铁男" loading="lazy" decoding="async">
+          <h3>钢铁男</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r2.jpeg" alt="机车男" loading="lazy" decoding="async">
+          <h3>机车男</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r3.jpeg" alt="虔诚的人" loading="lazy" decoding="async">
+          <h3>虔诚的人</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r4.jpeg" alt="吃青团的阿呆" loading="lazy" decoding="async">
+          <h3>吃青团的阿呆</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r5.jpeg" alt="河边的老阿姨" loading="lazy" decoding="async">
+          <h3>河边的老阿姨</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r6.jpeg" alt="唱歌的人" loading="lazy" decoding="async">
+          <h3>唱歌的人</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r7.jpeg" alt="韩系帅哥" loading="lazy" decoding="async">
+          <h3>韩系帅哥</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r8.jpeg" alt="长得像努努的小胖男" loading="lazy" decoding="async">
+          <h3>长得像努努的小胖男</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r9.jpeg" alt="民国 lucky" loading="lazy" decoding="async">
+          <h3>民国 lucky</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r10.jpeg" alt="不看天气和逆天气的人" loading="lazy" decoding="async">
+          <h3>不看天气和逆天气的人</h3>
+          <p>在我们一行人中，共存在三种人：顺天气、逆天气和不看天气的人。</p>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r11.jpeg" alt="三人合影" loading="lazy" decoding="async">
+          <h3>三人合影</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r12.jpeg" alt="装模作样的亮" loading="lazy" decoding="async">
+          <h3>装模作样的亮</h3>
+        </article>
+        <article class="nanjing-card">
+          <img src="../../assets/travel/nanjing/r13.jpeg" alt="买香水的两个人" loading="lazy" decoding="async">
+          <h3>买香水的两个人</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="nanjing-section nanjing-section--appendix">
+      <div class="nanjing-section-heading">
+        <p class="nanjing-section-index">附录 B</p>
+        <h2>饮食清单</h2>
+      </div>
+      <div class="nanjing-card-grid nanjing-card-grid--food">
+        <article class="nanjing-card nanjing-card--food">
+          <img src="../../assets/travel/nanjing/c1.jpeg" alt="馨方园 南京菜" loading="lazy" decoding="async">
+          <h3>馨方园 南京菜</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food">
+          <img src="../../assets/travel/nanjing/c2.jpeg" alt="丑小鸭 鸭血粉丝" loading="lazy" decoding="async">
+          <h3>丑小鸭 鸭血粉丝</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food nanjing-card--text-only">
+          <h3>捞鱼 鱼火锅</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food nanjing-card--text-only">
+          <h3>5 只羊 烤串</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food">
+          <img src="../../assets/travel/nanjing/c3.jpeg" alt="小吃街 大肉面" loading="lazy" decoding="async">
+          <h3>小吃街 大肉面</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food">
+          <img src="../../assets/travel/nanjing/c4.jpeg" alt="小吃街 大肉面近景" loading="lazy" decoding="async">
+          <h3>小吃街 大肉面</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food">
+          <img src="../../assets/travel/nanjing/c5.jpeg" alt="小厨娘 淮南菜" loading="lazy" decoding="async">
+          <h3>小厨娘 淮南菜</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food">
+          <img src="../../assets/travel/nanjing/c6.jpeg" alt="小厨娘 淮南菜细节" loading="lazy" decoding="async">
+          <h3>小厨娘 淮南菜</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food">
+          <img src="../../assets/travel/nanjing/c7.jpeg" alt="早餐 馄饨" loading="lazy" decoding="async">
+          <h3>早餐 馄饨</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food">
+          <img src="../../assets/travel/nanjing/c8.jpeg" alt="广迎居 南京菜" loading="lazy" decoding="async">
+          <h3>广迎居 南京菜</h3>
+        </article>
+        <article class="nanjing-card nanjing-card--food">
+          <img src="../../assets/travel/nanjing/c9.jpeg" alt="广迎居 南京菜细节" loading="lazy" decoding="async">
+          <h3>广迎居 南京菜</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="nanjing-section nanjing-section--backlink">
+      <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
     </section>
   </main>
 
@@ -53,10 +287,10 @@
     </button>
   </footer>
 
-  <script src="../../script.js"></script>
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script src="../../script.js"></script>
 </body>
 </html>

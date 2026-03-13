@@ -1,15 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zhlin 的兴趣清单：阅读、电影、游戏，以及每项兴趣带来的创作启发。">
+  <link rel="canonical" href="https://zhlin-photography.vercel.app/hobby/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hobby · Zhlin Photography">
+  <meta property="og:description" content="阅读、电影、游戏，是我保持观察力和叙事感的三个长期入口。">
+  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/profile/avatar.jpeg">
   <title>Hobby · Zhlin Photography</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="hobby" data-base-path=".." data-content-url="../data/site-content.json">
   <header class="site-header">
     <div class="logo">
       <a href="../index.html" class="logo-link">
@@ -17,7 +23,7 @@
         <span class="logo-text">ZHLIN PHOTOGRAPHY</span>
       </a>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main Navigation">
       <a href="../index.html">ABOUT ME</a>
       <a href="../photography/index.html">PHOTOGRAPHY</a>
       <a href="index.html" class="nav-active">HOBBY</a>
@@ -26,15 +32,38 @@
     </nav>
   </header>
 
-  <main class="content">
+  <main class="content content--wide">
     <section class="section">
       <h1 class="section-heading">Hobby</h1>
-      <p class="section-desc">阅读、电影、游戏——生活里的另一面。</p>
-      <ul class="hobby-list">
-        <li>阅读</li>
-        <li>电影</li>
-        <li>游戏</li>
-      </ul>
+      <p class="section-desc" id="hobby-intro">阅读、电影、游戏，是我保持观察力和叙事感的三个长期入口。</p>
+
+      <div class="hobby-block">
+        <h2 class="hobby-subheading">长期入口</h2>
+        <div class="hobby-grid" id="hobby-grid" aria-label="Hobby Cards"></div>
+      </div>
+
+      <div class="hobby-block hobby-block--digest" id="hobby-digest-section" hidden>
+        <div class="hobby-block-head">
+          <h2 class="hobby-subheading">本月更新</h2>
+          <button type="button" class="hobby-more-btn" id="hobby-digest-toggle" hidden>查看更早月份</button>
+        </div>
+        <div class="hobby-digest-grid" id="hobby-digest-grid" aria-label="Monthly Digest"></div>
+      </div>
+
+      <div class="hobby-meta-grid">
+        <article class="hobby-meta-card" id="hobby-links-section" hidden>
+          <h2 class="hobby-subheading">完整记录</h2>
+          <p class="hobby-meta-desc">完整书单与观影记录在外部平台维护，这里只保留精选与近期更新。</p>
+          <div class="hobby-links" id="hobby-links"></div>
+        </article>
+
+        <article class="hobby-meta-card" id="hobby-lol-section" hidden>
+          <h2 class="hobby-subheading">LOL 观察</h2>
+          <p class="hobby-meta-desc" id="hobby-lol-desc">国服（CN） · 当前段位 Master</p>
+          <div class="hobby-tag-list" id="hobby-lol-tags"></div>
+          <p class="hobby-lol-note" id="hobby-lol-note"></p>
+        </article>
+      </div>
     </section>
   </main>
 
@@ -44,10 +73,10 @@
     </button>
   </footer>
 
-  <script src="../script.js"></script>
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>

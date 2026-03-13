@@ -1,18 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zhlin 的个人主页，PhD Student 与 Photographer，分享摄影作品、旅行见闻与个人项目。">
-  <meta name="keywords" content="zhlin, zhlin photography, photographer, photography, travel, PhD, 旅行摄影, 个人主页">
+  <meta name="description" content="Zhlin 的个人主页，展示摄影作品、旅行记录与个人兴趣。">
+  <meta name="keywords" content="zhlin, photography, travel, personal website">
   <meta name="author" content="Zhlin">
+  <link rel="canonical" href="https://zhlin-photography.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zhlin Photography">
+  <meta property="og:description" content="摄影与生活记录为主的个人网站。">
+  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/profile/avatar.jpeg">
   <title>Zhlin Photography</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="home" data-base-path="." data-content-url="data/site-content.json">
   <header class="site-header">
     <div class="logo">
       <a href="index.html" class="logo-link">
@@ -20,7 +25,7 @@
         <span class="logo-text">ZHLIN PHOTOGRAPHY</span>
       </a>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Main Navigation">
       <a href="index.html" class="nav-active">ABOUT ME</a>
       <a href="photography/index.html">PHOTOGRAPHY</a>
       <a href="hobby/index.html">HOBBY</a>
@@ -31,17 +36,18 @@
 
   <main class="content">
     <section class="section about-section">
-      <h1 class="name">Your Name</h1>
-      <p class="title-line">PhD Student · Photographer</p>
+      <h1 class="name">Zhlin</h1>
+      <p class="title-line">Photographer</p>
       <div class="about-block">
         <div class="avatar-wrap">
           <div class="avatar" role="img" aria-label="个人头像">
-            <img src="头像.jpeg" alt="个人头像">
+            <img id="about-avatar" src="assets/profile/avatar.jpeg" alt="Zhlin avatar" loading="eager" decoding="async">
           </div>
         </div>
-        <div class="about-text">
-          <p>这里可以写一段个人简介，介绍你的背景、摄影经历以及你希望访客了解的内容。保持简洁，突出个性与专业方向。</p>
-          <p>第二段可以补充更多关于你的故事、创作理念或与社区、客户的互动方式。</p>
+        <div class="about-text" id="about-text">
+          <p>这里主要分享摄影作品与生活观察，记录日常里那些容易被忽略但值得停留的瞬间。</p>
+          <p>摄影以街拍为主，偏爱在日常场景中捕捉真实情绪与城市节奏，记录那些转瞬即逝的细微时刻。</p>
+          <p>目前常驻浙江杭州，在学习与创作之间持续积累，也希望通过这个网站分享阶段性的观察与作品。</p>
         </div>
       </div>
     </section>
@@ -49,13 +55,10 @@
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p class="footer-text">© 2025 Zhlin Photography. All rights reserved.</p>
+      <p class="footer-text">© 2026 Zhlin Photography. All rights reserved.</p>
       <div class="social-links">
-        <a href="mailto:your@email.com" class="social-link">Email</a>
-        <span class="social-separator">·</span>
-        <a href="#" class="social-link">Instagram</a>
-        <span class="social-separator">·</span>
-        <a href="#" class="social-link">WeChat</a>
+        <a id="footer-email" href="mailto:Jackylin714@gmail.com" class="social-link">Email</a>
+        <span id="footer-social-links"></span>
       </div>
     </div>
     <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换深色/浅色模式">
