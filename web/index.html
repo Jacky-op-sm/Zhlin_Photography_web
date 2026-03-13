@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -16,6 +16,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var key = "theme";
+      var dark = "dark";
+      var light = "light";
+      var theme = light;
+
+      try {
+        var stored = localStorage.getItem(key);
+        if (stored === dark || stored === light) {
+          theme = stored;
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      } catch (error) {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      }
+
+      if (theme === dark) {
+        document.documentElement.setAttribute("data-theme", dark);
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+    })();
+  </script>
 </head>
 <body data-page="home" data-base-path="." data-content-url="data/site-content.json">
   <header class="site-header">
@@ -40,12 +67,12 @@
       <p class="title-line">Photographer</p>
       <div class="about-block">
         <div class="avatar-wrap">
-          <div class="avatar" role="img" aria-label="个人头像">
+          <div class="avatar">
             <img id="about-avatar" src="assets/profile/avatar.jpeg" alt="Zhlin avatar" loading="eager" decoding="async">
           </div>
         </div>
         <div class="about-text" id="about-text">
-          <p>这里主要分享摄影作品与生活观察，记录日常里那些容易被忽略但值得停留的瞬间。</p>
+          <p class="about-intro">这里主要分享摄影作品与生活观察，记录日常里那些容易被忽略但值得停留的瞬间。</p>
           <p>摄影以街拍为主，偏爱在日常场景中捕捉真实情绪与城市节奏，记录那些转瞬即逝的细微时刻。</p>
           <p>目前常驻浙江杭州，在学习与创作之间持续积累，也希望通过这个网站分享阶段性的观察与作品。</p>
         </div>
@@ -70,6 +97,6 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
-  <script src="script.js"></script>
+  <script defer src="script.js"></script>
 </body>
 </html>

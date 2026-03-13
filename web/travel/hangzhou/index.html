@@ -1,19 +1,46 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="杭州旅行记录：西湖与烟雨。">
+  <meta name="description" content="杭州旅游记录：西湖与烟雨。">
   <link rel="canonical" href="https://zhlin-photography.vercel.app/travel/hangzhou/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="杭州行记 · Travel · Zhlin Photography">
-  <meta property="og:description" content="杭州旅行记录：西湖与烟雨。">
+  <meta property="og:title" content="杭州游记 · Travel · Zhlin Photography">
+  <meta property="og:description" content="杭州旅游记录：西湖与烟雨。">
   <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/hangzhou-front.jpeg">
-  <title>杭州行记 · Travel · Zhlin Photography</title>
+  <title>杭州游记 · Travel · Zhlin Photography</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var key = "theme";
+      var dark = "dark";
+      var light = "light";
+      var theme = light;
+
+      try {
+        var stored = localStorage.getItem(key);
+        if (stored === dark || stored === light) {
+          theme = stored;
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      } catch (error) {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      }
+
+      if (theme === dark) {
+        document.documentElement.setAttribute("data-theme", dark);
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+    })();
+  </script>
 </head>
 <body data-page="travel-detail" data-city="hangzhou" data-base-path="../.." data-content-url="../../data/site-content.json">
   <header class="site-header">
@@ -40,7 +67,7 @@
       <p class="travel-detail-summary" id="travel-detail-summary"></p>
 
       <div class="travel-detail-image-wrap">
-        <img id="travel-detail-cover" src="" alt="" style="width:100%;height:auto;display:block;vertical-align:middle;">
+        <img id="travel-detail-cover" class="travel-detail-cover" src="" alt="">
       </div>
 
       <div class="travel-detail-grid">
@@ -65,7 +92,7 @@
         <p id="travel-reflection"></p>
       </article>
 
-      <p style="margin-top: 2rem;">
+      <p class="travel-detail-backlink">
         <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
       </p>
     </section>
@@ -81,6 +108,6 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
-  <script src="../../script.js"></script>
+  <script defer src="../../script.js"></script>
 </body>
 </html>

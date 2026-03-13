@@ -3,17 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="南京行记：像摄影画册一样翻阅的游记长页，保留老门东、夫子庙与同行人的原始叙事。">
+  <meta name="description" content="南京游记：像摄影画册一样翻阅的游记长页，保留老门东、夫子庙与同行人的原始叙事。">
   <link rel="canonical" href="https://zhlin-photography.vercel.app/travel/nanjing/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="南京行记 · Travel · Zhlin Photography">
+  <meta property="og:title" content="南京游记 · Travel · Zhlin Photography">
   <meta property="og:description" content="像摄影画册一样翻阅的南京游记，保留老门东、夫子庙与同行人的原始叙事。">
-  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/nanjing-front.jpg">
-  <title>南京行记 · Travel · Zhlin Photography</title>
+  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/nanjing-hero-wutong-street.jpg">
+  <title>南京游记 · Travel · Zhlin Photography</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var key = "theme";
+      var dark = "dark";
+      var light = "light";
+      var theme = light;
+
+      try {
+        var stored = localStorage.getItem(key);
+        if (stored === dark || stored === light) {
+          theme = stored;
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      } catch (error) {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      }
+
+      if (theme === dark) {
+        document.documentElement.setAttribute("data-theme", dark);
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+    })();
+  </script>
 </head>
 <body data-page="travel-nanjing">
   <header class="site-header">
@@ -51,12 +78,12 @@
   <main class="nanjing-story nanjing-story--roadbook">
     <article class="nanjing-rb-article">
       <figure class="nanjing-rb-hero">
-        <img src="../../assets/travel/nanjing-front.jpg" alt="南京街头的梧桐与建筑" loading="eager" decoding="async">
+        <img src="../../assets/travel/nanjing-hero-wutong-street.jpg" alt="南京街头的梧桐与建筑" loading="eager" decoding="async">
       </figure>
 
       <header class="nanjing-rb-header">
         <p class="nanjing-rb-channel">旅行</p>
-        <h1>南京行记</h1>
+        <h1>南京游记</h1>
         <ul class="nanjing-rb-tags" aria-label="标签">
           <li>南京</li>
           <li>老门东</li>
@@ -83,6 +110,10 @@
         <p>所以才有了此次的出行。</p>
       </section>
 
+      <figure class="nanjing-rb-media nanjing-rb-media--single">
+        <img src="../../assets/travel/nanjing/old-city-gate-memory.jpg" alt="记忆里的南京城门与夜色" loading="lazy" decoding="async">
+      </figure>
+
       <section class="nanjing-rb-section">
         <p class="nanjing-rb-section-index">旅行</p>
         <h2>老门东</h2>
@@ -99,7 +130,7 @@
       </section>
 
       <figure class="nanjing-rb-media nanjing-rb-media--single">
-        <img src="../../assets/travel/nanjing/a1.jpeg" alt="老门东人潮" loading="lazy" decoding="async">
+        <img src="../../assets/travel/nanjing/laomendong-crowd.jpg" alt="老门东人潮" loading="lazy" decoding="async">
       </figure>
 
       <section class="nanjing-rb-section">
@@ -114,11 +145,11 @@
 
       <div class="nanjing-rb-media-grid">
         <figure class="nanjing-rb-media">
-          <img src="../../assets/travel/nanjing/z1.jpeg" alt="圆孔镜面中的景物" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/circular-mirror-framing.jpg" alt="圆孔镜面中的景物" loading="lazy" decoding="async">
           <figcaption>相比直接拍摄，圆孔的镜面让景物多了一个层次，且孔面本身是个很好的取景框。</figcaption>
         </figure>
         <figure class="nanjing-rb-media">
-          <img src="../../assets/travel/nanjing/z2.jpeg" alt="墙面与落叶松的构图" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/sunset-wall-fir-composition.jpg" alt="墙面与落叶松的构图" loading="lazy" decoding="async">
           <figcaption>斜向上的墙壁作为引导，让人的视线落在碧绿的落叶松上，再配合落日的光影，组成一个干净的画面。</figcaption>
         </figure>
       </div>
@@ -135,7 +166,7 @@
       </section>
 
       <figure class="nanjing-rb-media nanjing-rb-media--single">
-        <img src="../../assets/travel/nanjing/z4.jpeg" alt="桥上一对情侣的剪影" loading="lazy" decoding="async">
+        <img src="../../assets/travel/nanjing/qinhuai-bridge-couple-silhouette.jpg" alt="桥上一对情侣的剪影" loading="lazy" decoding="async">
         <figcaption>相遇后的分离来得很快。起因是掏粪想去厕所，厕所在街道的深处，等待时，我和阿呆走到了秦淮河的岸边，就此便走散了。幸运的是，我得此机会拍了桥上一对情侣的剪影。</figcaption>
       </figure>
 
@@ -146,7 +177,7 @@
       </section>
 
       <figure class="nanjing-rb-media nanjing-rb-media--single">
-        <img src="../../assets/travel/nanjing/z5.jpeg" alt="水池边拍摄的夜色场景" loading="lazy" decoding="async">
+        <img src="../../assets/travel/nanjing/night-pool-reflection.jpg" alt="水池边拍摄的夜色场景" loading="lazy" decoding="async">
       </figure>
 
       <section class="nanjing-rb-section">
@@ -159,7 +190,7 @@
       </section>
 
       <figure class="nanjing-rb-media nanjing-rb-media--single">
-        <img src="../../assets/travel/nanjing/a2.jpeg" alt="夫子庙夜晚的人潮" loading="lazy" decoding="async">
+        <img src="../../assets/travel/nanjing/fuzimiao-night-crowd.jpg" alt="夫子庙夜晚的人潮" loading="lazy" decoding="async">
       </figure>
     </article>
 
@@ -170,56 +201,56 @@
       </div>
       <div class="nanjing-card-grid nanjing-card-grid--people">
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r1.jpeg" alt="钢铁男" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-steel-man.jpg" alt="钢铁男" loading="lazy" decoding="async">
           <h3>钢铁男</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r2.jpeg" alt="机车男" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-biker-man.jpg" alt="机车男" loading="lazy" decoding="async">
           <h3>机车男</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r3.jpeg" alt="虔诚的人" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-devout-man.jpg" alt="虔诚的人" loading="lazy" decoding="async">
           <h3>虔诚的人</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r4.jpeg" alt="吃青团的阿呆" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-adai-qingtuan.jpg" alt="吃青团的阿呆" loading="lazy" decoding="async">
           <h3>吃青团的阿呆</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r5.jpeg" alt="河边的老阿姨" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-riverside-auntie.jpg" alt="河边的老阿姨" loading="lazy" decoding="async">
           <h3>河边的老阿姨</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r6.jpeg" alt="唱歌的人" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-street-singer.jpg" alt="唱歌的人" loading="lazy" decoding="async">
           <h3>唱歌的人</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r7.jpeg" alt="韩系帅哥" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-korean-style-guy.jpg" alt="韩系帅哥" loading="lazy" decoding="async">
           <h3>韩系帅哥</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r8.jpeg" alt="长得像努努的小胖男" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-chubby-boy.jpg" alt="长得像努努的小胖男" loading="lazy" decoding="async">
           <h3>长得像努努的小胖男</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r9.jpeg" alt="民国 lucky" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-republic-lucky.jpg" alt="民国 lucky" loading="lazy" decoding="async">
           <h3>民国 lucky</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r10.jpeg" alt="不看天气和逆天气的人" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-weather-types.jpg" alt="不看天气和逆天气的人" loading="lazy" decoding="async">
           <h3>不看天气和逆天气的人</h3>
           <p>在我们一行人中，共存在三种人：顺天气、逆天气和不看天气的人。</p>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r11.jpeg" alt="三人合影" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-three-friends.jpg" alt="三人合影" loading="lazy" decoding="async">
           <h3>三人合影</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r12.jpeg" alt="装模作样的亮" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-posing-liang.jpg" alt="装模作样的亮" loading="lazy" decoding="async">
           <h3>装模作样的亮</h3>
         </article>
         <article class="nanjing-card">
-          <img src="../../assets/travel/nanjing/r13.jpeg" alt="买香水的两个人" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/portrait-perfume-shoppers.jpg" alt="买香水的两个人" loading="lazy" decoding="async">
           <h3>买香水的两个人</h3>
         </article>
       </div>
@@ -232,11 +263,11 @@
       </div>
       <div class="nanjing-card-grid nanjing-card-grid--food">
         <article class="nanjing-card nanjing-card--food">
-          <img src="../../assets/travel/nanjing/c1.jpeg" alt="馨方园 南京菜" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/food-xinfangyuan-nanjing-cuisine.jpg" alt="馨方园 南京菜" loading="lazy" decoding="async">
           <h3>馨方园 南京菜</h3>
         </article>
         <article class="nanjing-card nanjing-card--food">
-          <img src="../../assets/travel/nanjing/c2.jpeg" alt="丑小鸭 鸭血粉丝" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/food-chouxiaoya-duck-vermicelli.jpg" alt="丑小鸭 鸭血粉丝" loading="lazy" decoding="async">
           <h3>丑小鸭 鸭血粉丝</h3>
         </article>
         <article class="nanjing-card nanjing-card--food nanjing-card--text-only">
@@ -246,31 +277,31 @@
           <h3>5 只羊 烤串</h3>
         </article>
         <article class="nanjing-card nanjing-card--food">
-          <img src="../../assets/travel/nanjing/c3.jpeg" alt="小吃街 大肉面" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/food-snack-street-braised-pork-noodle.jpg" alt="小吃街 大肉面" loading="lazy" decoding="async">
           <h3>小吃街 大肉面</h3>
         </article>
         <article class="nanjing-card nanjing-card--food">
-          <img src="../../assets/travel/nanjing/c4.jpeg" alt="小吃街 大肉面近景" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/food-snack-street-braised-pork-noodle-closeup.jpg" alt="小吃街 大肉面近景" loading="lazy" decoding="async">
           <h3>小吃街 大肉面</h3>
         </article>
         <article class="nanjing-card nanjing-card--food">
-          <img src="../../assets/travel/nanjing/c5.jpeg" alt="小厨娘 淮南菜" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/food-xiaochuniang-huainan-cuisine.jpg" alt="小厨娘 淮南菜" loading="lazy" decoding="async">
           <h3>小厨娘 淮南菜</h3>
         </article>
         <article class="nanjing-card nanjing-card--food">
-          <img src="../../assets/travel/nanjing/c6.jpeg" alt="小厨娘 淮南菜细节" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/food-xiaochuniang-huainan-cuisine-detail.jpg" alt="小厨娘 淮南菜细节" loading="lazy" decoding="async">
           <h3>小厨娘 淮南菜</h3>
         </article>
         <article class="nanjing-card nanjing-card--food">
-          <img src="../../assets/travel/nanjing/c7.jpeg" alt="早餐 馄饨" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/food-breakfast-wonton.jpg" alt="早餐 馄饨" loading="lazy" decoding="async">
           <h3>早餐 馄饨</h3>
         </article>
         <article class="nanjing-card nanjing-card--food">
-          <img src="../../assets/travel/nanjing/c8.jpeg" alt="广迎居 南京菜" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/food-guangyingju-nanjing-cuisine.jpg" alt="广迎居 南京菜" loading="lazy" decoding="async">
           <h3>广迎居 南京菜</h3>
         </article>
         <article class="nanjing-card nanjing-card--food">
-          <img src="../../assets/travel/nanjing/c9.jpeg" alt="广迎居 南京菜细节" loading="lazy" decoding="async">
+          <img src="../../assets/travel/nanjing/food-guangyingju-nanjing-cuisine-detail.jpg" alt="广迎居 南京菜细节" loading="lazy" decoding="async">
           <h3>广迎居 南京菜</h3>
         </article>
       </div>
@@ -291,6 +322,6 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
-  <script src="../../script.js"></script>
+  <script defer src="../../script.js"></script>
 </body>
 </html>

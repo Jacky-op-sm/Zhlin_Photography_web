@@ -3,17 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="日本行记：沿着高松、岛屿、京都与奈良展开的影像长页，尽量保留原 tex 里的叙事推进与陌生人观察。">
+  <meta name="description" content="日本游记：沿着高松、岛屿、京都与奈良展开的影像长页，尽量保留原 tex 里的叙事推进与陌生人观察。">
   <link rel="canonical" href="https://zhlin-photography.vercel.app/travel/japan/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="日本行记 · Travel · Zhlin Photography">
+  <meta property="og:title" content="日本游记 · Travel · Zhlin Photography">
   <meta property="og:description" content="沿着高松、直岛、小豆岛、京都与奈良展开的影像长页，尽量保留原 tex 中最有画面感的段落。">
   <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/japan-front.jpeg">
-  <title>日本行记 · Travel · Zhlin Photography</title>
+  <title>日本游记 · Travel · Zhlin Photography</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var key = "theme";
+      var dark = "dark";
+      var light = "light";
+      var theme = light;
+
+      try {
+        var stored = localStorage.getItem(key);
+        if (stored === dark || stored === light) {
+          theme = stored;
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      } catch (error) {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      }
+
+      if (theme === dark) {
+        document.documentElement.setAttribute("data-theme", dark);
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+    })();
+  </script>
 </head>
 <body data-page="travel-japan">
   <header class="site-header">
@@ -56,7 +83,7 @@
 
       <header class="japan-rb-header">
         <p class="japan-rb-channel">旅行</p>
-        <h1>日本行记</h1>
+        <h1>日本游记</h1>
       </header>
 
       <section class="japan-rb-section">
@@ -73,7 +100,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-1.jpeg" alt="出发去日本的旅途开场" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/01-flight-departure.jpeg" alt="出发去日本的旅途开场" loading="lazy" decoding="async">
       </figure>
 
       <section class="japan-rb-section">
@@ -93,7 +120,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-7.jpeg" alt="日式乡村建筑，以及迷你停车场" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/02-takamatsu-rural-house.jpeg" alt="日式乡村建筑，以及迷你停车场" loading="lazy" decoding="async">
         <figcaption>日式乡村建筑，以及迷你停车场</figcaption>
       </figure>
 
@@ -110,18 +137,23 @@
 
       <div class="japan-rb-media-grid japan-rb-media-grid--three">
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-71.jpeg" alt="湖上划桨的船夫和坐在船上的游客们" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/03-ritsurin-boat.jpeg" alt="湖上划桨的船夫和坐在船上的游客们" loading="lazy" decoding="async">
           <figcaption>湖上划桨的船夫和坐在船上的游客们</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-73.jpeg" alt="日式庭院的模样" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/04-ritsurin-garden.jpeg" alt="日式庭院的模样" loading="lazy" decoding="async">
           <figcaption>日式庭院的模样</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-74.jpeg" alt="红色的甜味刨冰" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/05-ritsurin-kakigori.jpeg" alt="红色的甜味刨冰" loading="lazy" decoding="async">
           <figcaption>红色的甜味刨冰</figcaption>
         </figure>
       </div>
+
+      <figure class="japan-rb-media japan-rb-media--single">
+        <img src="../../assets/travel/japan/05b-ritsurin-park-summer.jpeg" alt="栗林公园夏日景致" loading="lazy" decoding="async">
+        <figcaption>栗林公园夏日景致</figcaption>
+      </figure>
 
       <section class="japan-rb-section">
         <p>公园和中国江南的风景相似，它有着别雅的庭院：黑白格调的房屋旁，是笔挺的日本松、圆形的灌木丛和葱郁的草地；公园中央是一片像镜子般明亮的湖面，底下映照的天空和本体的一样蓝；湖边修着一座亭子，老人们坐在榻榻米上休息，年轻人在看手机；绿树间藏有可以一览全景的假山。虽荣获米其林三星推荐，却不足为奇。</p>
@@ -129,7 +161,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-75.jpeg" alt="漂亮的日本井盖" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/06-ritsurin-manhole.jpeg" alt="漂亮的日本井盖" loading="lazy" decoding="async">
         <figcaption>我要是河南人，我肯定会去偷日本的井盖，它比大陆不知漂亮了多少倍</figcaption>
       </figure>
 
@@ -138,7 +170,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-3.jpeg" alt="船窗外的蓝" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/07-naoshima-ferry-blue-sea.jpeg" alt="船窗外的蓝" loading="lazy" decoding="async">
         <figcaption>船窗外的蓝</figcaption>
       </figure>
 
@@ -154,7 +186,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-31.jpeg" alt="欢迎来到香川直岛" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/08-naoshima-museum-sign.jpeg" alt="欢迎来到香川直岛" loading="lazy" decoding="async">
         <figcaption>欢迎来到香川直岛</figcaption>
       </figure>
 
@@ -167,15 +199,15 @@
 
       <div class="japan-rb-media-grid japan-rb-media-grid--three">
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-33.jpeg" alt="红色的大南瓜" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/09-naoshima-red-pumpkin.jpeg" alt="红色的大南瓜" loading="lazy" decoding="async">
           <figcaption>红色的大南瓜</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-34.jpeg" alt="黄色的大南瓜" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/10-naoshima-yellow-pumpkin.jpeg" alt="黄色的大南瓜" loading="lazy" decoding="async">
           <figcaption>黄色的大南瓜</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-32.jpeg" alt="粉色的天空和小镇" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/11-naoshima-pink-sky-town.jpeg" alt="粉色的天空和小镇" loading="lazy" decoding="async">
           <figcaption>粉色的天空和小镇</figcaption>
         </figure>
       </div>
@@ -185,7 +217,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-35.jpeg" alt="落日前的码头" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/12-naoshima-pier-sunset.jpeg" alt="落日前的码头" loading="lazy" decoding="async">
         <figcaption>落日前的码头</figcaption>
       </figure>
 
@@ -201,7 +233,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-41.jpeg" alt="高松本地JR线" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/13-takamatsu-jr-train.jpeg" alt="高松本地JR线" loading="lazy" decoding="async">
         <figcaption>高松本地JR线</figcaption>
       </figure>
 
@@ -217,11 +249,11 @@
 
       <div class="japan-rb-media-grid">
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-4.jpeg" alt="屋岛上的寺庙" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/14-yashima-temple.jpeg" alt="屋岛上的寺庙" loading="lazy" decoding="async">
           <figcaption>屋岛上的寺庙</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-42.jpeg" alt="屋岛山顶的观景台" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/15-yashima-observatory.jpeg" alt="屋岛山顶的观景台" loading="lazy" decoding="async">
           <figcaption>屋岛山顶的观景台</figcaption>
         </figure>
       </div>
@@ -234,15 +266,15 @@
 
       <div class="japan-rb-media-grid japan-rb-media-grid--three">
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-44.jpeg" alt="危险的独木桥" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/16-shikokumura-bridge.jpeg" alt="危险的独木桥" loading="lazy" decoding="async">
           <figcaption>危险的独木桥</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-43.jpeg" alt="妖怪与四国村独自旅行的少女" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/17-shikokumura-girl-yokai.jpeg" alt="妖怪与四国村独自旅行的少女" loading="lazy" decoding="async">
           <figcaption>妖怪与四国村独自旅行的少女</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-45.jpeg" alt="历史的舞台与圆形看台" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/18-shikokumura-stage.jpeg" alt="历史的舞台与圆形看台" loading="lazy" decoding="async">
           <figcaption>历史的舞台与圆形看台</figcaption>
         </figure>
       </div>
@@ -252,7 +284,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-5.jpeg" alt="雾气缭绕的天使之路" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/19-shodoshima-angel-road-fog.jpeg" alt="雾气缭绕的天使之路" loading="lazy" decoding="async">
         <figcaption>雾气缭绕的天使之路</figcaption>
       </figure>
 
@@ -263,7 +295,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-51.jpeg" alt="天使会在阴天出来嘛" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/20-shodoshima-angel-road-overcast.jpeg" alt="天使会在阴天出来嘛" loading="lazy" decoding="async">
         <figcaption>天使会在阴天出来嘛</figcaption>
       </figure>
 
@@ -279,11 +311,11 @@
 
       <div class="japan-rb-media-grid">
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-52.jpeg" alt="写着最喜欢小豆岛的石头" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/21-shodoshima-stone-sign.jpeg" alt="写着最喜欢小豆岛的石头" loading="lazy" decoding="async">
           <figcaption>写着“最喜欢小豆岛”的石头</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-53.jpeg" alt="纯白色的船桅" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/22-shodoshima-white-mast.jpeg" alt="纯白色的船桅" loading="lazy" decoding="async">
           <figcaption>纯白色的船桅</figcaption>
         </figure>
       </div>
@@ -302,7 +334,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-54.jpeg" alt="夕阳余晖下的大桥" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/23-kobe-route-sunset-bridge.jpeg" alt="夕阳余晖下的大桥" loading="lazy" decoding="async">
         <figcaption>夕阳余晖下的大桥</figcaption>
       </figure>
 
@@ -313,7 +345,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-55.jpeg" alt="行驶在天空和大海之间的船只" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/24-ferry-blue-hour.jpeg" alt="行驶在天空和大海之间的船只" loading="lazy" decoding="async">
         <figcaption>行驶在天空和大海之间的船只</figcaption>
       </figure>
 
@@ -323,15 +355,15 @@
 
       <div class="japan-rb-media-grid japan-rb-media-grid--three">
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-6.jpeg" alt="稻荷大社里红色的鸟居" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/25-fushimi-inari-torii.jpeg" alt="稻荷大社里红色的鸟居" loading="lazy" decoding="async">
           <figcaption>稻荷大社里红色的鸟居</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-61.jpeg" alt="工匠在鸟居的圆柱上写字" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/26-fushimi-inari-craftsman.jpeg" alt="工匠在鸟居的圆柱上写字" loading="lazy" decoding="async">
           <figcaption>工匠在鸟居的圆柱上写下捐赠人的地址和姓名</figcaption>
         </figure>
         <figure class="japan-rb-media">
-          <img src="../../assets/travel/japan/1-62.jpeg" alt="三层的红色塔楼" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/27-kyoto-red-pagoda.jpeg" alt="三层的红色塔楼" loading="lazy" decoding="async">
           <figcaption>三层的红色塔楼</figcaption>
         </figure>
       </div>
@@ -348,7 +380,7 @@
       </section>
 
       <figure class="japan-rb-media japan-rb-media--single">
-        <img src="../../assets/travel/japan/1-63.jpeg" alt="清水寺前、新兰同款的照片" loading="lazy" decoding="async">
+        <img src="../../assets/travel/japan/28-kiyomizu-conan-shot.jpeg" alt="清水寺前、新兰同款的照片" loading="lazy" decoding="async">
         <figcaption>清水寺前、新兰同款的照片(后期修过)</figcaption>
       </figure>
 
@@ -368,7 +400,7 @@
           <p>评价：即使是庶民，我也接受不了这开局王炸。这顿应该是所有饭中最难吃的一顿。炸物放置了许久，也不允许再热一下；乌冬面里的咖喱，味道实在重口，到后来味蕾只能感受到咸味。</p>
         </article>
         <article class="japan-card">
-          <img src="../../assets/travel/japan/2-2.jpeg" alt="文吧烤肉" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/food-01-yakiniku-bunbar.jpeg" alt="文吧烤肉" loading="lazy" decoding="async">
           <h3>没有高档和牛的「文吧烤肉」</h3>
           <p>评价：此次旅行中为数不多的轻奢享受，在高松本地评分也不错。晚餐内容是啤酒+烤肉，终于喝上了 super dry 品牌的生啤，此前见过多次的广告，清爽好喝。</p>
         </article>
@@ -389,7 +421,7 @@
           <p>评价：早餐套餐有一杯咖啡和三片热乎的吐司，价格只需要 20 块钱。我总是一边吃，一边想着一会儿要去往的地方。这是我京都旅行的启程站。</p>
         </article>
         <article class="japan-card">
-          <img src="../../assets/travel/japan/2-10.jpeg" alt="清水寺附近的鹿肉饭" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/food-02-spiced-deer-rice.jpeg" alt="清水寺附近的鹿肉饭" loading="lazy" decoding="async">
           <h3>清水寺附近的百佳店：印度香料鹿肉饭</h3>
           <p>评价：这是我此次旅行中唯一吃过的「百佳店」。店面不大，最多只能容下 20 个人。我坐在吧台的位置，看着工作人员现场制作，食物很有特色，只可惜不是我的菜。</p>
         </article>
@@ -398,17 +430,17 @@
           <p>评价：你要是问我到底什么是鸭川特有的感觉，我会说答案就藏在眼前的这顿饭里。喝着小酒，嘴里叼着热乎的天妇罗，看看窗外宁静的夜晚，底下的鸭川缓缓流过，真是好不惬意。</p>
         </article>
         <article class="japan-card">
-          <img src="../../assets/travel/japan/2-11.jpeg" alt="奈良午饭" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/food-03-nara-lunch.jpeg" alt="奈良午饭" loading="lazy" decoding="async">
           <h3>没有成功搭讪的奈良午饭</h3>
           <p>评价：额外的 1 分，是和一旁的女郎相遇，我们在沉默之间用食完毕，而我一直在心里纠结的搭讪，到结束也未说出口。事后想想，正是这些意料之外的偶遇，才会使得旅行格外精彩。</p>
         </article>
         <article class="japan-card">
-          <img src="../../assets/travel/japan/2-12.jpeg" alt="大阪烧" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/food-04-okonomiyaki.jpeg" alt="大阪烧" loading="lazy" decoding="async">
           <h3>超级腻的大阪烧</h3>
           <p>评价：别看那圆圆的猪肉馅大饼用料丰富，我拍照时能吃下的 1/4 就是我最大的极限。即使有我最爱的 super dry 啤酒，但还是挽救不了局面。</p>
         </article>
         <article class="japan-card">
-          <img src="../../assets/travel/japan/2-1.jpeg" alt="芭菲" loading="lazy" decoding="async">
+          <img src="../../assets/travel/japan/food-05-parfait.jpeg" alt="芭菲" loading="lazy" decoding="async">
           <h3>小新园长大人的芭菲</h3>
           <p>评价：芭菲，我听过许多次，却一次也没吃过。这是离开京都前最后的甜品。原来这就是芭菲，和吃冰激凌毫无区别。就是这价格，连带咖啡要斥下将近 140 的巨资。</p>
         </article>
@@ -430,6 +462,6 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
-  <script src="../../script.js"></script>
+  <script defer src="../../script.js"></script>
 </body>
 </html>

@@ -172,31 +172,36 @@ a:hover {
 }
 
 .name {
-  font-size: 1.75rem;
+  font-size: clamp(2.25rem, 5vw, 3rem);
   font-weight: 700;
   text-align: center;
-  margin: 0 0 0.25rem;
-  letter-spacing: 0.02em;
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.01em;
+  line-height: 1.12;
 }
 
 .title-line {
   text-align: center;
-  font-size: 0.9375rem;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--text-muted);
-  margin: 0 0 2rem;
+  margin: 0 0 2.5rem;
 }
 
 .about-block {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 2rem;
   align-items: flex-start;
+  max-width: 940px;
+  margin: 0 auto;
 }
 
 @media (min-width: 640px) {
   .about-block {
     flex-direction: row;
-    gap: 2.6rem;
+    gap: 2.8rem;
     align-items: flex-start;
   }
 }
@@ -229,15 +234,31 @@ a:hover {
 .about-text {
   flex: 1;
   min-width: 0;
+  max-width: 34em;
 }
 
 .about-text p {
-  margin: 0 0 1rem;
-  font-size: 0.9375rem;
+  margin: 0 0 1.15rem;
+  font-size: clamp(1.06rem, 0.95rem + 0.3vw, 1.2rem);
+  line-height: 1.95;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.about-text .about-intro {
+  font-size: clamp(1.13rem, 1rem + 0.45vw, 1.34rem);
+  line-height: 1.85;
+  font-weight: 500;
 }
 
 .about-text p:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 639px) {
+  .about-text {
+    max-width: 100%;
+  }
 }
 
 /* ===== Hobby 列表 ===== */
@@ -529,13 +550,13 @@ a:hover {
 }
 
 .travel-intro .section-heading {
-  font-size: 2.125rem;
+  font-size: 1.8rem;
   letter-spacing: 0.08em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .travel-intro .section-desc {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.45;
   color: var(--text-muted);
 }
@@ -596,7 +617,7 @@ a:hover {
 }
 
 .travel-card-overlay-tag {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   opacity: 0.9;
@@ -604,7 +625,7 @@ a:hover {
 }
 
 .travel-card-overlay-title {
-  font-size: 3rem;
+  font-size: 2.35rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -613,7 +634,7 @@ a:hover {
 }
 
 .travel-card-overlay-sub {
-  font-size: 1.1rem;
+  font-size: 0.92rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 0.15rem;
@@ -621,13 +642,13 @@ a:hover {
 }
 
 .travel-card-meta {
-  font-size: 2rem;
+  font-size: 1.55rem;
   color: var(--text-muted);
   margin: 0 0 0.5rem;
 }
 
 .travel-card-title {
-  font-size: 2.4rem;
+  font-size: 1.85rem;
   font-weight: 600;
   letter-spacing: 0.03em;
   margin: 0 0 0.65rem;
@@ -635,7 +656,7 @@ a:hover {
 }
 
 .travel-card-read {
-  font-size: 2rem;
+  font-size: 1.45rem;
   color: var(--text-muted);
   text-decoration: underline;
   text-underline-offset: 0.2em;
@@ -651,23 +672,23 @@ a:hover {
   }
 
   .travel-card-overlay-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   .travel-card-overlay-sub {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   .travel-card-meta {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 
   .travel-card-title {
-    font-size: 1.5rem;
+    font-size: 1.32rem;
   }
 
   .travel-card-read {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
@@ -1194,6 +1215,17 @@ body.lightbox-open {
 
 .travel-detail-image-wrap {
   margin: 1.3rem 0 1.8rem;
+}
+
+.travel-detail-cover {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+.travel-detail-backlink {
+  margin-top: 2rem;
 }
 
 .travel-detail-grid {
@@ -1797,140 +1829,6 @@ body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-deta
   display: none;
 }
 
-body[data-page="travel-nanjing"] .nanjing-toc-shell {
-  display: none;
-  position: fixed;
-  left: 1rem;
-  top: 8.6rem;
-  z-index: 25;
-  width: 190px;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-toggle {
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  border: 1px solid var(--border);
-  background: rgba(248, 246, 242, 0.9);
-  background: color-mix(in srgb, var(--bg) 84%, #ffffff 16%);
-  color: var(--text-muted);
-  font-size: 0.77rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.52rem 0.7rem;
-  cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-toggle:hover {
-  color: var(--text);
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border) 55%);
-  text-decoration: none;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-toggle-icon {
-  font-size: 0.8rem;
-  line-height: 1;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc {
-  margin-top: 0.55rem;
-  border: 1px solid var(--border);
-  background: rgba(248, 246, 242, 0.95);
-  background: color-mix(in srgb, var(--bg) 90%, #ffffff 10%);
-  padding: 0.75rem 0.75rem 0.8rem;
-  max-height: calc(100vh - 12rem);
-  overflow-y: auto;
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 0.22s ease, transform 0.22s ease;
-}
-
-[data-theme="dark"] body[data-page="travel-nanjing"] .nanjing-toc {
-  background: rgba(24, 24, 24, 0.86);
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-title {
-  margin: 0 0 0.65rem;
-  color: var(--text);
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-content {
-  display: grid;
-  grid-template-columns: 3px minmax(0, 1fr);
-  gap: 0.62rem;
-  align-items: stretch;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-progress {
-  position: relative;
-  width: 3px;
-  border-radius: 999px;
-  background: var(--border);
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-progress-bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 0%;
-  border-radius: 999px;
-  background: var(--accent);
-  transition: height 0.2s ease;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-list li + li {
-  margin-top: 0.32rem;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-list a {
-  display: block;
-  color: var(--text-muted);
-  font-size: 0.83rem;
-  line-height: 1.45;
-  padding: 0.24rem 0.48rem;
-  border-left: 2px solid transparent;
-  text-decoration: none;
-  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-list a:hover {
-  color: var(--text);
-}
-
-body[data-page="travel-nanjing"] .nanjing-toc-list a.is-active {
-  color: var(--text);
-  border-left-color: var(--accent);
-  background: rgba(139, 115, 85, 0.12);
-  background: color-mix(in srgb, var(--accent) 12%, transparent 88%);
-}
-
-body[data-page="travel-nanjing"].nanjing-toc-collapsed .nanjing-toc {
-  opacity: 0;
-  transform: translateX(-10px);
-  pointer-events: none;
-}
-
-body[data-page="travel-nanjing"].nanjing-toc-collapsed .nanjing-toc-toggle {
-  width: auto;
-}
-
-body[data-page="travel-nanjing"].nanjing-toc-collapsed .nanjing-toc-toggle .nanjing-toc-toggle-label {
-  display: none;
-}
-
 @media (min-width: 900px) {
   .nanjing-story--roadbook .nanjing-rb-media-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1940,17 +1838,6 @@ body[data-page="travel-nanjing"].nanjing-toc-collapsed .nanjing-toc-toggle .nanj
   .nanjing-story--roadbook .nanjing-rb-media-grid .nanjing-rb-media img {
     height: clamp(300px, 31vw, 460px);
     object-fit: cover;
-  }
-
-  body[data-page="travel-nanjing"] .nanjing-toc-shell {
-    display: block;
-  }
-}
-
-@media (min-width: 1320px) {
-  body[data-page="travel-nanjing"] .nanjing-toc-shell {
-    left: max(1rem, calc((100vw - 1320px) / 2 - 210px));
-    top: 9rem;
   }
 }
 
@@ -2438,4 +2325,10 @@ body[data-page="travel-nanjing"].nanjing-toc-collapsed .nanjing-toc-toggle .nanj
   border-radius: 999px;
   font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+/* Dongbei appendix cards: enforce uniform image heights */
+body[data-page="travel-dongbei"] .japan-card-grid--food .japan-card img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }

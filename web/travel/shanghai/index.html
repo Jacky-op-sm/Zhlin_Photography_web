@@ -1,21 +1,48 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="上海旅行记录：外滩与弄堂。">
+  <meta name="description" content="上海行记：从地铁、街巷到黄浦江夜骑，用游记长页记录城市节奏。">
   <link rel="canonical" href="https://zhlin-photography.vercel.app/travel/shanghai/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="上海行记 · Travel · Zhlin Photography">
-  <meta property="og:description" content="上海旅行记录：外滩与弄堂。">
-  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/shanghai-front.jpg">
+  <meta property="og:description" content="回到游记模式的上海长页：地铁见闻、夜骑、愚园路、教堂偶遇与外滩失落。">
+  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/shanghai-hero-cityscape.jpg">
   <title>上海行记 · Travel · Zhlin Photography</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var key = "theme";
+      var dark = "dark";
+      var light = "light";
+      var theme = light;
+
+      try {
+        var stored = localStorage.getItem(key);
+        if (stored === dark || stored === light) {
+          theme = stored;
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      } catch (error) {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      }
+
+      if (theme === dark) {
+        document.documentElement.setAttribute("data-theme", dark);
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+    })();
+  </script>
 </head>
-<body data-page="travel-detail" data-city="shanghai" data-base-path="../.." data-content-url="../../data/site-content.json">
+<body data-page="travel-shanghai">
   <header class="site-header">
     <div class="logo">
       <a href="../../index.html" class="logo-link">
@@ -32,42 +59,183 @@
     </nav>
   </header>
 
-  <main class="content">
-    <section class="section">
-      <p class="travel-detail-meta" id="travel-detail-period"></p>
-      <h1 class="travel-detail-title" id="travel-detail-title"></h1>
-      <p class="section-desc" id="travel-detail-location"></p>
-      <p class="travel-detail-summary" id="travel-detail-summary"></p>
+  <aside class="travel-toc-shell" id="travel-toc-shell" aria-label="目录">
+    <button type="button" class="travel-toc-toggle" id="travel-toc-toggle" aria-controls="travel-toc-panel" aria-expanded="true">
+      <span class="travel-toc-toggle-icon" aria-hidden="true">+</span>
+      <span class="travel-toc-toggle-label">隐藏目录</span>
+    </button>
+    <nav class="travel-toc" id="travel-toc-panel" aria-label="目录">
+      <p class="travel-toc-title">目录</p>
+      <div class="travel-toc-content">
+        <div class="travel-toc-progress" aria-hidden="true">
+          <span class="travel-toc-progress-bar" id="travel-toc-progress-bar"></span>
+        </div>
+        <ol class="travel-toc-list" id="travel-toc-list"></ol>
+      </div>
+    </nav>
+  </aside>
 
-      <div class="travel-detail-image-wrap">
-        <img id="travel-detail-cover" src="" alt="" style="width:100%;height:auto;display:block;vertical-align:middle;">
+  <main class="japan-story japan-story--roadbook">
+    <article class="japan-rb-article">
+      <figure class="japan-rb-hero">
+        <img src="../../assets/travel/shanghai-hero-cityscape.jpg" alt="上海城市天际线" loading="eager" decoding="async">
+      </figure>
+
+      <header class="japan-rb-header">
+        <p class="japan-rb-channel">旅行</p>
+        <h1>上海行记</h1>
+      </header>
+
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">前言</p>
+        <h2>该怎么组织游记的文字呢？</h2>
+        <p>该怎么组织游记的文字呢？以往总是按照时间顺序，事无巨细地记录下来，希望让以后的自己重读时，能重新捡起当时的回忆。</p>
+        <p>可若每次都这般去写，记录的琐事太多，相应地花费的时间也会较多。</p>
+        <p>因此，这次改换一种形式，用主题分类的方法，将游记重新组合一下，不知完成时会有怎样的效果。</p>
+        <p>正式提笔已是归来后的一个星期了，写的都算是回忆，而非当天鲜活的记叙了。</p>
+        <p>不过这样也好，沉淀下来的会是旅行的核心，那些不重要的，忘记也就罢了。</p>
+      </section>
+
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">初到上海</p>
+        <h2>精确到秒的上海地铁</h2>
+        <p>从虹桥火车站出来，走不远就是地铁站。</p>
+        <p>从虹桥到预订的普陀区民宿，大约有 45 分钟的路程——30 分钟地铁，15 分钟骑行。</p>
+        <p>毕竟是火车站，地铁上等车的人大多带着行李，我也成了其中之一。这次，是以旅客的身份来见识上海。</p>
+        <p>地铁的环境和杭州类似，外部整体整洁，车厢内也一样。注意到一个有趣的不同点：这里的等候显示屏上的时间，以“秒”为最小单位。</p>
+      </section>
+
+      <figure class="japan-rb-media japan-rb-media--single">
+        <img src="../../assets/travel/shanghai/metro-second-display.jpg" alt="精确到秒的上海地铁" loading="lazy" decoding="async">
+      </figure>
+
+      <section class="japan-rb-section">
+        <h2>车厢里两小孩的国际象棋对局</h2>
+        <p>当我坐在地铁座位上时，看到对面一位大人带着两个刚上完兴趣班的小孩回家。那两个年纪尚小、猜测刚上小学不久的孩子，居然手里拿着一副国际象棋棋盘。</p>
+        <p>棋子能很好地吸附在棋盘上，因此不受地铁晃动的影响。</p>
+        <p>两个小孩装出一副认真思考的样子，每次吃掉对方棋子前，都会看一眼对方的脸色，试图判断对方是否有诈。</p>
+      </section>
+
+      <div class="japan-rb-media-grid japan-rb-media-grid--three">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/metro-chess-kids-1.jpg" alt="地铁上的国际象棋局面" loading="lazy" decoding="async">
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/metro-chess-kids-2.jpg" alt="小孩在地铁里下棋" loading="lazy" decoding="async">
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/metro-carriage-moment.jpg" alt="上海地铁车厢瞬间" loading="lazy" decoding="async">
+        </figure>
       </div>
 
-      <div class="travel-detail-grid">
-        <article class="travel-detail-block">
-          <h2>行程概览</h2>
-          <ul id="travel-itinerary"></ul>
-        </article>
+      <section class="japan-rb-section">
+        <h2>黄浦江夜骑 8 km</h2>
+        <p>不知是何时染上了骑行这个爱好，相比其他交通工具，有时骑行才是自己心目中认识一座城市的最好方式。</p>
+        <p>夜晚的九点半我就在二楼的甲板等待，看着身旁和我一样的游客越来越多，直等到十点，船才从码头出发，耗时十分钟便停靠于江边了。</p>
+        <p>下了船，在附近找了辆共享单车，骑行才正式宣告开始。</p>
+        <p>与外滩的打卡点不同，江的另一边游客稀少，偶尔能见到晚上出来跑步锻炼的本地居民。</p>
+        <p>随着骑行的深入，江边的夜景也慢慢地发生变化：夜晚的霓虹灯逐渐黯淡下来，城市的热闹也渐渐离我远去，待我张望四周，何时我已孤单成了一人。</p>
+      </section>
 
-        <article class="travel-detail-block">
-          <h2>地点清单</h2>
-          <ul id="travel-spots"></ul>
-        </article>
+      <div class="japan-rb-media-grid japan-rb-media-grid--three">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/huangpu-ferry-deck.jpg" alt="前往复兴东路渡口" loading="lazy" decoding="async">
+          <figcaption>前往复兴东路渡口</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/huangpu-lupu-bridge.jpg" alt="上海卢浦大桥" loading="lazy" decoding="async">
+          <figcaption>由远及近的卢浦大桥</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/huangpu-riverside-track.jpg" alt="江边跑道" loading="lazy" decoding="async">
+          <figcaption>江边的跑道</figcaption>
+        </figure>
       </div>
 
-      <article class="travel-detail-block">
-        <h2>照片故事</h2>
-        <p id="travel-photo-story"></p>
-      </article>
+      <section class="japan-rb-section">
+        <h2>独自漫步之愚园路</h2>
+        <p>独自漫步于陌生城市的魅力在于，这里没有一个人认识自己，自己便更容易穿梭在人群中，仿佛随时都能变成另一个人。</p>
+        <p>在这短短的时间里，我带着最强的好奇心，拿起放大镜，观察着上海愚园路的热闹街道。</p>
+        <p>我看到琳琅满目的精致小店，它们并排坐落在人行道两旁，常常用艺术画作和绿色藤蔓作为装饰。</p>
+        <p>当然，最令我印象深刻的，是在逛完礼品店后遇到的“画像的老人们”。</p>
+      </section>
 
-      <article class="travel-detail-block">
-        <h2>个人感受</h2>
-        <p id="travel-reflection"></p>
-      </article>
+      <div class="japan-rb-media-grid">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/yuyuan-road-shopfront.jpg" alt="愚园路街边小店" loading="lazy" decoding="async">
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/yuyuan-road-street-artist.jpg" alt="愚园路街头画者" loading="lazy" decoding="async">
+        </figure>
+      </div>
 
-      <p style="margin-top: 2rem;">
-        <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
-      </p>
+      <section class="japan-rb-section">
+        <h2>偶遇法国人天主教洗礼</h2>
+        <p>可刚骑了不到几百米，我的目光被一座教堂所吸引。</p>
+        <p>我跟着进到内部，沿路没有受到阻拦，看来今天的确是对外开放的。</p>
+        <p>台上有位穿着豹纹裙饰的女士，在步道的讲台边，对着麦克风轻声歌唱。</p>
+        <p>左侧有一对模样看上去是父子的人，父亲吹着乐器大号，孩子吹着小号。</p>
+        <p>洗礼正式开始。高亢的嗓音，洋溢着幸福的微笑，光是听这位女士歌唱，我已觉得不虚此行了。</p>
+      </section>
+
+      <div class="japan-rb-media-grid japan-rb-media-grid--three">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/church-entrance.jpg" alt="教堂门口" loading="lazy" decoding="async">
+          <figcaption>教堂的门口</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/church-ritual-booklet.jpg" alt="法语洗礼过程手册" loading="lazy" decoding="async">
+          <figcaption>法语洗礼的过程手册</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/church-father-son-trumpet.jpg" alt="吹小号的父子" loading="lazy" decoding="async">
+          <figcaption>吹小号的父子</figcaption>
+        </figure>
+      </div>
+
+      <section class="japan-rb-section">
+        <h2>外滩打卡的失落</h2>
+        <p>终于走到外滩，上了台阶。只见以上海东方明珠为中心，灯火辉煌的建筑群熠熠生辉，缤纷的霓虹灯在黑暗的江水中投下了倒影。</p>
+        <p>游客几乎占满了整个通道，都挤在围栏旁拿着相机或手机拍照。</p>
+        <p>我们一行人也懒得加入拥挤的行列，只是看了两眼，就离开了。</p>
+        <p>总体来看，逛个外滩好像只留下了失落这一个感觉：毕竟是充当一个外地打卡者，和周围的游客们没有任何区别，只是被建筑的外观吸引，却对其中一无所知。</p>
+      </section>
+
+      <div class="japan-rb-media-grid japan-rb-media-grid--three">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/bund-skyline-crowd.jpg" alt="外滩灯火与人群" loading="lazy" decoding="async">
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/bund-night-river.jpg" alt="夜色中的黄浦江" loading="lazy" decoding="async">
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/bund-clocktower.jpg" alt="外滩钟楼夜景" loading="lazy" decoding="async">
+        </figure>
+      </div>
+
+      <section class="japan-rb-section">
+        <h2>与上海出租车司机的闲聊</h2>
+        <p>每次到一个地方旅行，最容易搭上话的，就是当地的出租车司机师傅了。</p>
+        <p>绝大部分情况下，面对游客时，他们相对活跃；而作为游客的我，也能从他们口中了解当地的生活。</p>
+        <p>在整个搭车的二十分钟里，师傅一刻不停地分享他的见闻和观点，我负责随声附和，鼓励他说下去就好。</p>
+        <p>车开到了此前骑车望见的卢浦大桥。夜深了，江边的城市迎来沉睡。</p>
+      </section>
+
+      <div class="japan-rb-media-grid japan-rb-media-grid--three">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/taxi-night-ride.jpg" alt="深夜出租车返程" loading="lazy" decoding="async">
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/lupu-bridge-midnight.jpg" alt="深夜卢浦大桥" loading="lazy" decoding="async">
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/shanghai/city-lights-after-ride.jpg" alt="夜骑结束后的城市灯光" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </article>
+
+    <section class="japan-section japan-section--backlink">
+      <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
     </section>
   </main>
 
@@ -81,6 +249,6 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
-  <script src="../../script.js"></script>
+  <script defer src="../../script.js"></script>
 </body>
 </html>

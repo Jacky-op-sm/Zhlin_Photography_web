@@ -1,21 +1,48 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="东北旅行记录：雪乡与冰城。">
+  <meta name="description" content="东北行记：沿沈阳、长白山与哈尔滨展开的冬日游记长页，文字节选自原 tex。">
   <link rel="canonical" href="https://zhlin-photography.vercel.app/travel/dongbei/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="东北行记 · Travel · Zhlin Photography">
-  <meta property="og:description" content="东北旅行记录：雪乡与冰城。">
+  <meta property="og:description" content="沿沈阳、长白山与哈尔滨展开的冬日游记长页，文字节选自原 tex。">
   <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/dongbei-front.jpg">
   <title>东北行记 · Travel · Zhlin Photography</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var key = "theme";
+      var dark = "dark";
+      var light = "light";
+      var theme = light;
+
+      try {
+        var stored = localStorage.getItem(key);
+        if (stored === dark || stored === light) {
+          theme = stored;
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      } catch (error) {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      }
+
+      if (theme === dark) {
+        document.documentElement.setAttribute("data-theme", dark);
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+    })();
+  </script>
 </head>
-<body data-page="travel-detail" data-city="dongbei" data-base-path="../.." data-content-url="../../data/site-content.json">
+<body data-page="travel-dongbei">
   <header class="site-header">
     <div class="logo">
       <a href="../../index.html" class="logo-link">
@@ -32,42 +59,167 @@
     </nav>
   </header>
 
-  <main class="content">
-    <section class="section">
-      <p class="travel-detail-meta" id="travel-detail-period"></p>
-      <h1 class="travel-detail-title" id="travel-detail-title"></h1>
-      <p class="section-desc" id="travel-detail-location"></p>
-      <p class="travel-detail-summary" id="travel-detail-summary"></p>
+  <aside class="travel-toc-shell" id="travel-toc-shell" aria-label="目录">
+    <button type="button" class="travel-toc-toggle" id="travel-toc-toggle" aria-controls="travel-toc-panel" aria-expanded="true">
+      <span class="travel-toc-toggle-icon" aria-hidden="true">+</span>
+      <span class="travel-toc-toggle-label">隐藏目录</span>
+    </button>
+    <nav class="travel-toc" id="travel-toc-panel" aria-label="目录">
+      <p class="travel-toc-title">目录</p>
+      <div class="travel-toc-content">
+        <div class="travel-toc-progress" aria-hidden="true">
+          <span class="travel-toc-progress-bar" id="travel-toc-progress-bar"></span>
+        </div>
+        <ol class="travel-toc-list" id="travel-toc-list"></ol>
+      </div>
+    </nav>
+  </aside>
 
-      <div class="travel-detail-image-wrap">
-        <img id="travel-detail-cover" src="" alt="" style="width:100%;height:auto;display:block;vertical-align:middle;">
+  <main class="japan-story japan-story--roadbook">
+    <article class="japan-rb-article">
+      <figure class="japan-rb-hero">
+        <img src="../../assets/travel/dongbei-front.jpg" alt="东北冬季旅途封面" loading="eager" decoding="async">
+      </figure>
+
+      <header class="japan-rb-header">
+        <p class="japan-rb-channel">旅行</p>
+        <h1>东北行记</h1>
+      </header>
+
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">前言</p>
+        <h2>初到沈阳：雪白和欢庆的世界</h2>
+        <p>第一次意识到自己已经来到了北方，是在飞机上。当我摘下耳机，刚从一场精彩的电影世界里走出来，抬头望向窗外时，我才意识到，曾几何时外面的景色已变成白茫茫的一片。</p>
+        <p>下飞机时，被空姐好心地提醒，外面此时的地表温度为零下负十，注意多添加些衣物。当我们经过辗转反侧，终于来到沈阳的中街时，我终于体会到了北方的冷。这里的冷是物理攻击，对那些没有穿戴防具的部位伤害最为严重。</p>
+        <p>当然，其中区别最大的，自然是雪。就像南方经常下的雨，北方对应的则是雪。这里的一切都带上雪的装饰。</p>
+      </section>
+
+      <figure class="japan-rb-media japan-rb-media--single">
+        <img src="../../assets/travel/dongbei/shenyang-palace-snow-roof.jpeg" alt="沈阳故宫屋檐上的积雪" loading="lazy" decoding="async">
+        <figcaption>沈阳故宫：屋檐与雪</figcaption>
+      </figure>
+
+      <section class="japan-rb-section">
+        <h2>早起去雾凇漂流</h2>
+        <p>早上好歹也起了早，想在下午离开前，最后一睹长白山景区的风景。整理好行李，搭上昨天相同司机的专车，我们前去了上午的目的地：雾凇漂流。</p>
+        <p>检完票，我们三人同乘于一条艇上，眼前是向下倾斜的水道，两边是林立的松树，其树枝向中央倾斜，成拱门状，穿梭其间，如过水帘洞般。</p>
+        <p>后来小艇游过了水道，来到开阔的湖面，我得以看见雾凇的全景。小小的雪凝结在树杈上，像是给它们画上了雪白的眉毛。湖面如镜，水中倒立着蓝天和被雪装饰的树。</p>
+        <p>事后回想起来，这儿大抵是整个旅程中最美丽的地方。</p>
+      </section>
+
+      <div class="japan-rb-media-grid japan-rb-media-grid--three">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/dongbei/wusong-branches-sky.jpeg" alt="雾凇枝头与蓝天" loading="lazy" decoding="async">
+          <figcaption>什么是雾凇？</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/dongbei/wusong-river-boat.jpeg" alt="雾凇漂流的小艇" loading="lazy" decoding="async">
+          <figcaption>雾凇湖畔</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/dongbei/wusong-river-wide.jpeg" alt="开阔冰河与漂流艇" loading="lazy" decoding="async">
+          <figcaption>如洗的湖面</figcaption>
+        </figure>
       </div>
 
-      <div class="travel-detail-grid">
-        <article class="travel-detail-block">
-          <h2>行程概览</h2>
-          <ul id="travel-itinerary"></ul>
-        </article>
+      <section class="japan-rb-section">
+        <h2>速通长白山</h2>
+        <p>逛完雾凇，下一站便是长白山。去之前，自诩幸运星的我们，认为这儿的天池一定会向我们开放。可即使是晴朗的蓝天，在我们看不见的山顶上，依旧下着大雪。</p>
+        <p>我仍旧记得初次见到雪山时的震撼。果然山的恢弘气势，不是渺小之物所能够比拟的。它们高我们如此之多，那雪白的山巅离我们又是如此遥远。</p>
+        <p>身处两千多米的海拔之上，温度来到了零下负二十七，山谷里吹的风比此前任何地方都刺骨和寒冷。</p>
+      </section>
 
-        <article class="travel-detail-block">
-          <h2>地点清单</h2>
-          <ul id="travel-spots"></ul>
+      <figure class="japan-rb-media japan-rb-media--single">
+        <img src="../../assets/travel/dongbei/changbai-mountain-view.jpeg" alt="被雪覆盖的长白山山体" loading="lazy" decoding="async">
+        <figcaption>被雪覆盖的长白山</figcaption>
+      </figure>
+
+      <section class="japan-rb-section">
+        <h2>北大湖滑雪：拿命下来的中级道</h2>
+        <p>所谓初生牛犊不怕虎，上次在天定山的滑雪让我积累了大量的自信心，那儿的中级道我能随便滑，难道北大湖的我就不能试一下了嘛？</p>
+        <p>我第一次亲眼见到这儿的滑雪场，是在去酒店的摆渡车上：远远望去，那里是一座高山，上面四通八达的雪道与桦树交叉着。</p>
+        <p>终的，当我在雪道尽头，回头去看这段下来的旅程时，心里只剩下唯一的情绪：滑雪它好可怕。</p>
+      </section>
+
+      <figure class="japan-rb-media japan-rb-media--single">
+        <img src="../../assets/travel/dongbei/beidahu-snow-portrait.jpeg" alt="北大湖雪道旁的人像" loading="lazy" decoding="async">
+        <figcaption>北大湖：雪地里的停驻</figcaption>
+      </figure>
+
+      <section class="japan-rb-section">
+        <h2>城市漫步：行走在结冰的松花江</h2>
+        <p>今天严格来说，并没有路线规划，只有随心所欲地走，走到哪里算哪里吧。</p>
+        <p>可到了白天，打开地图，我才明白原来这里不过是松花江边。而眼前的大片冰面，其实是松花江结冰后，当地设立的、冬季特有的游乐园。它也不需要门票，我跟着身旁的游客，一同进去了。</p>
+        <p>那为了过岸，我就来到了松花江大桥上。这桥远远望去就挺漂亮的，其上是湛蓝色的天空；底下是结冰的湖面，与天空澄澈的蓝色相呼应。</p>
+      </section>
+
+      <figure class="japan-rb-media japan-rb-media--single">
+        <img src="../../assets/travel/dongbei/songhua-bridge-plaque.jpeg" alt="松花江铁路大桥文保牌" loading="lazy" decoding="async">
+        <figcaption>松花江铁路大桥</figcaption>
+      </figure>
+
+      <section class="japan-rb-section">
+        <h2>乡村的角落：船厂</h2>
+        <p>过了桥，如果只能步行的话，那么船厂就是我必须会经过的地方。</p>
+        <p>村里几乎听不到一点声音，让我这位外来者，仿佛体会到了一丝这里被哈尔滨外面世界所抛弃的感觉。路上也见不到行人，偶尔从远处拐角出现的，也都是爷爷奶奶辈的老人们。</p>
+        <p>不知为何，每次回想起来，呆在这儿不期而遇的小村落的感受，竟是哈尔滨所有地方里精神性最好、最舒适的一次体验。</p>
+      </section>
+
+      <figure class="japan-rb-media japan-rb-media--single">
+        <img src="../../assets/travel/dongbei/chuanchang-photo-studio.jpeg" alt="船厂老式照相馆" loading="lazy" decoding="async">
+        <figcaption>船厂照相馆</figcaption>
+      </figure>
+
+      <section class="japan-rb-section">
+        <h2>哈尔滨大剧院：初次欣赏戏剧《哈姆雷特》</h2>
+        <p>这次想看一场戏剧的想法，是上次在北京和阿呆一起游玩后延续下来的。</p>
+        <p>于是，在我到哈尔滨的当天，我就点开了当地的戏剧节目，看看里面是否有无我所熟悉的。这才找到了今日的节目：《哈姆雷特》。</p>
+        <p>可观看的体验，却和阅读剧本完全不同。书里的台词，只能让人明白发生了什么，可却无法活生生地看见人物的挣扎与表情。</p>
+        <blockquote><p>To be or not to be。</p></blockquote>
+        <p>在明白了这点后，才能体会到为何莎翁的剧是永恒经典。</p>
+      </section>
+
+      <figure class="japan-rb-media japan-rb-media--single">
+        <img src="../../assets/travel/dongbei/harbin-window-snow-night.jpeg" alt="哈尔滨夜里窗外风雪" loading="lazy" decoding="async">
+        <figcaption>在哈尔滨迷茫</figcaption>
+      </figure>
+    </article>
+
+    <section class="japan-section japan-section--appendix">
+      <div class="japan-section-heading">
+        <p class="japan-section-index">附录</p>
+        <h2>补充影像</h2>
+      </div>
+      <div class="japan-card-grid japan-card-grid--food">
+        <article class="japan-card">
+          <img src="../../assets/travel/dongbei/changbai-portrait-brown-hat.jpeg" alt="长白山旅途人物一" loading="lazy" decoding="async">
+          <h3>金日和底下的长白山</h3>
+        </article>
+        <article class="japan-card">
+          <img src="../../assets/travel/dongbei/changbai-portrait-white-fur-hat.jpeg" alt="长白山旅途人物二" loading="lazy" decoding="async">
+          <h3>回望长白山</h3>
+        </article>
+        <article class="japan-card">
+          <img src="../../assets/travel/dongbei/changbai-portrait-earmuffs.jpeg" alt="长白山旅途人物三" loading="lazy" decoding="async">
+          <h3>远景</h3>
+        </article>
+        <article class="japan-card">
+          <img src="../../assets/travel/dongbei/beidahu-snow-portrait.jpeg" alt="北大湖雪地中的旅途人物" loading="lazy" decoding="async">
+          <h3>北大湖：雪地里的停驻</h3>
+        </article>
+        <article class="japan-card">
+          <img src="../../assets/travel/dongbei/longta-night.jpeg" alt="哈尔滨龙塔夜景" loading="lazy" decoding="async">
+          <h3>夜晚的龙塔</h3>
+        </article>
+        <article class="japan-card">
+          <img src="../../assets/travel/dongbei/harbin-window-snow-night.jpeg" alt="哈尔滨夜里窗外风雪" loading="lazy" decoding="async">
+          <h3>在哈尔滨迷茫</h3>
         </article>
       </div>
+    </section>
 
-      <article class="travel-detail-block">
-        <h2>照片故事</h2>
-        <p id="travel-photo-story"></p>
-      </article>
-
-      <article class="travel-detail-block">
-        <h2>个人感受</h2>
-        <p id="travel-reflection"></p>
-      </article>
-
-      <p style="margin-top: 2rem;">
-        <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
-      </p>
+    <section class="japan-section japan-section--backlink">
+      <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
     </section>
   </main>
 
@@ -81,6 +233,6 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
-  <script src="../../script.js"></script>
+  <script defer src="../../script.js"></script>
 </body>
 </html>

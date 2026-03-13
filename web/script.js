@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   var STORAGE_KEY = "theme";
   var DARK = "dark";
   var LIGHT = "light";
@@ -7,8 +7,24 @@
   var toggle = document.getElementById("theme-toggle");
   var label = document.querySelector(".theme-label");
 
+  function readStoredTheme() {
+    try {
+      return localStorage.getItem(STORAGE_KEY);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function writeStoredTheme(theme) {
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch (error) {
+      // Ignore storage errors, keep theme in memory only.
+    }
+  }
+
   function getPreferredTheme() {
-    var stored = localStorage.getItem(STORAGE_KEY);
+    var stored = readStoredTheme();
     if (stored === DARK || stored === LIGHT) return stored;
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) return DARK;
     return LIGHT;
@@ -22,7 +38,7 @@
       html.removeAttribute("data-theme");
       if (label) label.textContent = "深色";
     }
-    localStorage.setItem(STORAGE_KEY, theme);
+    writeStoredTheme(theme);
   }
 
   function toggleTheme() {
@@ -45,6 +61,20 @@
   var basePath = (body.getAttribute("data-base-path") || ".").replace(/\/+$/, "");
   var contentUrl = body.getAttribute("data-content-url");
 
+  function escapeHtml(value) {
+    var text = value == null ? "" : String(value);
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function escapeAttr(value) {
+    return escapeHtml(value).replace(/`/g, "&#96;");
+  }
+
   function withBase(path) {
     if (!path) return "";
     if (/^(https?:|mailto:|tel:)/i.test(path)) return path;
@@ -65,7 +95,7 @@
 
     var html = "";
     for (var i = 0; i < lines.length; i++) {
-      html += "<p>" + lines[i] + "</p>";
+      html += "<p>" + escapeHtml(lines[i]) + "</p>";
     }
     el.innerHTML = html;
   }
@@ -93,9 +123,9 @@
         html += '<span class="social-separator">·</span>';
       }
       if (isLink(link)) {
-        html += '<a href="' + link + '" class="social-link" target="_blank" rel="noopener noreferrer">' + item.label + "</a>";
+        html += '<a href="' + escapeAttr(link) + '" class="social-link" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.label) + "</a>";
       } else {
-        html += '<span class="social-link social-link--plain">' + item.label + ": " + link + "</span>";
+        html += '<span class="social-link social-link--plain">' + escapeHtml(item.label) + ": " + escapeHtml(link) + "</span>";
       }
     }
 
@@ -126,7 +156,12 @@
 
     renderSocialLinks("#footer-social-links", data.profile.socials);
     var footerSocial = document.getElementById("footer-social-links");
-    if (footerSocial && footerSocial.querySelector("a")) {
+    if (
+      footerSocial &&
+      footerSocial.textContent &&
+      footerSocial.textContent.trim() &&
+      !footerSocial.querySelector(".section-placeholder")
+    ) {
       footerSocial.insertAdjacentHTML("afterbegin", '<span class="social-separator">·</span>');
     }
   }
@@ -145,17 +180,22 @@
     for (var i = 0; i < data.photography.items.length; i++) {
       var item = data.photography.items[i];
       var areaClass = areaClasses[i % areaClasses.length];
+      var src = withBase(item && item.src);
+      var title = item && item.title ? String(item.title) : "";
+      var subtitle = item && item.subtitle ? String(item.subtitle) : "";
+      var location = item && item.location ? String(item.location) : "";
+      var date = item && item.date ? String(item.date) : "";
       html +=
         '<li class="photo-item ' + areaClass + '">' +
           '<button type="button" class="photo-card" ' +
-            'data-lightbox-src="' + withBase(item.src) + '" ' +
-            'data-lightbox-title="' + item.title + '" ' +
-            'data-lightbox-subtitle="' + item.subtitle + '" ' +
-            'data-lightbox-location="' + item.location + '" ' +
-            'data-lightbox-date="' + item.date + '" ' +
-            'aria-label="Open ' + item.title + '">' +
+            'data-lightbox-src="' + escapeAttr(src) + '" ' +
+            'data-lightbox-title="' + escapeAttr(title) + '" ' +
+            'data-lightbox-subtitle="' + escapeAttr(subtitle) + '" ' +
+            'data-lightbox-location="' + escapeAttr(location) + '" ' +
+            'data-lightbox-date="' + escapeAttr(date) + '" ' +
+            'aria-label="' + escapeAttr("Open " + title) + '">' +
             '<span class="photo-card-media">' +
-              '<img src="' + withBase(item.src) + '" alt="' + item.title + '" loading="' + (i === 0 ? "eager" : "lazy") + '" decoding="async">' +
+              '<img src="' + escapeAttr(src) + '" alt="' + escapeAttr(title) + '" loading="' + (i === 0 ? "eager" : "lazy") + '" decoding="async">' +
             '</span>' +
           '</button>' +
         '</li>';
@@ -169,16 +209,6 @@
 
     var hobby = data.hobby;
     setText("#hobby-intro", hobby.intro);
-
-    function escapeHtml(value) {
-      var text = value == null ? "" : String(value);
-      return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-    }
 
     function normalizeMonthValue(month) {
       if (typeof month !== "string") return -1;
@@ -317,27 +347,23 @@
 
     if (digestSection && digestGrid) {
       var digestHtml = "";
-      var visibleMonths = 3;
+      var collapsedMonths = 4;
+      var expandedMonths = 8;
       var renderedMonths = 0;
 
       for (var m = 0; m < digestSource.length; m++) {
+        if (renderedMonths >= expandedMonths) break;
+
         var monthData = digestSource[m] || {};
         var readingHtml = renderDigestGroup("阅读", monthData.reading, m, "reading");
         var filmHtml = renderDigestGroup("电影", monthData.films, m, "films");
-        var lolHtml = "";
-        if (monthData.lolNote) {
-          lolHtml += '<section class="hobby-digest-group">';
-          lolHtml += '<h4 class="hobby-digest-group-title">LOL</h4>';
-          lolHtml += '<p class="hobby-digest-lol-note">' + escapeHtml(monthData.lolNote) + "</p>";
-          lolHtml += "</section>";
-        }
 
-        if (!readingHtml && !filmHtml && !lolHtml) continue;
+        if (!readingHtml && !filmHtml) continue;
 
-        var extraMonthAttr = renderedMonths >= visibleMonths ? ' data-extra-month="true" hidden' : "";
+        var extraMonthAttr = renderedMonths >= collapsedMonths ? ' data-extra-month="true" hidden' : "";
         digestHtml += '<article class="hobby-digest-card"' + extraMonthAttr + ">";
         digestHtml += '<h3 class="hobby-digest-month">' + escapeHtml(formatMonth(monthData.month || "")) + "</h3>";
-        digestHtml += readingHtml + filmHtml + lolHtml;
+        digestHtml += readingHtml + filmHtml;
         digestHtml += "</article>";
         renderedMonths += 1;
       }
@@ -350,7 +376,7 @@
         if (digestToggle) {
           if (extraMonths.length) {
             digestToggle.hidden = false;
-            digestToggle.textContent = "查看更早月份";
+            digestToggle.textContent = "查看更多月份";
             digestToggle.setAttribute("data-expanded", "false");
             digestToggle.setAttribute("aria-expanded", "false");
           } else {
@@ -398,11 +424,11 @@
             cards[i2].hidden = expanded;
           }
           if (expanded) {
-            digestToggle.textContent = "查看更早月份";
+            digestToggle.textContent = "查看更多月份";
             digestToggle.setAttribute("data-expanded", "false");
             digestToggle.setAttribute("aria-expanded", "false");
           } else {
-            digestToggle.textContent = "收起更早月份";
+            digestToggle.textContent = "收起";
             digestToggle.setAttribute("data-expanded", "true");
             digestToggle.setAttribute("aria-expanded", "true");
           }
@@ -425,7 +451,7 @@
         var entry = linkEntries[n];
         var url = externalProfiles[entry.key];
         if (!url) continue;
-        linksHtml += '<a class="hobby-link-btn" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(entry.label) + " ↗</a>";
+        linksHtml += '<a class="hobby-link-btn" href="' + escapeAttr(url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(entry.label) + " ↗</a>";
       }
 
       if (linksHtml) {
@@ -456,19 +482,26 @@
 
     for (var i = 0; i < data.travel.cities.length; i++) {
       var city = data.travel.cities[i];
+      var slug = city && city.slug ? String(city.slug).trim() : "";
+      if (!/^[a-z0-9-]+$/i.test(slug)) continue;
+      var cityZhName = city && city.zhName ? String(city.zhName) : "";
+      var cityEnName = city && city.enName ? String(city.enName) : "";
+      var cityPeriod = city && city.period ? String(city.period) : "";
+      var cityCardTitle = city && city.cardTitle ? String(city.cardTitle) : "";
+      var cityCover = withBase(city && city.cover);
       html +=
         '<li class="travel-card">' +
-          '<a href="' + city.slug + '/index.html" class="travel-card-link">' +
+          '<a href="' + escapeAttr(slug) + '/index.html" class="travel-card-link">' +
             '<div class="travel-card-image-wrap">' +
-              '<img src="' + withBase(city.cover) + '" alt="' + city.zhName + ' · ' + city.enName + '" loading="' + (i === 0 ? "eager" : "lazy") + '" decoding="async">' +
+              '<img src="' + escapeAttr(cityCover) + '" alt="' + escapeAttr(cityZhName + " · " + cityEnName) + '" loading="' + (i === 0 ? "eager" : "lazy") + '" decoding="async">' +
               '<div class="travel-card-overlay">' +
                 '<span class="travel-card-overlay-tag">Travel</span>' +
-                '<span class="travel-card-overlay-title">' + city.zhName + '</span>' +
-                '<span class="travel-card-overlay-sub">' + city.enName + '</span>' +
+                '<span class="travel-card-overlay-title">' + escapeHtml(cityZhName) + '</span>' +
+                '<span class="travel-card-overlay-sub">' + escapeHtml(cityEnName) + '</span>' +
               '</div>' +
             '</div>' +
-            '<p class="travel-card-meta">' + city.period + '</p>' +
-            '<h2 class="travel-card-title">' + city.cardTitle + '</h2>' +
+            '<p class="travel-card-meta">' + escapeHtml(cityPeriod) + '</p>' +
+            '<h2 class="travel-card-title">' + escapeHtml(cityCardTitle) + '</h2>' +
             '<span class="travel-card-read">Read More</span>' +
           '</a>' +
         '</li>';
@@ -511,7 +544,7 @@
     if (itinerary && Array.isArray(city.itinerary)) {
       var itineraryHtml = "";
       for (var j = 0; j < city.itinerary.length; j++) {
-        itineraryHtml += "<li>" + city.itinerary[j] + "</li>";
+        itineraryHtml += "<li>" + escapeHtml(city.itinerary[j]) + "</li>";
       }
       itinerary.innerHTML = itineraryHtml;
     }
@@ -520,7 +553,7 @@
     if (spots && Array.isArray(city.spots)) {
       var spotsHtml = "";
       for (var k = 0; k < city.spots.length; k++) {
-        spotsHtml += "<li>" + city.spots[k] + "</li>";
+        spotsHtml += "<li>" + escapeHtml(city.spots[k]) + "</li>";
       }
       spots.innerHTML = spotsHtml;
     }
@@ -547,9 +580,9 @@
       function appendSocial(label, value, short) {
         if (!value) return "";
         if (isLink(value)) {
-          return '<a href="' + value + '" class="social-icon social-icon--text" aria-label="' + label + '" target="_blank" rel="noopener noreferrer">' + short + "</a>";
+          return '<a href="' + escapeAttr(value) + '" class="social-icon social-icon--text" aria-label="' + escapeAttr(label) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(short) + "</a>";
         }
-        return '<span class="social-chip">' + label + ": " + value + "</span>";
+        return '<span class="social-chip">' + escapeHtml(label) + ": " + escapeHtml(value) + "</span>";
       }
 
       var html = "";
@@ -564,7 +597,7 @@
       var options = '<option value="">请选择类型</option>';
       for (var i = 0; i < data.contact.types.length; i++) {
         var t = data.contact.types[i];
-        options += '<option value="' + t + '">' + t + "</option>";
+        options += '<option value="' + escapeAttr(t) + '">' + escapeHtml(t) + "</option>";
       }
       typeSelect.innerHTML = options;
     }
@@ -621,10 +654,22 @@
           body: JSON.stringify(payload)
         });
 
-        var result = await response.json();
+        var rawResult = await response.text();
+        var result = null;
+        if (rawResult) {
+          try {
+            result = JSON.parse(rawResult);
+          } catch (error) {
+            result = null;
+          }
+        }
 
-        if (!response.ok || !result.ok) {
-          throw new Error(result.error || "提交失败，请稍后重试。");
+        if (!response.ok) {
+          throw new Error((result && result.error) || "提交失败，请稍后重试。");
+        }
+
+        if (!result || !result.ok) {
+          throw new Error((result && result.error) || "提交失败，请稍后重试。");
         }
 
         form.reset();
@@ -722,13 +767,6 @@
       (function (idx) {
         cards[idx].addEventListener("click", function () {
           openAt(idx);
-        });
-
-        cards[idx].addEventListener("keydown", function (event) {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            openAt(idx);
-          }
         });
       })(i);
     }
@@ -873,9 +911,9 @@
       sections.push(section);
       var tocIndex = String(sections.length).padStart(2, "0");
       html +=
-        '<li><a href="#' + section.id + '">' +
+        '<li><a href="#' + escapeAttr(section.id) + '">' +
           '<span class="travel-toc-item-index" aria-hidden="true">' + tocIndex + "</span>" +
-          '<span class="travel-toc-item-title">' + title + "</span>" +
+          '<span class="travel-toc-item-title">' + escapeHtml(title) + "</span>" +
         "</a></li>";
     }
 
@@ -1006,7 +1044,7 @@
     if (!contentUrl) return null;
 
     try {
-      var response = await fetch(contentUrl, { cache: "no-store" });
+      var response = await fetch(contentUrl);
       if (!response.ok) {
         throw new Error("Failed to load content data");
       }

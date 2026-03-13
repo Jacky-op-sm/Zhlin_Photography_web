@@ -1,21 +1,48 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="北京旅行记录：城墙与烟火。">
+  <meta name="description" content="北京行记：从北大、颐和园到长城与 798 的城市观察，节选自原 tex 记录。">
   <link rel="canonical" href="https://zhlin-photography.vercel.app/travel/beijing/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="北京行记 · Travel · Zhlin Photography">
-  <meta property="og:description" content="北京旅行记录：城墙与烟火。">
-  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/beijing-front.jpeg">
+  <meta property="og:description" content="从北大、颐和园到长城与 798 的北京行记，保留原 tex 中最有画面感的片段。">
+  <meta property="og:image" content="https://zhlin-photography.vercel.app/assets/travel/beijing/beijing-hero-kunming-lake.jpeg">
   <title>北京行记 · Travel · Zhlin Photography</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var key = "theme";
+      var dark = "dark";
+      var light = "light";
+      var theme = light;
+
+      try {
+        var stored = localStorage.getItem(key);
+        if (stored === dark || stored === light) {
+          theme = stored;
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      } catch (error) {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          theme = dark;
+        }
+      }
+
+      if (theme === dark) {
+        document.documentElement.setAttribute("data-theme", dark);
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
+    })();
+  </script>
 </head>
-<body data-page="travel-detail" data-city="beijing" data-base-path="../.." data-content-url="../../data/site-content.json">
+<body data-page="travel-beijing">
   <header class="site-header">
     <div class="logo">
       <a href="../../index.html" class="logo-link">
@@ -32,42 +59,201 @@
     </nav>
   </header>
 
-  <main class="content">
-    <section class="section">
-      <p class="travel-detail-meta" id="travel-detail-period"></p>
-      <h1 class="travel-detail-title" id="travel-detail-title"></h1>
-      <p class="section-desc" id="travel-detail-location"></p>
-      <p class="travel-detail-summary" id="travel-detail-summary"></p>
+  <aside class="travel-toc-shell" id="travel-toc-shell" aria-label="目录">
+    <button type="button" class="travel-toc-toggle" id="travel-toc-toggle" aria-controls="travel-toc-panel" aria-expanded="true">
+      <span class="travel-toc-toggle-icon" aria-hidden="true">+</span>
+      <span class="travel-toc-toggle-label">隐藏目录</span>
+    </button>
+    <nav class="travel-toc" id="travel-toc-panel" aria-label="目录">
+      <p class="travel-toc-title">目录</p>
+      <div class="travel-toc-content">
+        <div class="travel-toc-progress" aria-hidden="true">
+          <span class="travel-toc-progress-bar" id="travel-toc-progress-bar"></span>
+        </div>
+        <ol class="travel-toc-list" id="travel-toc-list"></ol>
+      </div>
+    </nav>
+  </aside>
 
-      <div class="travel-detail-image-wrap">
-        <img id="travel-detail-cover" src="" alt="" style="width:100%;height:auto;display:block;vertical-align:middle;">
+  <main class="japan-story japan-story--roadbook">
+    <article class="japan-rb-article">
+      <figure class="japan-rb-hero">
+        <img src="../../assets/travel/beijing/beijing-hero-kunming-lake.jpeg" alt="昆明湖与远处塔楼" loading="eager" decoding="async">
+      </figure>
+
+      <header class="japan-rb-header">
+        <p class="japan-rb-channel">旅行</p>
+        <h1>北京行记</h1>
+      </header>
+
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">前言</p>
+        <h2>旅行是给人一个打开心境的过程</h2>
+        <p>旅游是给人一个打开心境的过程，即使是一个人旅游，你也能够在沿途上遇到有趣的陌生人，从而分享你在旅途中所有的感悟。</p>
+        <p>当我走到一个新的地方，不同的景色固然有着很强的吸引力，可长久居住在那个地方的人们，似乎对我构成了更强的兴趣。</p>
+        <p>我希望能够了解到他们的想法，了解一方水土养一方人家后，他们对周遭的不同看法是如何能够影响到自己的。</p>
+      </section>
+
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">July 1</p>
+        <h2>北京大学</h2>
+        <p>上午前去北京大学报道，当人脸能够直接刷进闸机，让自己产生了片刻的错觉，我能够成为一个北大学生，只不过为期 2 个星期。</p>
+        <p>报道的老师们一个个相当和善，即使面对不知道是哪里来的我们，她们也根本没有拿出瞧不起人的态度。</p>
+        <p>报道完，还剩了一个小时多，于是我们便在有限的时间里逛起了校园。感觉北大不愧是政治相关的顶级学校了，校园里哪里都是红色。</p>
+        <p>当红色为主基调，那些偶尔才能看到的蓝色建筑，比如图书馆就变得更加气派和高雅了。</p>
+      </section>
+
+      <div class="japan-rb-media-grid">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/pku-red-architecture.jpeg" alt="北大建筑风格" loading="lazy" decoding="async">
+          <figcaption>北大建筑风格，超红的。</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/pku-campus-card.jpeg" alt="浙大研究生证与北大" loading="lazy" decoding="async">
+          <figcaption>把自己浙大的校园卡也拿了出来。</figcaption>
+        </figure>
       </div>
 
-      <div class="travel-detail-grid">
-        <article class="travel-detail-block">
-          <h2>行程概览</h2>
-          <ul id="travel-itinerary"></ul>
-        </article>
+      <section class="japan-rb-section">
+        <h2>南锣鼓巷和天安门</h2>
+        <p>吃完晚饭后，我们便前往了附近的商业街：南锣鼓巷。提前看了大众点评上的评论，有一句总结得很好，“不来要后悔，来了也要后悔的地方”。</p>
+        <p>果然商业街都是大差不差的样子，里面人山人海，游玩的兴致也因此不是很高。</p>
+        <p>我们走马观花般结束了这个商业街。离开之前，在路旁的自行车看到了一只猫，全身洁白的毛发配上黄色的墨镜，好帅，有点要变成猫先生的样子了。</p>
+        <p>到了天安门前外面的路口，突然出现了好多辆，是多到简直无法通行的程度。保安重复的都是一个命令，“不要停车，边走边拍。”</p>
+      </section>
 
-        <article class="travel-detail-block">
-          <h2>地点清单</h2>
-          <ul id="travel-spots"></ul>
-        </article>
+      <div class="japan-rb-media-grid japan-rb-media-grid--three">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/beijing-roast-duck-dinner.jpeg" alt="北京烤鸭" loading="lazy" decoding="async">
+          <figcaption>第一次吃北京正宗的烤鸭，留下了不错的印象。</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/nanluo-sunglasses-cat.jpeg" alt="墨镜白猫" loading="lazy" decoding="async">
+          <figcaption>好帅的猫咪，墨镜真是一绝。</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/national-library-reading-hall.jpeg" alt="国家图书馆阅览室" loading="lazy" decoding="async">
+          <figcaption>国家图书馆。</figcaption>
+        </figure>
       </div>
 
-      <article class="travel-detail-block">
-        <h2>照片故事</h2>
-        <p id="travel-photo-story"></p>
-      </article>
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">July 2-3</p>
+        <h2>书店专辑</h2>
+        <p>书店1：page one。咖啡店+书店的经营模式，位置只有买了饮品才可以坐下，逛了一圈，感觉是现代书店的样子。</p>
+        <p>书店2：万圣书园。位置居然在商场里面，仿佛外面是喧闹的世界，里面却是一个安静的角落。</p>
+        <h2>尝试进北大图书馆</h2>
+        <p>看来图书馆真的是一个学校的门面担当和身份认同的地方。暑期学校的学生，是没有资格进入这里的。可是，作为图书馆常客的自己，还是非常想观摩一下北大的图书馆内部，到底会是怎样的“富丽堂皇”。</p>
+        <p>我想，只剩最后一次机会了。我前去图书馆，再次面对那位小哥。我把一路上的来龙去脉一一说给了他听，希望他能够对我如此的辛苦和坚定感到一丝同情。可是，最后他还是说了不行，露出了一丝苦笑。</p>
+        <p>最终回合，以失败结束。</p>
+      </section>
 
-      <article class="travel-detail-block">
-        <h2>个人感受</h2>
-        <p id="travel-reflection"></p>
-      </article>
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">July 6</p>
+        <h2>怒走颐和园</h2>
+        <p>有了上次和同伴们一起逛圆明园、自己却根本没有体会到一点漫步的快乐的经历后，我这次就选择独自前往颐和园。</p>
+        <p>正如前文所说，颐和园就是一个大园子，中心是一片湖，四周依湖而建。</p>
+        <p>行走时，我改变了往常一贯的作风，我不再带着耳机，开着降噪，而是尽量感受着身旁吹来的热风，观察着路上行走的人们。</p>
+        <p>总结来看，颐和园并没有带给自己什么特别新奇的游玩体验。它就是一个大公园，适合黄昏的散步。</p>
+      </section>
 
-      <p style="margin-top: 2rem;">
-        <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
-      </p>
+      <div class="japan-rb-media-grid japan-rb-media-grid--three">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/summer-palace-arch-bridge.jpeg" alt="颐和园拱桥" loading="lazy" decoding="async">
+          <figcaption>南门进口的桥。</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/summer-palace-kunming-lake-overlook.jpeg" alt="昆明湖俯瞰" loading="lazy" decoding="async">
+          <figcaption>爬到高楼上的鸟瞰图。</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/summer-palace-tower-and-boat.jpeg" alt="昆明湖与远塔" loading="lazy" decoding="async">
+          <figcaption>远望塔楼。</figcaption>
+        </figure>
+      </div>
+
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">July 7</p>
+        <h2>和呆傻一起怒爬长城</h2>
+        <p>我们退了缆车的票，因为我看了看导航，发现爬上和爬下其实花不了多少时间，何况缆车还根本坐不上，还要额外多花100块大洋，长城票才40呢。</p>
+        <p>“不到长城非好汉” 我想，有多少人是因为这句话，才来到此地。</p>
+        <p>途中最困难的不在于路，而是在于周围的人。到了北五，缆车上的人们突然都加入了队伍，速度也不再可控，我们只能顺着人群，慢慢地往前挪动。</p>
+        <p>一路上，我们还是看风景为主，城墙外是漫山遍野的绿。</p>
+      </section>
+
+      <div class="japan-rb-media-grid">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/great-wall-crowded-ridge.jpeg" alt="长城游人" loading="lazy" decoding="async">
+          <figcaption>上坡有挺多游客。</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/great-wall-mountain-panorama.jpeg" alt="长城远眺" loading="lazy" decoding="async">
+          <figcaption>再次远眺。</figcaption>
+        </figure>
+      </div>
+
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">July 9</p>
+        <h2>王府井商业街</h2>
+        <p>傍晚到的商业街，此时街上的人并没有很多。</p>
+        <p>比较有趣的是站在街角，拿着画板和彩色颜料的画笔的一位人民画家，她对着钟楼的方向，在夜晚完全降临之前，捕捉黄昏的光芒洒在建筑上的瞬间。</p>
+        <p>她附近围了不少观看的群众，当然我也是其中之一，我对着她的画和实景照了张像，并没有打扰她，就转身离去了。</p>
+      </section>
+
+      <figure class="japan-rb-media japan-rb-media--single">
+        <img src="../../assets/travel/beijing/wangfujing-street-artist.jpeg" alt="王府井画家" loading="lazy" decoding="async">
+        <figcaption>人民画家，在画钟楼。</figcaption>
+      </figure>
+
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">July 10</p>
+        <h2>教堂</h2>
+        <p>今天第一次去了教堂，是北京最大的天主教的教堂。</p>
+        <p>内部由许多柱子支撑着，上方天花板红白交错，前方有个讲坛，底下是座位。两侧的墙壁上有着壁画的窗户，光从外面打进来，透进来的光也就变成了彩虹的颜色。</p>
+        <h2>天坛</h2>
+        <p>逛完教堂，出来已经接近下午三点了。坐地铁到天坛，抵达时已将近四点。</p>
+        <p>虽然又是北京一个 5A 级的景区，但和北京其他园林文化丝毫没有区别：又是一个绿树成荫的大公园。</p>
+        <p>走在这样的道路上，看着两边来来往往的游客，全权当作下午、接近傍晚的散步了。</p>
+      </section>
+
+      <div class="japan-rb-media-grid japan-rb-media-grid--three">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/church-interior-vaulted-ceiling.jpeg" alt="教堂拱顶" loading="lazy" decoding="async">
+          <figcaption>教堂室内的装潢。</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/temple-of-heaven-qiniandian.jpeg" alt="祈年殿" loading="lazy" decoding="async">
+          <figcaption>天坛的祈门殿。</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/shichahai-livehouse-night.jpeg" alt="清吧驻唱" loading="lazy" decoding="async">
+          <figcaption>驻唱姐姐和三杯鸡尾酒。</figcaption>
+        </figure>
+      </div>
+
+      <section class="japan-rb-section">
+        <p class="japan-rb-section-index">July 11</p>
+        <h2>798艺术区</h2>
+        <p>北京之旅只有最后两天了，我该去何地，才能获得最新奇的体验呢。最后我去了 798 艺术区。</p>
+        <p>问了问门票的价格，需要55块钱。正当我想要离去时，我转念一想，不能对不起这55的门票，我最后再多看几分钟吧。</p>
+        <p>通过他们的对话，我才得知，眼前的中年男子，是附近教电影史的老师。</p>
+        <p>我觉得我刹时发现了旅行的意义，见到了陌生的人们，并和他们产生关联，从而产生意想不到的火花。</p>
+      </section>
+
+      <div class="japan-rb-media-grid">
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/798-anime-exhibit-photo.jpeg" alt="动漫原稿展" loading="lazy" decoding="async">
+          <figcaption>动漫原稿展。</figcaption>
+        </figure>
+        <figure class="japan-rb-media">
+          <img src="../../assets/travel/beijing/798-art-district-poster.jpeg" alt="798 海报" loading="lazy" decoding="async">
+          <figcaption>我最后再多看几分钟吧。</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <section class="japan-section japan-section--backlink">
+      <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
     </section>
   </main>
 
@@ -81,6 +267,6 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
-  <script src="../../script.js"></script>
+  <script defer src="../../script.js"></script>
 </body>
 </html>
