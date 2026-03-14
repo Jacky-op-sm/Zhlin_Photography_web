@@ -2174,6 +2174,79 @@ body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-deta
   margin-top: 3.5rem;
 }
 
+.travel-comments {
+  max-width: 1020px;
+  margin: 3.2rem auto 0;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--border);
+}
+
+.travel-comments-head {
+  margin-bottom: 0.9rem;
+}
+
+.travel-comments-tabs {
+  display: inline-flex;
+  gap: 0.42rem;
+  margin-top: 0.85rem;
+  border: 1px solid var(--border);
+  padding: 0.32rem;
+}
+
+.travel-comments-tab {
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  padding: 0.42rem 0.7rem;
+  cursor: pointer;
+}
+
+.travel-comments-tab.is-active {
+  background: color-mix(in srgb, var(--accent) 14%, transparent 86%);
+  color: var(--text);
+}
+
+.travel-comments-kicker {
+  margin: 0 0 0.45rem;
+  color: #8d5d36;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.travel-comments-head h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.65vw, 1.58rem);
+  line-height: 1.28;
+}
+
+.travel-comments-thread {
+  min-height: 6rem;
+}
+
+.travel-comments-thread:not(.is-active) {
+  display: none;
+}
+
+.travel-comments-message {
+  border: 1px dashed var(--border);
+  background: color-mix(in srgb, var(--bg-elev) 80%, var(--bg) 20%);
+  padding: 1rem 1.1rem;
+}
+
+.travel-comments-message p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+body[data-page="travel-detail"] .travel-comments {
+  margin-top: 2.2rem;
+}
+
 @media (min-width: 900px) {
   .japan-story {
     padding: 2.5rem 2rem 6rem;

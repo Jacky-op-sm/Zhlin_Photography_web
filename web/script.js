@@ -60,6 +60,29 @@
   var page = body.getAttribute("data-page") || "";
   var basePath = (body.getAttribute("data-base-path") || ".").replace(/\/+$/, "");
   var contentUrl = body.getAttribute("data-content-url");
+  var DEFAULT_TRAVEL_COMMENTS_CONFIG = {
+    enabled: true,
+    primaryProvider: "waline",
+    waline: {
+      serverURL: "https://web-comment-seven.vercel.app",
+      lang: "zh-CN",
+      requiredMeta: ["nick"],
+      login: "disable",
+      dark: '[data-theme="dark"]'
+    },
+    giscus: {
+      repo: "Jacky-op-sm/Zhlin_Photography_web",
+      repoId: "R_kgDORlYKzQ",
+      category: "Announcements",
+      categoryId: "DIC_kwDORlYKzc4C4WTD",
+      mapping: "pathname",
+      strict: "0",
+      reactionsEnabled: "1",
+      emitMetadata: "0",
+      inputPosition: "bottom",
+      lang: "zh-CN"
+    }
+  };
 
   function escapeHtml(value) {
     var text = value == null ? "" : String(value);
@@ -646,6 +669,15 @@
       setStatus("正在发送，请稍候...", "pending");
 
       try {
+        var fallbackEmail = "Jackylin714@gmail.com";
+        var fallbackSubject = encodeURIComponent("[Website Contact] " + payload.type);
+        var fallbackBody = encodeURIComponent(
+          "Name: " + payload.firstName + " " + payload.lastName + "\n" +
+          "Email: " + payload.email + "\n" +
+          "Type: " + payload.type + "\n\n" +
+          payload.message
+        );
+
         var response = await fetch("/api/contact", {
           method: "POST",
           headers: {
@@ -675,7 +707,15 @@
         form.reset();
         setStatus("提交成功。我们已收到你的消息，将尽快回复。", "success");
       } catch (error) {
-        setStatus(error.message || "提交失败，请稍后重试。", "error");
+        var message = error && error.message ? error.message : "提交失败，请稍后重试。";
+        setStatus(message + " 若问题持续，请使用邮箱直接联系。", "error");
+
+        // Graceful fallback: open prefilled email draft so user content is not lost.
+        try {
+          window.location.href = "mailto:" + fallbackEmail + "?subject=" + fallbackSubject + "&body=" + fallbackBody;
+        } catch (fallbackError) {
+          // Ignore mailto errors in restricted environments.
+        }
       } finally {
         if (submitButton) {
           submitButton.disabled = false;
@@ -1040,6 +1080,282 @@
     });
   }
 
+  function isTravelArticlePage() {
+    return /^travel-/.test(page) && page !== "travel";
+  }
+
+  function mergeConfig(base, override) {
+    var output = {};
+    var key;
+    override = override && typeof override === "object" ? override : {};
+
+    for (key in base) {
+      if (!Object.prototype.hasOwnProperty.call(base, key)) continue;
+      if (
+        base[key] &&
+        typeof base[key] === "object" &&
+        !Array.isArray(base[key]) &&
+        override[key] &&
+        typeof override[key] === "object" &&
+        !Array.isArray(override[key])
+      ) {
+        output[key] = mergeConfig(base[key], override[key]);
+      } else {
+        output[key] = override[key] != null ? override[key] : base[key];
+      }
+    }
+
+    for (key in override) {
+      if (!Object.prototype.hasOwnProperty.call(override, key)) continue;
+      if (!Object.prototype.hasOwnProperty.call(output, key)) {
+        output[key] = override[key];
+      }
+    }
+
+    return output;
+  }
+
+  function getTravelCommentsConfig() {
+    var external = window.TRAVEL_COMMENTS_CONFIG;
+    var userConfig = external && typeof external === "object" ? external : {};
+    return mergeConfig(DEFAULT_TRAVEL_COMMENTS_CONFIG, userConfig);
+  }
+
+  function getTravelCommentsTheme() {
+    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark_dimmed" : "light";
+  }
+
+  function setTravelCommentsMessage(container, message) {
+    if (!container) return;
+    container.innerHTML =
+      '<div class="travel-comments-message">' +
+        "<p>" + escapeHtml(message) + "</p>" +
+      "</div>";
+  }
+
+  function ensureTravelCommentsMount() {
+    var existingWaline = document.getElementById("travel-comments-waline");
+    var existingGiscus = document.getElementById("travel-comments-giscus");
+    if (existingWaline && existingGiscus) {
+      return {
+        waline: existingWaline,
+        giscus: existingGiscus
+      };
+    }
+
+    var section = document.createElement("section");
+    section.className = "travel-comments";
+    section.setAttribute("aria-label", "评论区");
+    section.innerHTML =
+      '<div class="travel-comments-head">' +
+        '<p class="travel-comments-kicker">Comments</p>' +
+        "<h2>欢迎留言交流</h2>" +
+        '<div class="travel-comments-tabs" role="tablist" aria-label="评论方式">' +
+          '<button type="button" class="travel-comments-tab is-active" data-comments-tab="waline" role="tab" aria-selected="true">快捷评论</button>' +
+          '<button type="button" class="travel-comments-tab" data-comments-tab="giscus" role="tab" aria-selected="false">GitHub 评论</button>' +
+        "</div>" +
+      "</div>" +
+      '<div class="travel-comments-panels">' +
+        '<div class="travel-comments-thread is-active" id="travel-comments-waline" role="tabpanel"></div>' +
+        '<div class="travel-comments-thread" id="travel-comments-giscus" role="tabpanel" hidden></div>' +
+      "</div>";
+
+    var anchor = document.querySelector(".japan-section--backlink, .nanjing-section--backlink, .travel-detail-backlink");
+    if (anchor && anchor.parentNode) {
+      anchor.parentNode.insertBefore(section, anchor);
+      return {
+        waline: document.getElementById("travel-comments-waline"),
+        giscus: document.getElementById("travel-comments-giscus")
+      };
+    }
+
+    var host = document.querySelector(".japan-rb-article, .nanjing-rb-article, main .section, main");
+    if (!host) return null;
+    host.appendChild(section);
+    return {
+      waline: document.getElementById("travel-comments-waline"),
+      giscus: document.getElementById("travel-comments-giscus")
+    };
+  }
+
+  function isConfiguredCommentsValue(value) {
+    if (typeof value !== "string") return false;
+    var trimmed = value.trim();
+    if (!trimmed) return false;
+    return trimmed.indexOf("YOUR_") !== 0;
+  }
+
+  function updateGiscusTheme() {
+    var frame = document.querySelector("iframe.giscus-frame");
+    if (!frame || !frame.contentWindow) return;
+
+    frame.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: getTravelCommentsTheme() } } },
+      "https://giscus.app"
+    );
+  }
+
+  function initCommentTabs() {
+    var tabButtons = document.querySelectorAll(".travel-comments-tab");
+    if (!tabButtons.length) return;
+
+    function setActiveTab(tab) {
+      var walinePanel = document.getElementById("travel-comments-waline");
+      var giscusPanel = document.getElementById("travel-comments-giscus");
+      var isWaline = tab === "waline";
+
+      for (var i = 0; i < tabButtons.length; i++) {
+        var button = tabButtons[i];
+        var active = button.getAttribute("data-comments-tab") === tab;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-selected", active ? "true" : "false");
+      }
+
+      if (walinePanel) {
+        walinePanel.classList.toggle("is-active", isWaline);
+        walinePanel.hidden = !isWaline;
+      }
+
+      if (giscusPanel) {
+        giscusPanel.classList.toggle("is-active", !isWaline);
+        giscusPanel.hidden = isWaline;
+      }
+    }
+
+    for (var i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].addEventListener("click", function () {
+        var tab = this.getAttribute("data-comments-tab");
+        if (!tab) return;
+        setActiveTab(tab);
+      });
+    }
+  }
+
+  function initWaline(walineMount, walineConfig) {
+    if (!walineMount) return;
+    if (!isConfiguredCommentsValue(walineConfig.serverURL) || walineConfig.serverURL.indexOf("YOUR-WALINE-SERVER") !== -1) {
+      setTravelCommentsMessage(
+        walineMount,
+        "快捷评论尚未配置。请先部署 Waline 服务，并在 web/script.js 中填写 waline.serverURL。"
+      );
+      return;
+    }
+
+    var cssId = "waline-css";
+    if (!document.getElementById(cssId)) {
+      var css = document.createElement("link");
+      css.id = cssId;
+      css.rel = "stylesheet";
+      css.href = "https://unpkg.com/@waline/client@v3/dist/waline.css";
+      document.head.appendChild(css);
+    }
+
+    var scriptId = "waline-js";
+    var onReady = function () {
+      if (!window.Waline || typeof window.Waline.init !== "function") {
+        setTravelCommentsMessage(walineMount, "Waline 加载失败，请稍后刷新重试。");
+        return;
+      }
+
+      walineMount.innerHTML = "";
+      window.Waline.init({
+        el: "#travel-comments-waline",
+        serverURL: walineConfig.serverURL,
+        lang: walineConfig.lang,
+        requiredMeta: walineConfig.requiredMeta,
+        login: walineConfig.login,
+        dark: walineConfig.dark
+      });
+    };
+
+    if (window.Waline && typeof window.Waline.init === "function") {
+      onReady();
+      return;
+    }
+
+    var existingScript = document.getElementById(scriptId);
+    if (existingScript) {
+      existingScript.addEventListener("load", onReady, { once: true });
+      return;
+    }
+
+    var script = document.createElement("script");
+    script.id = scriptId;
+    script.src = "https://unpkg.com/@waline/client@v3/dist/waline.js";
+    script.async = true;
+    script.onload = onReady;
+    script.onerror = function () {
+      setTravelCommentsMessage(walineMount, "Waline 脚本加载失败，请检查网络或稍后重试。");
+    };
+    document.body.appendChild(script);
+  }
+
+  function initGiscus(giscusMount, giscusConfig) {
+    if (!giscusMount) return;
+
+    if (
+      !isConfiguredCommentsValue(giscusConfig.repo) ||
+      !isConfiguredCommentsValue(giscusConfig.repoId) ||
+      !isConfiguredCommentsValue(giscusConfig.category) ||
+      !isConfiguredCommentsValue(giscusConfig.categoryId)
+    ) {
+      setTravelCommentsMessage(giscusMount, "GitHub 评论配置缺失。");
+      return;
+    }
+
+    giscusMount.innerHTML = "";
+    var script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.setAttribute("crossorigin", "anonymous");
+    script.setAttribute("data-repo", giscusConfig.repo);
+    script.setAttribute("data-repo-id", giscusConfig.repoId);
+    script.setAttribute("data-category", giscusConfig.category);
+    script.setAttribute("data-category-id", giscusConfig.categoryId);
+    script.setAttribute("data-mapping", giscusConfig.mapping);
+    script.setAttribute("data-strict", giscusConfig.strict);
+    script.setAttribute("data-reactions-enabled", giscusConfig.reactionsEnabled);
+    script.setAttribute("data-emit-metadata", giscusConfig.emitMetadata);
+    script.setAttribute("data-input-position", giscusConfig.inputPosition);
+    script.setAttribute("data-theme", getTravelCommentsTheme());
+    script.setAttribute("data-lang", giscusConfig.lang);
+    script.setAttribute("data-loading", "lazy");
+    script.setAttribute("data-travel-comments", "giscus");
+    giscusMount.appendChild(script);
+  }
+
+  function initTravelComments() {
+    if (!isTravelArticlePage()) return;
+
+    var mounts = ensureTravelCommentsMount();
+    if (!mounts) return;
+
+    var commentsConfig = getTravelCommentsConfig();
+    if (!commentsConfig.enabled) {
+      setTravelCommentsMessage(mounts.waline, "评论区已关闭。");
+      setTravelCommentsMessage(mounts.giscus, "评论区已关闭。");
+      return;
+    }
+
+    initWaline(mounts.waline, commentsConfig.waline || {});
+    initGiscus(mounts.giscus, commentsConfig.giscus || {});
+    initCommentTabs();
+
+    var observer = new MutationObserver(function () {
+      updateGiscusTheme();
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"]
+    });
+
+    if ((commentsConfig.primaryProvider || "").toLowerCase() === "giscus") {
+      var giscusTab = document.querySelector('.travel-comments-tab[data-comments-tab="giscus"]');
+      if (giscusTab) giscusTab.click();
+    }
+  }
+
   async function loadContentData() {
     if (!contentUrl) return null;
 
@@ -1070,6 +1386,7 @@
     initPhotoLightbox();
     initContactForm();
     initTravelStoryToc();
+    initTravelComments();
   }
 
   bootstrap();
