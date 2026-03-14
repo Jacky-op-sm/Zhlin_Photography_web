@@ -1686,11 +1686,13 @@ body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-deta
   bottom: 1.5rem;
   left: auto;
   top: auto;
-  z-index: 100;
+  z-index: 103;
   width: auto;
 }
 
 body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-toggle {
+  position: relative;
+  z-index: 104;
   width: auto;
   display: inline-flex;
   align-items: center;
@@ -2149,7 +2151,7 @@ body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-deta
   }
 
   body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]).travel-toc-collapsed .travel-toc-toggle .travel-toc-toggle-label {
-    display: none;
+    display: inline;
   }
 
   body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]):not(.travel-toc-collapsed) .travel-toc {

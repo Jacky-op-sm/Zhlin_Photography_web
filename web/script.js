@@ -893,7 +893,7 @@
       shell.innerHTML =
         '<button type="button" class="travel-toc-toggle" id="travel-toc-toggle" aria-controls="travel-toc-panel" aria-expanded="true">' +
           '<span class="travel-toc-toggle-icon" aria-hidden="true">+</span>' +
-          '<span class="travel-toc-toggle-label">隐藏目录</span>' +
+          '<span class="travel-toc-toggle-label">关闭目录</span>' +
         "</button>" +
         '<nav class="travel-toc" id="travel-toc-panel" aria-label="目录">' +
           '<p class="travel-toc-title">目录</p>' +
@@ -999,6 +999,9 @@
         var id = href.slice(1);
         scrollToSectionById(id);
         setActive(id);
+        if (window.matchMedia && window.matchMedia("(max-width: 899px)").matches) {
+          setTocOpen(false);
+        }
         if (history && typeof history.replaceState === "function") {
           history.replaceState(null, "", "#" + id);
         }
@@ -1062,7 +1065,7 @@
 
       var labelNode = toggleBtn.querySelector(".travel-toc-toggle-label");
       if (labelNode) {
-        labelNode.textContent = isOpen ? "隐藏目录" : "显示目录";
+        labelNode.textContent = isOpen ? "关闭目录" : "打开目录";
       }
 
       writeStoredTocState(isOpen ? "true" : "false");
