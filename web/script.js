@@ -83,6 +83,8 @@
       lang: "zh-CN"
     }
   };
+  var walineModulePromise = null;
+  var walineInstance = null;
 
   function escapeHtml(value) {
     var text = value == null ? "" : String(value);
@@ -1250,15 +1252,22 @@
       document.head.appendChild(css);
     }
 
-    var scriptId = "waline-js";
-    var onReady = function () {
-      if (!window.Waline || typeof window.Waline.init !== "function") {
+    if (!walineModulePromise) {
+      walineModulePromise = import("https://unpkg.com/@waline/client@v3/dist/waline.js");
+    }
+
+    walineModulePromise.then(function (walineModule) {
+      if (!walineModule || typeof walineModule.init !== "function") {
         setTravelCommentsMessage(walineMount, "Waline 加载失败，请稍后刷新重试。");
         return;
       }
 
       walineMount.innerHTML = "";
-      window.Waline.init({
+      if (walineInstance && typeof walineInstance.destroy === "function") {
+        walineInstance.destroy();
+      }
+
+      walineInstance = walineModule.init({
         el: "#travel-comments-waline",
         serverURL: walineConfig.serverURL,
         lang: walineConfig.lang,
@@ -1266,28 +1275,9 @@
         login: walineConfig.login,
         dark: walineConfig.dark
       });
-    };
-
-    if (window.Waline && typeof window.Waline.init === "function") {
-      onReady();
-      return;
-    }
-
-    var existingScript = document.getElementById(scriptId);
-    if (existingScript) {
-      existingScript.addEventListener("load", onReady, { once: true });
-      return;
-    }
-
-    var script = document.createElement("script");
-    script.id = scriptId;
-    script.src = "https://unpkg.com/@waline/client@v3/dist/waline.js";
-    script.async = true;
-    script.onload = onReady;
-    script.onerror = function () {
+    }).catch(function () {
       setTravelCommentsMessage(walineMount, "Waline 脚本加载失败，请检查网络或稍后重试。");
-    };
-    document.body.appendChild(script);
+    });
   }
 
   function initGiscus(giscusMount, giscusConfig) {
