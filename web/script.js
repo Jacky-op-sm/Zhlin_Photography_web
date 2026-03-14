@@ -648,7 +648,6 @@
       var emailField = document.getElementById("email");
       var typeField = document.getElementById("contact-type");
       var messageField = document.getElementById("message");
-      var websiteField = document.getElementById("website");
 
       var payload = {
         firstName: (firstNameField && firstNameField.value || "").trim(),
@@ -656,7 +655,8 @@
         email: (emailField && emailField.value || "").trim(),
         type: (typeField && typeField.value || "").trim(),
         message: (messageField && messageField.value || "").trim(),
-        website: (websiteField && websiteField.value || "").trim()
+        // Keep honeypot empty in JS flow to avoid accidental autofill false positives.
+        website: ""
       };
 
       if (!payload.firstName || !payload.lastName || !payload.email || !payload.message || !payload.type) {
