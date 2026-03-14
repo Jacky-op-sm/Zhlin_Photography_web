@@ -1072,7 +1072,8 @@
     if (stored === "true" || stored === "false") {
       setTocOpen(stored === "true");
     } else {
-      setTocOpen(window.innerWidth >= 900);
+      // Default to open on mobile (< 900px), closed on desktop
+      setTocOpen(window.innerWidth < 900);
     }
 
     toggleBtn.addEventListener("click", function () {
@@ -1158,6 +1159,9 @@
         "</div>" +
       "</div>" +
       '<div class="travel-comments-panels">' +
+        '<div class="waline-proxy-tip" id="waline-proxy-tip">' +
+          '<span class="waline-proxy-tip-icon">ℹ️</span> 由于服务器部署在海外，中国大陆用户需开启代理才能正常使用评论功能。' +
+        '</div>' +
         '<div class="travel-comments-thread is-active" id="travel-comments-waline" role="tabpanel"></div>' +
         '<div class="travel-comments-thread" id="travel-comments-giscus" role="tabpanel" hidden></div>' +
       "</div>";
@@ -1204,6 +1208,7 @@
     function setActiveTab(tab) {
       var walinePanel = document.getElementById("travel-comments-waline");
       var giscusPanel = document.getElementById("travel-comments-giscus");
+      var proxyTip = document.getElementById("waline-proxy-tip");
       var isWaline = tab === "waline";
 
       for (var i = 0; i < tabButtons.length; i++) {
@@ -1221,6 +1226,10 @@
       if (giscusPanel) {
         giscusPanel.classList.toggle("is-active", !isWaline);
         giscusPanel.hidden = isWaline;
+      }
+
+      if (proxyTip) {
+        proxyTip.hidden = !isWaline;
       }
     }
 
