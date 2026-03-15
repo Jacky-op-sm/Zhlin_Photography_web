@@ -25,36 +25,68 @@
     "intro": "Selected photography with notes on place, light, and time.",
     "items": [
       {
+        "id": "street-scene-1",
+        "src": "assets/photos/street-scene-1.jpg",
+        "title": "Sunlit Cafe Table",
+        "subtitle": "Sunlight and window text spill across a quiet café table",
+        "location": "Hangzhou, China",
+        "date": "March 2026"
+      },
+      {
+        "id": "street-scene-2",
+        "src": "assets/photos/street-scene-2.jpg",
+        "title": "Stair Geometry",
+        "subtitle": "Layered staircases cut into sharp geometry and late-day shadow",
+        "location": "Hangzhou, China",
+        "date": "March 2026"
+      },
+      {
+        "id": "street-scene-3",
+        "src": "assets/photos/street-scene-3.jpg",
+        "title": "Crossing Together",
+        "subtitle": "A family crossing together in silhouette under hard afternoon light",
+        "location": "Hangzhou, China",
+        "date": "March 2026"
+      },
+      {
+        "id": "street-scene-4",
+        "src": "assets/photos/street-scene-4.jpg",
+        "title": "Lakeside Rider",
+        "subtitle": "A cyclist glides along the lakeside at dusk beneath a dark canopy",
+        "location": "Hangzhou, China",
+        "date": "March 2026"
+      },
+      {
+        "id": "refrigerator",
+        "src": "assets/photos/refrigerator.jpg",
+        "title": "Refrigerator Study",
+        "subtitle": "An everyday object turned into graphic composition",
+        "location": "China",
+        "date": "2026"
+      },
+      {
         "id": "school-light",
-        "src": "assets/photos/学校的光影.jpeg",
+        "src": "assets/photos/school-light.jpg",
         "title": "School Light and Shadows",
         "subtitle": "Warm afternoon light moving through classrooms",
         "location": "Hangzhou, China",
         "date": "March 2026"
       },
       {
-        "id": "west-lake-rain",
-        "src": "assets/photos/雨西湖.jpeg",
-        "title": "Rain Over West Lake",
-        "subtitle": "Rain and mist over water in early spring",
-        "location": "Hangzhou, China",
-        "date": "March 2026"
-      },
-      {
-        "id": "abstract-architecture",
-        "src": "assets/photos/抽象建筑.jpeg",
+        "id": "abstract-building",
+        "src": "assets/photos/abstract-building.jpg",
         "title": "Abstract Architecture",
         "subtitle": "Lines and shadows in a passing urban frame",
         "location": "China",
         "date": "2026"
       },
       {
-        "id": "fridge-study",
-        "src": "assets/photos/冰箱.jpeg",
-        "title": "Fridge Study",
-        "subtitle": "An everyday object turned into graphic composition",
-        "location": "China",
-        "date": "2026"
+        "id": "west-lake-rain",
+        "src": "assets/photos/west-lake-rain.jpg",
+        "title": "Rain Over West Lake",
+        "subtitle": "Rain and mist over water in early spring",
+        "location": "Hangzhou, China",
+        "date": "March 2026"
       }
     ]
   },
@@ -128,120 +160,170 @@
         "month": "2026-03",
         "reading": [
           {
-            "name": "《乞力马扎罗的雪（译文经典）》",
-            "why": "Goodreads：currently-reading（70%）。这月主要在盯海明威短篇里“极简叙述中的情绪转向”。"
+            "name": "《雨天炎天: 希臘、土耳其邊境紀行》",
+            "why": "在读（Goodreads）。"
           }
         ],
-        "films": []
+        "films": [
+          {
+            "name": "Cosmic Princess Kaguya!（辉夜大小姐想让我告白：初吻不会结束）",
+            "why": "2026-03-14 观看，★★★½。 类比摄影作品的话，这部电影本质是个糖水片：炫酷的特效、动感的音乐、经典的剧情。"
+          }
+        ]
       },
       {
         "month": "2026-02",
         "reading": [
           {
-            "name": "《流动的盛宴（译文经典）》",
-            "why": "Goodreads 记录：2026-02-05 读完，★★★★。笔记里我摘了这句：“Without that, you'd be bound to get utterly numbed.”"
+            "name": "《乞力马扎罗的雪 (译文经典) (Chinese Edition)》",
+            "why": "在读（Goodreads）。"
           },
           {
-            "name": "《第六病室：契诃夫小说精选》",
-            "why": "Goodreads 记录：2026-02-20 读完，★★★★★。"
+            "name": "《第六病室：契诃夫小说精选【上海译文出品！每一次翻开契诃夫的书，就是在获取一种生活的力量！著名翻译家朱逸森教授翻译，内含多幅精美插图，收录包括《变色龙》《第六病室》《套中人》《醋栗》等代表作】 (译文经典) (Chinese Edition)》",
+            "why": "2026-02-20 读完，★★★★★。"
           }
         ],
         "films": [
           {
             "name": "An Autumn Afternoon（秋刀鱼之味）",
-            "why": "2026-02-27 观看，★★★★。我在 Letterboxd 写：这是一部“主体占比小、背景不断流动”的电影，感情外露得少，表达克制。"
+            "why": "2026-02-27 观看，★★★★。 拿一幅画来比喻，这是一部主体占比小，但背景不断流动的电影。"
           },
           {
             "name": "Miss Kobayashi's Dragon Maid: A lonely dragon wants to be loved（小林家的龙女仆：寂寞的龙想被爱）",
-            "why": "2026-02-19 观看，★★★½。我的短评是：TV 的日常疗愈感更强，剧场版打斗比重上来后“有些变味了”。"
+            "why": "2026-02-19 观看，★★★½。 看TV时，喜欢的是这部番日常的和谐，角色间的友爱疗愈内心。"
           },
           {
             "name": "Scare Out（惊蛰无声）",
-            "why": "2026-02-18 观看，★★½。我的原话：没反转，没博弈，“不算好的电影”。"
+            "why": "2026-02-18 观看，★★½。 朋友的评价： 音乐生硬，剧情通俗，对话满是正能量，演员表演紧绷，不尽人意。"
           },
           {
             "name": "Nobody Knows（无人知晓）",
-            "why": "2026-02-09 观看，★★★½。我的短评：是枝裕和依然在写边缘生活，但这部“像是没有结尾”。"
+            "why": "2026-02-09 观看，★★★½。 是枝裕和很喜欢去描写社会边缘人士的日常生活，这部也是。"
           }
-        ],
-        "lolNote": "13.5 版本里，我把“前两波兵线的站位细节”当成整局节奏开关：先稳线再争资源，团队失误率会明显下降。"
+        ]
       },
       {
         "month": "2026-01",
         "reading": [
           {
             "name": "《香水》",
-            "why": "Goodreads 记录：2026-01-12 读完，★★★。我在笔记里写：“嗅觉是五官中最难刻画的感觉”，这点最让我着迷。"
+            "why": "2026-01-12 读完，★★★。 书的优点在于其猎奇性，毕竟嗅觉是五官中最难刻画的感觉，即使是放到人工智能随处可见的现代，还是找不到一个能表征嗅觉的数据方式，它便是这样的无形，简直无法让两个…"
           }
         ],
         "films": [
           {
             "name": "A Silent Voice: The Movie（声之形）",
-            "why": "2026-01-31 观看，★★½。我的短评分成两段：前半段画面和音乐不错，后半段“剧情有硬伤”。"
+            "why": "2026-01-31 观看，★★½。 前半段 剧情不出彩，但爱情的甜蜜让我沉醉。"
           },
           {
             "name": "Million Dollar Baby（百万美元宝贝）",
-            "why": "2026-01-12 观看，★★★★½。我的原评强调“三段式剧情”，以及文戏与武戏同样重要。"
+            "why": "2026-01-12 观看，★★★★½。 三段式的剧情。"
           },
           {
             "name": "Shame（羞耻）",
-            "why": "2026-01-09 观看，★★★。我写到：“电影提出了问题，但没有给出答案。”"
+            "why": "2026-01-09 观看，★★★。 《羞耻》让人有电影感的画面，就只有开头而已。"
           },
           {
             "name": "Taxi Driver（出租车司机）",
-            "why": "2026-01-08 观看，★★★★。我的短评：孤独与隔阂让角色跌得更深，结尾的黑色幽默更出彩。"
+            "why": "2026-01-08 观看，★★★★。 男主既像个好人，有着单纯、直来直往的个性，没有一般男子劝妓从良的虚伪； 也像个坏人，缺乏教育，战争的伤痕让他夜不成寐。"
+          },
+          {
+            "name": "Happy Together（春光乍泄）",
+            "why": "2026-01-04 观看，★★★½。 拉近 | 拉远 第一次 作为设定，未介绍 | 阿根廷去瀑布时路上的矛盾 第二次 男2被打，男主照顾他，最快乐的时光 | 男2恢复，出门寻花问柳；男主攒够钱去…"
           }
-        ],
-        "lolNote": "我开始在复盘里单独记录“无效沟通”，比只看 KDA 更能改掉中后期决策犹豫。"
+        ]
       },
       {
         "month": "2025-12",
         "reading": [
           {
+            "name": "《九個故事》",
+            "why": "2025-12-22 读完，★★★。"
+          },
+          {
             "name": "《献给阿尔吉侬的花束》",
-            "why": "Goodreads 记录：2025-12-04 读完，★★★★。我的感受是：进步报告的文本设计像过山车，情感冲击很直接。"
+            "why": "2025-12-04 读完，★★★★。 若是只看标题《献给阿尔吉侬的花束》，我会猜想这是一本讲恋爱的小说。"
           }
         ],
         "films": [
           {
             "name": "The Terror Live（恐怖直播）",
-            "why": "2025-12-31 观看，★★★½。我的短评里写：制作虽廉价，但“闪光点在于想象力”。"
+            "why": "2025-12-31 观看，★★★½。 劣势：电影的制作挺廉价的，场景设置放在一个小的房间，镜头语言对着主角的脸。"
+          },
+          {
+            "name": "Bicycle Thieves（偷自行车的人）",
+            "why": "2025-12-29 观看，★★★★。"
+          },
+          {
+            "name": "Nostalgia",
+            "why": "2025-12-15 观看，★★★½。 游泳时，《乡愁》的镜头，从头到尾、一帧帧地在脑子里上演，为的是弄明白观 影时的疑惑。"
+          },
+          {
+            "name": "Millennium Actress",
+            "why": "2025-12-09 观看，★★★★。"
+          },
+          {
+            "name": "Ikiru（生之欲）",
+            "why": "2025-12-06 观看，★★★★。"
           },
           {
             "name": "Little Women（小妇人）",
-            "why": "2025-12-04 观看，★★★★。我在 Letterboxd 里写了观影时的生活细节，也写到它“还原了书中绝大多数温情”。"
-          },
-          {
-            "name": "Nostalgia（乡愁）",
-            "why": "2025-12-15 观看，★★★½。我的原评是边看边提问：疯子的经历是什么？“端烛入泉”又意味着什么。"
+            "why": "2025-12-04 观看，★★★★。 像松鼠一样小口小口嚼着薯片，薯片的香味从舌尖散开。"
           }
-        ],
-        "lolNote": "把“先活着再输出”作为默认原则后，后期团战的决策质量提升不少。"
+        ]
       },
       {
         "month": "2025-11",
         "reading": [
           {
-            "name": "《逃离》",
-            "why": "Goodreads 记录：2025-11-10 读完，★★★★★。我写过一句：读短篇小说本身就像逃离，暂时躲进另一个人物的心里。"
+            "name": "《罗杰疑案 (Hercule Poirot, #4)》",
+            "why": "2025-11-24 读完，★★★★。 晚上看完了《罗杰疑案》。"
           },
           {
-            "name": "《罗杰疑案》",
-            "why": "Goodreads 记录：2025-11-24 读完，★★★★。我的短评：再读一遍，结尾的震撼“丝毫没有减弱”。"
+            "name": "《棋王樹王孩子王》",
+            "why": "2025-11-14 读完，★★★★。"
           }
         ],
         "films": [
           {
-            "name": "Three Colours: Red（红）",
-            "why": "2025-11-07 观看，★★★★。我在短评里写了雨天观影体验，也反复提到电影里“博爱”的主题。"
+            "name": "Nymphomaniac: Vol. II（女性瘾者：第二部）",
+            "why": "2025-11-24 观看，★★★★。 晚上看了《女性瘾者 2》一个半小时，不明白它在网上评分低的原因。"
           },
           {
             "name": "Nymphomaniac: Vol. I（女性瘾者：第一部）",
-            "why": "2025-11-23 观看，★★★★。我的短评里印象最深的是那句：“代表你灵魂的树。”"
+            "why": "2025-11-23 观看，★★★★。 “当你看到它时，就会知道它就是代表你灵魂的树。"
+          },
+          {
+            "name": "Kill Bill: Vol. 1（杀死比尔1）",
+            "why": "2025-11-16 观看，★★★½。"
+          },
+          {
+            "name": "Kill Bill: Vol. 2（杀死比尔2）",
+            "why": "2025-11-16 观看，★★★½。"
+          },
+          {
+            "name": "Demon Slayer: Kimetsu no Yaiba Infinity Castle（鬼灭之刃 无限城篇）",
+            "why": "2025-11-15 观看，★★★★½。"
           },
           {
             "name": "The Double Life of Véronique（维罗妮卡的双重生命）",
-            "why": "2025-11-12 观看，★★★½。我的一句话总结：它是“假如世界上有另一个我”的概念电影。"
+            "why": "2025-11-12 观看，★★★½。 这是一部概念电影，“假如世界上有另一个我，且她的死亡能带给我感受。"
+          },
+          {
+            "name": "Three Colours: White（白）",
+            "why": "2025-11-11 观看，★★★½。 今天看完了蓝白红三部曲，白色对应的是婚纱，还是死亡？"
+          },
+          {
+            "name": "Three Colours: Blue（蓝）",
+            "why": "2025-11-10 观看，★★★½。"
+          },
+          {
+            "name": "Three Colours: Red（红）",
+            "why": "2025-11-07 观看，★★★★。 最近一直在下雨，阴沉沉的天，在下午三四点拉上窗帘的话，室内就变得半明半 暗，像坐在电影院里，手里拿一杯热乎的饮品，下午点的是瑞幸的茉莉茶，明明 是咖啡店，却…"
+          },
+          {
+            "name": "Memories of Matsuko（被嫌弃的松子的一生）",
+            "why": "2025-11-06 观看，★★★★。 下午看了电影《被嫌弃的松子的一生》。"
           }
         ]
       },
@@ -249,18 +331,45 @@
         "month": "2025-10",
         "reading": [
           {
+            "name": "《Fathers and Children (父与子) (免费公版书)》",
+            "why": "2025-10-23 读完，★★★。 1. 总评 这是一本读了后感触不深切的书，是要怪译者翻译的晦涩呢，还是怪屠格涅夫本人写作的年代与现代距离的遥远？应该两者都有之吧。"
+          },
+          {
             "name": "《威尼斯日记》",
-            "why": "Goodreads 记录：2025-10-12 读完，★★★★。我写到它让我重新思考游记写作，不再只做“流水账”。"
+            "why": "2025-10-12 读完，★★★★。 经「不止读书」的播客推荐去读。"
           }
         ],
         "films": [
           {
             "name": "Tokyo Godfathers（东京教父）",
-            "why": "2025-10-07 观看，★★★★。Letterboxd 该条仅记录了观影日期与评分。"
+            "why": "2025-10-07 观看，★★★★。"
           },
           {
-            "name": "Crayon Shin-chan: My Moving Story! Cactus Large Attack!（蜡笔小新：仙人掌大袭击）",
-            "why": "2025-10-06 观看，★★½。Letterboxd 该条仅记录了观影日期与评分。"
+            "name": "Crayon Shin-chan: My Moving Story! Cactus Large Attack!（蜡笔小新：我的搬家物语 仙人掌大袭击）",
+            "why": "2025-10-06 观看，★★½。"
+          }
+        ]
+      },
+      {
+        "month": "2025-09",
+        "reading": [
+          {
+            "name": "《东京八平米》",
+            "why": "2025-09-10 读完，★★★★。 这本书是在去往日本的飞机上读完的。"
+          }
+        ],
+        "films": [
+          {
+            "name": "The Great Buddha+（大佛普拉斯）",
+            "why": "2025-09-23 观看，★★★½。"
+          },
+          {
+            "name": "A Sun（阳光普照）",
+            "why": "2025-09-22 观看，★★★★。"
+          },
+          {
+            "name": "The Wonderful Story of Henry Sugar（亨利·休格的神奇故事）",
+            "why": "2025-09-21 观看，★★★½。"
           }
         ]
       },
@@ -269,40 +378,13 @@
         "reading": [
           {
             "name": "《漫游在雨中池塘》",
-            "why": "Goodreads 记录：2025-08-30 读完，★★★★。我的笔记里写：先读原文再读分析，这种阅读方式很有收获。"
+            "why": "2025-08-30 读完，★★★★。 我本就是个爱读俄国文学的人：高中就看起了托尔斯泰，大学时读了陀思妥耶夫斯基，不久前接触了契诃夫的戏剧。"
           }
         ],
         "films": [
           {
             "name": "The Secret in Their Eyes（谜一样的双眼）",
-            "why": "2025-08-04 观看，★★★。Letterboxd 该条仅记录了观影日期与评分。"
-          }
-        ]
-      },
-      {
-        "month": "2025-06",
-        "reading": [
-          {
-            "name": "《失乐园-全译本》",
-            "why": "Goodreads 记录：2025-06-10 读完，★★★★。我的读后感开头写的是：一开始就是冲着它写实的情欲描写去的。"
-          },
-          {
-            "name": "《欲情十四课》",
-            "why": "Goodreads 记录：2025-06-19 读完，★★★★。我写过：这本看得很快，因为读得非常投入。"
-          }
-        ],
-        "films": [
-          {
-            "name": "Love Letter（情书）",
-            "why": "2025-06-16 观看，★★★½。我的短评是把这次观影和高中时期的观影经验做了并置对照。"
-          },
-          {
-            "name": "Detective Conan: One-Eyed Flashback（名侦探柯南：独眼的残像）",
-            "why": "2025-06-28 观看，★★★½。我按“夸奖 / 吐槽”写了长评，核心观点是人物高光足够，但剧情注水偏明显。"
-          },
-          {
-            "name": "In the Realm of the Senses（感官世界）",
-            "why": "2025-06-01 观看，★★★。我在短评里写：这是情欲极端、黑暗的一面，但仍值得被刻画。"
+            "why": "2025-08-04 观看，★★★。"
           }
         ]
       }
