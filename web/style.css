@@ -1453,6 +1453,15 @@ body.lightbox-open {
   object-fit: cover;
 }
 
+.nanjing-card--food {
+  cursor: pointer;
+}
+
+.nanjing-card--food:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .nanjing-card--text-only {
   display: flex;
   align-items: center;
@@ -1467,6 +1476,105 @@ body.lightbox-open {
 
 .nanjing-section--backlink {
   margin-top: 3.5rem;
+}
+
+.nanjing-food-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.nanjing-food-modal[hidden] {
+  display: none;
+}
+
+.nanjing-food-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.56);
+}
+
+.nanjing-food-modal__panel {
+  position: relative;
+  width: min(760px, calc(100vw - 2.5rem));
+  max-height: calc(100vh - 3rem);
+  overflow: auto;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+[data-theme="dark"] .nanjing-food-modal__panel {
+  background: #151515;
+}
+
+.nanjing-food-modal__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.nanjing-food-modal__score {
+  margin: 0 2.4rem 0.45rem 0;
+  color: var(--accent);
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+}
+
+.nanjing-food-modal h3 {
+  margin: 0 2.4rem 0.85rem 0;
+  font-size: 1.25rem;
+}
+
+.nanjing-food-modal__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  align-items: stretch;
+}
+
+.nanjing-food-modal__media {
+  margin: 0;
+}
+
+.nanjing-food-modal__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.nanjing-food-modal__text {
+  width: 100%;
+}
+
+.nanjing-food-modal__content p {
+  margin: 0 0 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+body.nanjing-food-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .nanjing-food-modal__media img {
+    width: 100%;
+    max-height: 260px;
+  }
 }
 
 @media (min-width: 900px) {
