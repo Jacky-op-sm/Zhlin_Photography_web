@@ -2742,6 +2742,14 @@ body[data-page="travel-detail"] .travel-comments {
   object-fit: cover;
 }
 
+@media (max-width: 639px) {
+  .nanjing-card-grid--food .nanjing-card img {
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+}
+
 /* Travel Rule: `PortraitList-4Col`
    Use on card grids that should match Nanjing portrait list:
    - desktop: 4 cards per row
