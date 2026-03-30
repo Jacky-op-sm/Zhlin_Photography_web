@@ -27,7 +27,7 @@ MAX_MONTHS = 8
 MAX_READING_PER_MONTH = 2
 
 FILM_TITLE_ZH = {
-    "Cosmic Princess Kaguya!": "辉夜大小姐想让我告白：初吻不会结束",
+    "Cosmic Princess Kaguya!": "超时空辉耀姬",
     "An Autumn Afternoon": "秋刀鱼之味",
     "Miss Kobayashi's Dragon Maid: A lonely dragon wants to be loved": "小林家的龙女仆：寂寞的龙想被爱",
     "Scare Out": "惊蛰无声",
@@ -57,6 +57,28 @@ FILM_TITLE_ZH = {
     "The Great Buddha+": "大佛普拉斯",
     "The Secret in Their Eyes": "谜一样的双眼",
     "The Wonderful Story of Henry Sugar": "亨利·休格的神奇故事",
+    "Late Spring": "晚春",
+    "Nostalgia": "乡愁",
+    "The Straight Story": "史崔特先生的故事",
+    "Manchester by the Sea": "海边的曼彻斯特",
+    "Gladiator": "角斗士",
+    "A Perfect World": "完美的世界",
+    "Like Father, Like Son": "如父如子",
+    "Creation of the Gods II: Demon Force": "封神第二部：战火西岐",
+    "Perfect Blue": "未麻的部屋",
+    "The Grand Budapest Hotel": "布达佩斯大饭店",
+    "Roma": "罗马",
+    "Our Little Sister": "海街日记",
+    "The Dreamers": "戏梦巴黎",
+    "9 Songs": "九首歌",
+    "In the Realm of the Senses": "感官世界",
+    "Love Letter": "情书",
+    "Detective Conan: One-Eyed Flashback": "名侦探柯南：独眼的残像",
+    "Millennium Actress": "千年女优",
+}
+
+FILM_WHY_OVERRIDE = {
+    "Late Spring": "在脑海里，它和前不久刚看的《秋刀鱼之味》分不清楚。拿摄影做比喻，它们像是出自同一位摄影师，关于同一题材的作品，稍有变化。",
 }
 
 
@@ -248,7 +270,10 @@ def parse_letterboxd_items(feed_xml: str) -> tuple[list[dict[str, Any]], list[st
         else:
             snippet = first_sentence(desc, max_len=78)
 
-        why = f"{prefix} {snippet}".strip() if snippet else prefix
+        if raw_film_title in FILM_WHY_OVERRIDE:
+            why = FILM_WHY_OVERRIDE[raw_film_title]
+        else:
+            why = f"{prefix} {snippet}".strip() if snippet else prefix
 
         items.append(
             {
