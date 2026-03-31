@@ -1443,6 +1443,13 @@ body.lightbox-open {
   line-height: 1.7;
 }
 
+.nanjing-card .nanjing-card-review {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .nanjing-card-grid--people .nanjing-card img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
@@ -1763,6 +1770,12 @@ body.nanjing-food-modal-open {
   display: block;
 }
 
+.nanjing-story--roadbook .nanjing-rb-media--single img {
+  max-height: min(72vh, 900px);
+  object-fit: contain;
+  background: #f3f1ed;
+}
+
 .nanjing-story--roadbook .nanjing-rb-media figcaption {
   margin-top: 0.72rem;
   font-size: 0.88rem;
@@ -1786,6 +1799,8 @@ body.nanjing-food-modal-open {
 .nanjing-story--roadbook .nanjing-rb-media-grid .nanjing-rb-media img {
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-detail"]) .travel-toc-shell {
@@ -1957,9 +1972,17 @@ body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-deta
     gap: 1.2rem;
   }
 
+  .nanjing-story--roadbook .nanjing-rb-media-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .nanjing-story--roadbook .nanjing-rb-media-grid .nanjing-rb-media img {
     height: clamp(300px, 31vw, 460px);
     object-fit: cover;
+  }
+
+  .nanjing-story--roadbook .nanjing-rb-media--single img {
+    max-height: min(70vh, 860px);
   }
 }
 
