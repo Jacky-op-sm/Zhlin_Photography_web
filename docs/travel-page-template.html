@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[城市]游记：一句摘要。">
+  <title>[城市]游记 · Travel · Zhlin Photography</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body data-page="travel-[slug]">
+  <header class="site-header">
+    <div class="logo">
+      <a href="../../index.html" class="logo-link">
+        <span class="logo-mark">ZL</span>
+        <span class="logo-text">ZHLIN PHOTOGRAPHY</span>
+      </a>
+    </div>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <a href="../../index.html">ABOUT ME</a>
+      <a href="../../photography/index.html">PHOTOGRAPHY</a>
+      <a href="../../hobby/index.html">HOBBY</a>
+      <a href="../index.html" class="nav-active">TRAVEL</a>
+      <a href="../../contact/index.html" class="nav-contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <aside class="travel-toc-shell" id="travel-toc-shell" aria-label="目录">
+    <button type="button" class="travel-toc-toggle" id="travel-toc-toggle" aria-controls="travel-toc-panel" aria-expanded="true">
+      <span class="travel-toc-toggle-icon" aria-hidden="true">+</span>
+      <span class="travel-toc-toggle-label">关闭目录</span>
+    </button>
+    <nav class="travel-toc" id="travel-toc-panel" aria-label="目录">
+      <p class="travel-toc-title">目录</p>
+      <div class="travel-toc-content">
+        <div class="travel-toc-progress" aria-hidden="true">
+          <span class="travel-toc-progress-bar" id="travel-toc-progress-bar"></span>
+        </div>
+        <ol class="travel-toc-list" id="travel-toc-list"></ol>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="nanjing-story nanjing-story--roadbook">
+    <article class="nanjing-rb-article">
+      <figure class="nanjing-rb-hero">
+        <img src="../../assets/travel/[slug]/front.jpg" alt="[城市]封面" loading="eager" decoding="async">
+      </figure>
+
+      <header class="nanjing-rb-header">
+        <p class="nanjing-rb-channel">旅行</p>
+        <h1>[城市]游记</h1>
+      </header>
+
+      <section class="nanjing-rb-section">
+        <p class="nanjing-rb-section-index">第一天</p>
+        <h2>章节标题</h2>
+        <p>正文段落。</p>
+      </section>
+
+      <!-- 横版大图：默认单图即可 -->
+      <figure class="nanjing-rb-media nanjing-rb-media--single">
+        <img src="../../assets/travel/[slug]/story/landscape-01.jpg" alt="横版大图说明" loading="lazy" decoding="async">
+        <figcaption>可选图注。</figcaption>
+      </figure>
+
+      <!-- 竖版单图：加 --portrait 压缩高度 -->
+      <figure class="nanjing-rb-media nanjing-rb-media--single nanjing-rb-media--portrait">
+        <img src="../../assets/travel/[slug]/story/portrait-01.jpg" alt="竖版图说明" loading="lazy" decoding="async">
+      </figure>
+
+      <!-- 三图同排：三图并排；如果三张都是竖图，再加 --portrait -->
+      <div class="nanjing-rb-media-grid nanjing-rb-media-grid--three">
+        <figure class="nanjing-rb-media"><img src="../../assets/travel/[slug]/story/p1.jpg" alt="图1" loading="lazy" decoding="async"></figure>
+        <figure class="nanjing-rb-media"><img src="../../assets/travel/[slug]/story/p2.jpg" alt="图2" loading="lazy" decoding="async"></figure>
+        <figure class="nanjing-rb-media"><img src="../../assets/travel/[slug]/story/p3.jpg" alt="图3" loading="lazy" decoding="async"></figure>
+      </div>
+
+      <!-- 竖图三连时使用 -->
+      <div class="nanjing-rb-media-grid nanjing-rb-media-grid--three nanjing-rb-media-grid--portrait">
+        <figure class="nanjing-rb-media"><img src="../../assets/travel/[slug]/story/v1.jpg" alt="图1" loading="lazy" decoding="async"></figure>
+        <figure class="nanjing-rb-media"><img src="../../assets/travel/[slug]/story/v2.jpg" alt="图2" loading="lazy" decoding="async"></figure>
+        <figure class="nanjing-rb-media"><img src="../../assets/travel/[slug]/story/v3.jpg" alt="图3" loading="lazy" decoding="async"></figure>
+      </div>
+
+      <section class="nanjing-rb-section">
+        <div class="nanjing-rb-break" aria-hidden="true"></div>
+        <p>中段过渡段落。</p>
+      </section>
+    </article>
+
+    <section class="nanjing-section nanjing-section--appendix travel-rule-appendix-standard">
+      <div class="nanjing-section-heading">
+        <p class="nanjing-section-index">附录 B</p>
+        <h2>饮食清单</h2>
+      </div>
+
+      <!-- 饮食卡片：默认 3 列横图；若素材全是竖图再加 travel-rule-food-portrait -->
+      <div class="nanjing-card-grid nanjing-card-grid--food travel-rule-food-3col">
+        <article class="nanjing-card nanjing-card--food" data-food-key="food-001" role="button" tabindex="0" aria-haspopup="dialog">
+          <img src="../../assets/travel/[slug]/food/f1.jpg" alt="食物 1" loading="lazy" decoding="async">
+          <h3>店名 / 菜名</h3>
+          <p class="nanjing-card-review">一句短评。</p>
+        </article>
+      </div>
+
+      <div class="nanjing-food-modal" id="nanjing-food-modal" hidden>
+        <div class="nanjing-food-modal__backdrop" data-close-food-modal="true"></div>
+        <section class="nanjing-food-modal__panel" role="dialog" aria-modal="true" aria-labelledby="nanjing-food-modal-title">
+          <button type="button" class="nanjing-food-modal__close" data-close-food-modal="true" aria-label="关闭评价">×</button>
+          <div class="nanjing-food-modal__layout">
+            <figure class="nanjing-food-modal__media"><img id="nanjing-food-modal-image" alt="" loading="lazy" decoding="async"></figure>
+            <div class="nanjing-food-modal__text">
+              <p class="nanjing-food-modal__score" id="nanjing-food-modal-score"></p>
+              <h3 id="nanjing-food-modal-title"></h3>
+              <div class="nanjing-food-modal__content" id="nanjing-food-modal-content"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="nanjing-section nanjing-section--backlink">
+      <a href="../index.html" class="travel-card-read">← 返回 Travel</a>
+    </section>
+  </main>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

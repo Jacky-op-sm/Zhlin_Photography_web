@@ -2086,7 +2086,7 @@ body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-deta
 @media (min-width: 900px) {
   .nanjing-story--roadbook .nanjing-rb-section h2,
   .japan-story--roadbook .japan-rb-section h2 {
-    white-space: nowrap;
+    white-space: normal;
   }
 }
 
@@ -2188,6 +2188,38 @@ body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-deta
 .japan-story--roadbook .japan-rb-media-grid--three .japan-rb-media img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.nanjing-story--roadbook .nanjing-rb-media-grid--portrait .nanjing-rb-media img,
+.japan-story--roadbook .japan-rb-media-grid--portrait .japan-rb-media img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.nanjing-story--roadbook .nanjing-rb-media--portrait img,
+.japan-story--roadbook .japan-rb-media--portrait img {
+  max-height: min(58vh, 760px);
+  width: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  background: #f3f1ed;
+}
+
+.japan-rb-divider {
+  width: 6.2rem;
+  height: 1px;
+  margin: 1.8rem 0;
+  border: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+}
+
+.nanjing-story--roadbook .nanjing-rb-separator,
+.japan-story--roadbook .japan-rb-separator {
+  margin: 1.1rem 0;
+  text-align: center;
+  color: color-mix(in srgb, var(--text-muted) 70%, var(--accent) 30%);
+  letter-spacing: 0.2em;
+  font-size: 0.82rem;
 }
 
 @media (min-width: 900px) {
@@ -2492,6 +2524,32 @@ body[data-page^="travel-"]:not([data-page="travel"]):not([data-page="travel-deta
   line-height: 1.75;
 }
 
+
+.japan-card .japan-card-review {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.japan-card--food {
+  cursor: pointer;
+}
+
+.japan-card--food:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 62%, #ffffff 38%);
+  outline-offset: 2px;
+}
+
+body[data-page="travel-dongbei"] .japan-rb-media-grid--three {
+  max-width: 1080px;
+}
+
+@media (min-width: 760px) {
+  body[data-page="travel-dongbei"] .japan-rb-media-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 .japan-section--backlink {
   margin-top: 3.5rem;
 }
@@ -2767,9 +2825,9 @@ body[data-page="travel-detail"] .travel-comments {
 
 @media (max-width: 639px) {
   .nanjing-card-grid--food .nanjing-card img {
-    height: auto;
-    aspect-ratio: auto;
-    object-fit: contain;
+    height: clamp(170px, 52vw, 240px);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
   }
 }
 
@@ -2780,6 +2838,13 @@ body[data-page="travel-detail"] .travel-comments {
 .travel-rule-portrait-4col .japan-card img,
 .travel-rule-portrait-4col .nanjing-card img {
   aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.travel-rule-food-portrait .japan-card img,
+.travel-rule-food-portrait .nanjing-card img {
+  aspect-ratio: 4 / 5;
+  height: auto;
   object-fit: cover;
 }
 
